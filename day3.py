@@ -1,127 +1,111 @@
 import streamlit as st
 from utils import get_gmap_link, show_food_table
 
+
 def show():
-    st.caption("3/16")
-    # ==========================================
-    # 0. 退房 & 早餐
-    # ==========================================
-    st.subheader("0️⃣ 退房 & 早餐")
-    st.info("💡 便利商店買早餐、茶水，車上吃")
-    
-    st.divider()
+    st.caption("1/18 (一)｜雪日（可與 D4 對調）｜自駕 Day1")
 
     # ==========================================
-    # 1. 租車 (金澤站)
+    # 1. 取車
     # ==========================================
-    st.subheader("1️⃣ 金澤租車 (Toyota Rent a Car)")
-    
-    st.markdown("**Step 1：前往租車點 (走路)**")
-    st.caption("位於金澤車站「西口」，請出站後往西口走")
-    st.link_button("🚶 導航：Toyota租車 金澤站西口店", get_gmap_link("Toyota Rent a Car Kanazawa Station West Exit", "walking"))
-
+    st.subheader("1️⃣ 取車")
     st.markdown("""
-    **Step 2：辦理取車手續**
-    請出示護照、台日駕照、信用卡
-    
-    """)
-    
-    st.warning("⚠️ **注意**：取車時確認車身舊傷")
-
+* **08:00** 京都站周邊租車店取車（48hr，雪胎＋ETC）
+* 取車時確認：雪胎、ETC 卡插好、油箱滿、還車時間 D5 07:45
+* 上車先設導航：**琵琶湖山谷 ロープウェイ山麓駅**
+""")
     st.divider()
 
     # ==========================================
-    # 2. 合掌村 (白川鄉)
+    # 2. 琵琶湖山谷
     # ==========================================
-    st.subheader("2️⃣ 合掌村")
-
-    st.markdown("**Step 1：車機導航**")
-    st.code("電話：05769-6-3111\nMapCode：549 018 350", language="text")
-
-    st.markdown("**Step 2：手機導航**")
-    st.link_button("🅿️ 導航：村營 Seseragi 停車場", get_gmap_link("Shirakawa-go Seseragi Park Parking", "driving"))
-
+    st.subheader("2️⃣ ★ 琵琶湖山谷 (びわ湖バレイ)")
     st.markdown("""
-    **Step 3：走法**
-    * 停好車後，走過吊橋「相逢橋 (Deai-bashi)」抵達村落""")
-    with st.expander("📸 必拍"):
-        st.markdown("""
-        * **三小屋** (落人咖啡館旁，三棟連在一起的經典畫面)
-        * **相逢橋** (在橋上拍河谷雪景)
-        """)
-    with st.expander("🍡 必吃"):
-        st.markdown("""
-        * **五平餅** (扁平狀的烤米餅，沾味噌醬)
-        * **飛驒牛可樂餅** 、 **飛驒牛串燒**
-        * **白川鄉布丁** :水布丁、五平餅風味布丁(ぷりんの家)
-        * **紫蘇最中餅 (紫蘇モナカ)**
-        """)
+* **08:50** 到山麓站停車場（京都東IC → 湖西道路約 50 分）
+* **09:30** 冬季第一班纜車上山（5 分到海拔 1,100m）
+* **🎫 票**：買「施設利用券（雪遊び／びわ湖テラス用）」＝ 纜車來回＋Terrace＋Snow Land；不滑雪**不要買滑雪券**
+  * 參考價 大人 ¥4,000 / 小學生 ¥2,000（Web 前售從 ¥3,200 / ¥1,600 起，KKday，浮動）
+* **Snow Land**：就在山頂站正前方，雪橇租 ¥500/60 分、堆雪人區、遊具區
+* **琵琶湖 Terrace**：山頂站旁，看整片琵琶湖；○ Café 360 要再搭ホーライ吊椅（10:00-15:30，最後 15:00）
+* 🍽 午餐：山頂餐廳，或早上超市買飯捲帶上去
+* **13:00** 下山
+""")
+    st.link_button("🚗 導航：琵琶湖山谷 纜車山麓站", get_gmap_link("Biwako Valley Ropeway", "driving"))
 
+    with st.expander("🧥 裝備"):
+        st.markdown("""
+* 小孩：防水雪褲＋雪靴＋防水手套（台灣先買）
+* 大人：防水外套褲鞋＋手套
+* 不租雪衣（4 人一天約 ¥20,000 起）；真的要租，山麓站有雪衣上下、雪靴 13-28cm
+* 山頂零下，帽子、圍巾、暖暖包
+""")
     st.divider()
 
     # ==========================================
-    # 3. 飛驒高山老街 (午餐)
+    # 3. 白鬚神社
     # ==========================================
-    st.subheader("3️⃣ 飛驒高山老街")
-
-    st.markdown("**市營神明停車場** (停1f)")
-    st.markdown("**Step 1：車機導航**")
-    st.code("電話：0577-32-5388", language="text")
-    st.markdown("**Step 2：手機導航**")
-    st.link_button("🅿️ 導航：市營神明停車場(5分)", get_gmap_link("Takayama City Municipal Shinmei Parking Lot", "driving"))
-    st.link_button("🅿️ 導航：中橋停車場(3分)", get_gmap_link("36.13960478190352, 137.25891920165688", "driving"))
-    st.link_button("🅿️ 導航：市營空町停車場(15分)", get_gmap_link("Takayama City Municipal Soramachi Parking Lot", "driving"))
-    st.warning("⚠️ 停車收現金 (限1000元鈔)")
-    st.link_button("🚶  導航：高山老街", get_gmap_link("36.14009405289713, 137.2596009170065", "walking"))
-    with st.expander("🍣 老街午餐 & 必吃"):
-        st.markdown("""
-        * **握壽司**：三種盛合(こって牛)
-        * **包子**： (喜八郎)
-        * **餐廳**： 握壽司、蕎麥麵、牛肉飯(坂口屋)
-        * **逛街重點**：味噌、清酒
-        """)
-
+    st.subheader("3️⃣ ★ 白鬚神社 湖中鳥居")
+    st.markdown("""
+* **13:30** 到（山谷往北約 25 分）
+* 下午順光，站**社務所前展望台**拍鳥居，40 分
+* ⚠️ 國道 161 車多，**不要為了拍照橫越馬路**，停車場在神社側
+""")
+    st.link_button("🚗 導航：白鬚神社", get_gmap_link("Shirahige Shrine Takashima", "driving"))
     st.divider()
 
     # ==========================================
-    # 4. 駿河屋 Asumo 店 (超市採購)
+    # 4. 可刪加碼
     # ==========================================
-    st.subheader("4️⃣ 駿河屋Asumo店(超市)")
-    st.markdown("適合買水果與晚上點心")
-
-    st.markdown("**Step 1：車機導航**")
-    st.code("電話：0577-34-7288", language="text")
-
-    st.markdown("**Step 2：手機導航**")
-    st.link_button("🚗 導航：駿河屋 Asumo店", get_gmap_link("Surugaya Asumo", "driving"))
-
-    with st.expander("🛒 超市推薦"):
-        st.markdown("""
-        * **🥩 飛驒牛** 、 **🍓 草莓** 
-        * **🥛 飛驒牛乳**：橘色或白色包裝
-        * **🐔 雞肉鄉土料理**：醃漬雞肉包，炒一下就好吃
-        * **熟食區**：炸雞、可樂餅、炒麵
-        """)
-
+    st.subheader("4️⃣ ○ 加碼（小孩還有力再去）")
+    st.markdown("""
+* **○ びわ湖こどもの国**（白鬚往北 10 分）：免費大型遊具＋室內館，1hr
+* **○ メタセコイア並木**（再往北 40 分）：❄ **有雪才去**，雪白隧道；回京都會多 40 分
+* **○ 浮御堂**（回程堅田出口）：湖上佛堂，20 分
+""")
+    st.link_button("🚗 導航：びわ湖こどもの国", get_gmap_link("Biwako Kodomo no Kuni", "driving"))
+    st.link_button("🚗 導航：メタセコイア並木", get_gmap_link("Metasequoia Namiki Makino", "driving"))
+    st.link_button("🚗 導航：浮御堂", get_gmap_link("Ukimido Katata", "driving"))
     st.divider()
 
     # ==========================================
-    # 5. 飯店 Check-in
+    # 5. 回京都
     # ==========================================
-    st.subheader("5️⃣ FAV HOTEL 飛驒高山")
-
-    st.markdown("**Step 1：車機導航設定**")
-    st.code("電話：0577-32-8885", language="text")
-    st.caption("地址：2 Chome-169-1 Nishinoisshikimachi")
-
-    st.markdown("**Step 2：手機導航**")
-    st.link_button("🚗 導航：FAV HOTEL 飛驒高山", get_gmap_link("FAV HOTEL HIDA TAKAYAMA", "driving"))
-    st.link_button("🅿️ 導航：第二停車場", get_gmap_link("36.14020065983774, 137.2497155792492", "driving"))
-    with st.expander("附近餐廳"):
-        st.markdown("""
-        * **🥩 壽喜燒** : 寿々や (Suzuya)
-        """)
+    st.subheader("5️⃣ 回京都")
+    st.markdown("""
+* **17:00** 回京都，車停飯店附近投幣停車場
+* 🍽 晚餐：京都站周邊
+""")
+    st.link_button("🚗 導航：22 PIECES", get_gmap_link("22 PIECES Kyoto", "driving"))
     st.divider()
-    show_food_table("飛驒高山")
+
+    # ==========================================
+    # 6. 備用方案
+    # ==========================================
+    st.subheader("6️⃣ 🔁 備用方案")
+    st.error("""
+**山谷纜車停駛 → 改箱館山**（只換地點，其他不變）
+* 順序改成：白鬚神社 → 箱館山 → 回程
+* 箱館山：8 人座纜車上山 8 分，Play Zone 雪遊區（有雪上電扶梯）、Snow Rafting 雪筏
+* 京都出發約 1hr20，白鬚神社往北 25 分
+
+**兩邊都不能上 → 今天改跑 D4 舟屋日內容，明天再賭雪日**
+""")
+    st.link_button("🚗 導航：箱館山滑雪場", get_gmap_link("Hakodateyama Ski Resort Takashima", "driving"))
+    st.divider()
+
+    # ==========================================
+    # 7. 今晚要做
+    # ==========================================
+    st.subheader("7️⃣ 今晚要做")
+    st.info("""
+✅ 看 **貴船神社官網 15:00 公告**（明天用）
+✅ 看明天天氣、NEXCO 縱貫道路況
+✅ 油量夠不夠（明天來回約 260 km）
+""")
+    st.divider()
+
+    show_food_table("湖西")
+
+
 if __name__ == "__main__":
     show()
