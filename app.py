@@ -28,6 +28,16 @@ st.markdown("""
 /* 隱藏預設選單與頁尾 */
 #MainMenu {visibility: hidden;}
 footer {visibility: hidden;}
+/* columns 手機不換行 */
+div[data-testid="stHorizontalBlock"] {
+    flex-wrap: nowrap !important;
+    gap: 6px;
+}
+div[data-testid="stHorizontalBlock"] > div[data-testid="stColumn"],
+div[data-testid="stHorizontalBlock"] > div[data-testid="column"] {
+    min-width: 0 !important;
+    flex: 1 1 0 !important;
+}
 
 /* --- 橫向滑動導覽列 --- */
 div[role="radiogroup"] {
