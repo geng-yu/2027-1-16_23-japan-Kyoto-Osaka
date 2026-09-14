@@ -55,7 +55,7 @@ def show():
 * **○ メタセコイア並木**（再往北 40 分）：❄ **有雪才去**，雪白隧道；回京都會多 40 分
 * **○ 浮御堂**（回程堅田出口）：湖上佛堂，20 分
 """)
-       c1, c2, c3 = st.columns(3)
+    c1, c2, c3 = st.columns(3) 
     with c1:
         st.link_button("🚗 こどもの国", get_gmap_link("Biwako Kodomo no Kuni", "driving"), width="stretch")
     with c2:
