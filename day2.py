@@ -17,6 +17,12 @@ def show():
 * **紀念品**：館內限定，最後再逛
 """)
     st.link_button("📍 導航：任天堂博物館", get_gmap_link("Nintendo Museum", "transit"))
+    with st.expander("😋 逛／吃／買"):
+        st.markdown("""
+* **吃**：HATENA BURGER（館內）
+* **玩**：花札工房（另付費，館內當天用 App 預約，額滿就沒了，進館先看）
+* **買**：博物館商店限定：問號磚抱枕、花札、手把造型雜貨；出去前再買
+""")
     st.divider()
 
     # ==========================================
