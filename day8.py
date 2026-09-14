@@ -1,140 +1,63 @@
 import streamlit as st
-import pandas as pd
 from utils import get_gmap_link
 
+
 def show():
-    st.caption("3/21")
-    # ==========================================
-    # 0. 航班資訊 (置頂提醒)
-    # ==========================================
-    with st.container(border=True):
-        st.subheader("🛫 中華航空 CI 151")
-        st.markdown("""
-        09:50 NGO 起飛 → 12:15 TPE 抵達
-        """)
-    st.divider()
+    st.caption("1/23 (六)｜回程｜16:15 起飛")
 
     # ==========================================
-    # 1. 早餐：麥當勞
+    # 1. 退房
     # ==========================================
-    st.subheader("1️⃣ 麥當勞(早餐)")
-
-    st.markdown("**Step 1：步行導航**")
-    st.caption("地點：麥當勞 榮大津通店")
-    st.link_button("🍔 導航：McDonald's Sakae Otsudori", get_gmap_link("McDonald's Sakae Otsu-dori", "walking"))
-    st.info("💡 **麥當勞**：鬆餅漢堡、期間限定派")
-
-    st.divider()
-
-    # ==========================================
-    # 2. 前往機場：方案 A (巴士)
-    # ==========================================
-    st.subheader("2️⃣ 交通方案 A：利木津巴士 (優先)")
-
-    st.markdown("**Step 1：前往搭車點**")
+    st.subheader("1️⃣ 10:00 退房")
     st.markdown("""
-    * **地點**：綠洲21 (Oasis 21) 巴士總站
-    * **月台**：**9號乘車處**
-    * **發車時間**：**06:10** (06:55 抵達機場)
-    * **信用卡** : 上車1人刷，下車講大人、小孩數量
-    * **現金** : 上車抽整理卷，下車付錢
-    """)
-    st.link_button("🚌 導航：Oasis 21 巴士總站", get_gmap_link("Oasis 21 Bus Terminal", "walking"))
-
-    st.warning("⚠️ **風險**：巴士客滿，立刻轉「方案 B」")
-
+* 行李最後檢查：護照、雪具乾了沒、免稅品別拆封
+* 早餐飯店或 Lawson
+""")
     st.divider()
 
     # ==========================================
-    # 3. 前往機場：方案 B (地鐵+名鐵)
+    # 2. 利木津巴士
     # ==========================================
-    st.subheader("3️⃣ 交通方案 B：電車 (備案)")
-
-    st.markdown("**Step 1：搭地鐵 (名城線 紫色)**")
-    st.markdown("`榮站 (Sakae)` ➔ `金山站 (Kanayama)`")
-    st.link_button("🚇 導航：榮站 (入口)", get_gmap_link("Sakae Station Nagoya", "walking"))
-
-    st.markdown("**Step 2：轉乘名鐵 (Meitetsu)**")
+    st.subheader("2️⃣ 關空利木津巴士")
     st.markdown("""
-    1.  金山站下車，出站後跟著「名鐵線 (Meitetsu Line)」指標走。
-    2.  進入名鐵閘門，前往中部國際機場方向月台。
-    3.  **票價說明**：
-        * **一般特急 (部分指定)**：車資 ¥980 (自由座) + ¥450 (指定車廂)。
-        * **μ-SKY (全車指定)**：車資 ¥980 + μ-Ticket ¥450 (必買)。
-    """)
-    st.link_button("🚄 導航：名鐵金山站", get_gmap_link("Kanayama Station Meitetsu", "walking"))
+* **10:50** 日本環球影城 **乘車處 1** 上車 → 約 70 分 → **12:00** 關空
+* 不用扛行李在西九条換車，行李放巴士下方
+* 票：官網先預約，或現場向司機／售票機買
+""")
+    st.link_button("🚶 導航：環球影城 利木津巴士站", get_gmap_link("Universal Studios Japan Bus Stop", "walking"))
 
-    # ==========================================
-    # 時刻表 (摺疊區塊)
-    # ==========================================
-    with st.expander("🚄 金山站 -> 機場時刻表"):
-        st.markdown("[🔗 官網時刻表](https://trainbus.meitetsu.co.jp/meitetsu-transfer-zh-tw/pc/transfer/DepArrTimeList?snode=00001879&gnode=00009406&date=2026-01-24&depTime=12)")
-        
-        schedule_data = [
-            {"出發": "06:07", "到達": "06:32", "耗時": "25分", "車種": "🔵 μ-SKY (全車指定)"},
-            {"出發": "06:12", "到達": "06:44", "耗時": "32分", "車種": "🔴 特急 (部分指定)"},
-            {"出發": "06:20", "到達": "06:59", "耗時": "39分", "車種": "🟠 急行"},
-            {"出發": "06:34", "到達": "07:03", "耗時": "29分", "車種": "🔵 μ-SKY (全車指定)"},
-            {"出發": "06:36", "到達": "07:17", "耗時": "41分", "車種": "🟠 急行"},
-            {"出發": "06:48", "到達": "07:20", "耗時": "32分", "車種": "🟠 快速急行"},
-            {"出發": "06:57", "到達": "07:23", "耗時": "26分", "車種": "🔵 μ-SKY (全車指定)"},
-        ]
-        
-        st.caption("🔵 μ-SKY 最快(980+450) / 🔴 特急自由座車廂(980) / 🐢 不推薦")
-        
-        df = pd.DataFrame(schedule_data)
-        # 修正：確保欄位名稱與資料 Key 一致
-        st.dataframe(
-            df, 
-            hide_index=True, 
-            use_container_width=True,
-            column_order=["出發", "到達", "耗時", "車種"]
-        )
-
+    with st.expander("🚃 巴士沒趕上的備案"):
+        st.markdown("""
+* JR 環球城 → 西九条 轉 **關空快速**（西九条有停）→ 關空 約 70 分
+* 12:30 前到關空都來得及
+""")
     st.divider()
 
     # ==========================================
-    # 4. 機場購物攻略
+    # 3. 臨空港 (可刪)
     # ==========================================
-    st.subheader("4️⃣ 中部國際機場 (Centrair) 購物")
-    
-    st.markdown("**Step 1：報到前 (Landside - 4F Sky Town)**")
-    st.markdown("這裡最好買！掛行李前先買好塞進去")
-    
-    with st.expander("🦐 必買：蝦餅之里 (Ebisenbei no Sato)"):
-        st.markdown("""
-        * **位置**：4F 提燈橫丁 (人最多的那間)
-        * **推薦**：綜合包 (最划算)、梅子口味、芥末口味
-        * **注意**：**可以退稅，建議直接買一箱裝箱託運**
-        """)
-
-    with st.expander("🍘 其他 4F 推薦"):
-        st.markdown("""
-        * **赤福 (Akafuku)**：伊勢名產，紅豆麻糬 (保存期限短)
-        * **兩口屋是清**：傳統和菓子，適合送長輩
-        * **天むす (炸蝦飯糰)**：4F 有名店「千壽」，飛機吃或當午餐
-        """)
-
-    st.markdown("---")
-
-    st.markdown("**Step 2：出境後 (Airside - 免稅店)**")
-    st.markdown("過安檢、護照查驗後，登機前的最後採購")
-    
-    with st.expander("🍫 免稅店必買"):
-        st.markdown("""
-        * **Royce 巧克力洋芋片**
-        * **東京香蕉 (Tokyo Banana)**：東京名產
-        * **白色戀人**：北海道名產
-        * **酒類**：獺祭、久保田等日本酒
-        * **LeTAO 起司蛋糕**：需購買保冷袋
-        """)
+    st.subheader("3️⃣ ○ 臨空港 Outlet")
+    st.markdown("""
+* 關空 → **りんくうタウン** 1 站 5 分（南海或 JR 都可）
+* 行李放關空置物櫃（或 Outlet 置物櫃）
+* **12:15-13:45** 逛，13:45 搭回關空
+* 不想跑的話，關空 T1 本身也很多店，直接報到
+""")
+    st.link_button("🚃 導航：臨空 Premium Outlets", get_gmap_link("Rinku Premium Outlets", "transit"))
     st.divider()
-    st.subheader("5️⃣ 搭機")
-    with st.container(border=True):
-        st.subheader("🛫 中華航空 CI 151")
-        st.markdown("""
-        09:50 NGO 起飛 → 12:15 TPE 抵達
-        """)
-    
+
+    # ==========================================
+    # 4. 報到
+    # ==========================================
+    st.subheader("4️⃣ 14:15 前報到 → 16:15 起飛")
+    st.markdown("""
+* 關空 T1 週六人多，**14:15 前**到櫃台
+* 免稅品在託運前拍照存證
+* 登機前：手機下載好回程的影片給小孩
+""")
+    st.link_button("🚶 導航：關西機場 T1", get_gmap_link("Kansai International Airport Terminal 1", "walking"))
+    st.success("🎉 8 天結束，辛苦了！")
+
+
 if __name__ == "__main__":
     show()
