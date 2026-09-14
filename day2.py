@@ -1,168 +1,111 @@
 import streamlit as st
 from utils import get_gmap_link, show_food_table
 
+
 def show():
-    st.caption("3/15")
-    # ==========================================
-    # 1. 購買一日券
-    # ==========================================
-    st.subheader("1️⃣ 購買巴士一日券")
-    
-    st.markdown("""
-    **金澤巴士一日周遊券 (One Day Pass)**
-    * **💰 價格**：大人 **800円** / 小孩 **400円**
-    * **🚌 範圍**：城下町周遊巴士 (RL右回 / LL左回)、兼六園區間巴士、北鐵路線巴士
-    * **📍 地點**：金澤站東口 (巴士圓環旁) 北鐵站前中心
-    * **💡 用法**：下車時將票券日期面給司機看(後門上，前門下)
-    """)
-    
-    st.link_button("🎫 導航：一日券售票處 (金澤車站西口巴士總站)", get_gmap_link("Hokuriku Rail Road Co., Ltd. Ticket Center", "walking"))
+    st.caption("1/17 (日)｜任天堂博物館 → 宇治")
 
+    # ==========================================
+    # 1. 京都站 → JR小倉
+    # ==========================================
+    st.subheader("1️⃣ 京都站 → JR 小倉")
+    st.markdown("""
+* **09:00** 京都站 **JR 奈良線**（普通車）→ **09:25** JR 小倉
+* 出站走 8 分到博物館
+* ⚠️ 搭到「快速」不停小倉，看清楚車種
+""")
+    st.link_button("🚃 導航：京都站 → JR 小倉站", get_gmap_link("JR Ogura Station Uji", "transit"))
     st.divider()
 
     # ==========================================
-    # 2. 近江町市場 (早餐)
+    # 2. 任天堂博物館
     # ==========================================
-    st.subheader("2️⃣ 近江町市場")
-    
-    st.markdown("**Step 1：前往搭車點 (走路)**")
-    st.link_button("🚶 導航：金澤車站東口 (巴士總站)", get_gmap_link("Kanazawa Station East Gate Bus Terminal", "walking"))
-    
+    st.subheader("2️⃣ ★ 任天堂博物館")
     st.markdown("""
-    **Step 2：確認公車班次**
-    * **乘車處**：東口 **7號** 乘車處
-    * **路線**：搭乘 **【LL 綠】、【SB 粉】** 或 經「武藏雷光」公車
-    * **下車**：`LL1` 、`SB1` 武藏雷光 (近江町市場)
-    """)
-    
-    st.markdown("**Step 3：抵達目的地**")
-    st.link_button("📍 導航：近江町市場", get_gmap_link("Omicho Market", "walking"))
+* **10:00** 時段入館（抽籤第一希望），館內 3-4hr
+* **入館證**：入口核對證件，姓名要跟護照一致
+* **體驗區**：每人 10 枚硬幣，大型控制器、花札等每項扣幣，先看想玩什麼再花
+* **午餐**：館內 **HATENA BURGER**（要有票才進得去）
+* **紀念品**：館內限定，最後再逛
+""")
+    st.link_button("📍 導航：任天堂博物館", get_gmap_link("Nintendo Museum", "walking"))
 
-    with st.expander("😋 近江町小吃"):
+    with st.expander("🎟️ 抽籤結果不是上午場的話"):
         st.markdown("""
-        * **可樂餅**：甜蝦或螃蟹奶油口味
-        * **海鮮**：大口 或 忠村 水產
-        * **豆腐家**：豆漿霜淇淋、豆乳甜甜圈
-        * **金澤關東煮(轉角)**：車麩(輪狀麵筋)、梅貝
-        * **伴手禮**：乾貨、高湯包
-        """)
-
+* **下午場**：09:00 先去宇治（平等院→宇治橋→中村藤吉）→ 13:00 JR 宇治 → JR 小倉 → 博物館 → 17:30 回京都站
+* **中 1/21**：今天改 09:00 宇治 → 13:00 回京都 → ○二條城 → ○京都水族館／鐵道博物館
+""")
     st.divider()
 
     # ==========================================
-    # 3. 東茶屋街
+    # 3. JR小倉 → 宇治
     # ==========================================
-    st.subheader("3️⃣ 東茶屋街")
-
-    st.markdown("**Step 1：前往搭車點 (走路)**")
-    st.caption("從市場走過馬路，到對面 M'ZA百貨 前的公車站")
-    st.link_button("🚶 導航：武藏雷光 (公車站)", get_gmap_link("Musashigatsuji Kanazawa Omotesando", "walking"))
-
+    st.subheader("3️⃣ JR 小倉 → 宇治")
     st.markdown("""
-    **Step 2：確認公車班次**
-    * **路線**：搭乘 **【右回 RL】(Right Loop 紅色)**
-    * **下車**：`RL4` 橋場町 (Hashiba-cho)
-    """)
-    
-    st.markdown("**Step 3：抵達目的地**")
-    st.caption("下車後需步行約 5 分鐘進入巷弄")
-    st.link_button("📍 導航：東茶屋街", get_gmap_link("Higashi Chaya District", "walking"))
-
-    with st.expander("🍘 東茶屋街美食"):
-        st.markdown("""
-        * **金箔冰淇淋**：(箔一 Hakuichi)
-        * **可樂餅**：長條形可樂餅 (Ville de Croquette)
-        * **水果大福**：(菓舗 Kazu Nakashima) 
-        * **伴手禮**：金箔保養品/吸油面紙 (箔座)(箔一)
-        """)
-
+* **13:30** JR 小倉 → **宇治**（1 站，約 3 分）
+* 出站走 10 分到平等院
+""")
+    st.link_button("🚃 導航：JR 宇治站", get_gmap_link("JR Uji Station", "transit"))
     st.divider()
 
     # ==========================================
-    # 4. 金澤城 & 兼六園
+    # 4. 平等院
     # ==========================================
-    st.subheader("4️⃣ 金澤城 & 兼六園")
-    
-    st.markdown("**Step 1：前往搭車點 (走路)**")
-    st.caption("從東茶屋街走回原本下車處附近的站牌")
-    st.link_button("🚶 導航：橋場町 (派出所前公車站)", get_gmap_link("36.5723822372095, 136.66479096516986", "walking"))
-
+    st.subheader("4️⃣ ★ 平等院鳳凰堂")
     st.markdown("""
-    **Step 2：確認公車班次**
-    * **路線**：搭乘 **【右回 RL】(Right Loop 紅色)** 或 兼六園區間巴士
-    * **下車**：`RL6` 兼六園下‧金澤城(石川門向)
-    """)
-    
-    st.markdown("**Step 3：抵達目的地**")
-    st.link_button("📍 導航：兼六園 (桂坂口)", get_gmap_link("36.56469558453552, 136.6621423464736", "walking"))
-
-    #st.info("📸 **必拍**：\n1. **徽軫燈籠** (兩腳長度不一的石燈籠)\n2. **雪吊** (冬季限定，保護樹木的繩索幾何美景)")
-    with st.expander("📸 必拍"):
-        st.markdown("""
-        * **徽軫燈籠** (兩腳長度不一的石燈籠)
-        * **雪吊** (冬季限定，保護樹木的繩索幾何美景)
-        """)
-    with st.expander("🍡 兼六園周邊點心"):
-        st.markdown("""
-        * **見城亭**：醬油糰子、納豆餅
-        * **箔一**：金箔冰淇淋
-        * **金箔紅豆湯**
-        """)
-
+* 10 円硬幣上的那棟，冬天人少
+* 鳳凰堂內部參觀要另外買時段票（現場排），時間不夠就只看外觀＋鳳翔館
+""")
+    st.link_button("📍 導航：平等院", get_gmap_link("Byodoin Temple", "walking"))
     st.divider()
 
     # ==========================================
-    # 5. 21世紀美術館
+    # 5. 宇治橋 / 宇治上神社
     # ==========================================
-    st.subheader("5️⃣ 21世紀美術館")
-
-    st.markdown("**Step 1：前往搭車點 (走路)**")
-    st.caption("從兼六園「真弓坂口」過馬路就到了，走路比搭車快")
-    st.link_button("🚶 導航：兼六園 (真弓坂口)", get_gmap_link("Kenrokuen Mayumizaka Gate", "walking"))
-    
+    st.subheader("5️⃣ ★ 宇治橋 → ○ 宇治上神社")
     st.markdown("""
-    **Step 2：步行抵達**
-    * 直接過馬路即抵達美術館 (約 3 分鐘)
-    """)
-
-    st.markdown("**Step 3：抵達目的地**")
-    st.link_button("📍 導航：金澤21世紀美術館", get_gmap_link("21st Century Museum of Contemporary Art, Kanazawa", "walking"))
-    with st.expander("🎨 美術館亮點"):
-        st.markdown("""
-        * **游泳池**：內部需預約，上方免費
-        * **Blue Planet Sky**：「光之庭」，仰望方形天空
-        """)
-    with st.expander("🍘 美術館美食"):
-        st.markdown("""
-        * **Patisserie OFUKU (パティスリー オフク)**：水果塔和蛋糕(下午茶)
-        """)
-        
+* 從平等院走表參道 → **宇治橋**（紫式部像）→ 過橋走 10 分 → **宇治上神社**（日本最古神社建築，世界遺產，小巧 20 分）
+* 小孩累了宇治上神社直接跳過
+""")
+    st.link_button("📍 導航：宇治上神社", get_gmap_link("Ujigami Shrine", "walking"))
     st.divider()
 
     # ==========================================
-    # 6. 金澤 FORUS (晚餐/逛街)
+    # 6. 中村藤吉本店
     # ==========================================
-    st.subheader("6️⃣ 金澤 FORUS")
-
-    st.markdown("**Step 1：前往搭車點 (走路)**")
-    st.link_button("🚶 導航：廣坂‧21世紀美術館 (公車站)", get_gmap_link("36.56168309662548, 136.6583946033682", "walking"))
-
+    st.subheader("6️⃣ 🍽 中村藤吉本店")
     st.markdown("""
-    **Step 2：確認公車班次**
-    * **路線**：搭乘 **【RL7 紅】、【SB7 粉】** 或 **金沢駅** 皆可回到車站。
-    * **下車**：金澤站 (Kanazawa Station)。
-    """)
-
-    st.markdown("**Step 3：抵達目的地**")
-    st.markdown("FORUS 百貨就在金澤站東口左手邊。")
-    st.link_button("📍 導航：金澤 FORUS", get_gmap_link("Kanazawa FORUS", "walking"))
-    with st.expander("🍘 FORUS美食"):
-        st.markdown("""
-        * **迴轉壽司6F**：もりもり寿し、プロムナード(能登前)
-        * **木桶飯6F**：Shiroku (四六時中)
-        """)
-    st.success("🛍️ **逛街重點 (FORUS)**：\n* **4F**：Uniqlo (免稅)\n* **5F**：寶可夢中心 (Pokemon Center Kanazawa) - 門口有「美納斯」雕像。")
+* JR 宇治站前，抹茶果凍、抹茶聖代、抹茶蕎麥麵
+* 假日會排隊，先登記再去逛也可以
+""")
+    st.link_button("📍 導航：中村藤吉本店", get_gmap_link("Nakamura Tokichi Honten", "walking"))
     st.divider()
-    show_food_table("金澤")
+
+    # ==========================================
+    # 7. 回京都
+    # ==========================================
+    st.subheader("7️⃣ 回京都站")
+    st.markdown("""
+* **17:00** JR 宇治 → 京都站（普通車約 30 分，快速約 20 分）
+* 🍽 晚餐：京都站周邊
+""")
+    st.link_button("🚃 導航：JR 宇治 → 京都站", get_gmap_link("Kyoto Station", "transit"))
+    st.divider()
+
+    # ==========================================
+    # 8. 今晚要做
+    # ==========================================
+    st.subheader("8️⃣ 今晚要做")
+    st.warning("""
+🔁 **決定明天是雪日還是舟屋日**
+* 看 **琵琶湖山谷官網 TOP 頁** 營業情報（纜車有沒有預告停駛）
+* 看隔天 **風速** 預報：風小 → 雪日；風大 → 舟屋日
+* 看 **NEXCO 西日本** 縱貫道路況
+""")
+    st.divider()
+
+    show_food_table("宇治")
+
+
 if __name__ == "__main__":
     show()
