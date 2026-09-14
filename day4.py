@@ -84,9 +84,13 @@ def show():
   * **沒雪** → 貴船看燈籠石階＋水占卜（17:30-18:30）→ ○ 鞍馬站看天狗雕像
 * 大雪日不要開上貴船，改叡山電車（出町柳 → 貴船口）
 """)
-    st.link_button(" 🅿️1 貴船神社", get_gmap_link("35.12210122259409, 135.76339418928197", "driving"))
-    st.link_button(" 🅿️2 貴船神社", get_gmap_link("35.12055954695767, 135.7626417214197", "driving"))
-    st.link_button(" 🅿️3 貴船神社", get_gmap_link("35.119117921926446, 135.76276126082237", "driving"))
+    c1, c2, c3 = st.columns(3)
+    with c1:
+        st.link_button("🅿️1 貴船神社", get_gmap_link("35.12210122259409, 135.76339418928197", "driving"), width="stretch")
+    with c2:
+        st.link_button("🅿️2 貴船神社", get_gmap_link("35.12055954695767, 135.7626417214197", "driving"), width="stretch")
+    with c3:
+        st.link_button("🅿️3 貴船神社", get_gmap_link("35.119117921926446, 135.76276126082237", "driving"), width="stretch")
     st.link_button("📍 導航：鞍馬站 (天狗)", get_gmap_link("Kurama Station", "driving"))
     st.divider()
 
