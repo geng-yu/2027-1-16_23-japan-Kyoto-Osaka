@@ -43,13 +43,13 @@ def show():
 * 下午順光，站**社務所前展望台**拍鳥居，40 分
 * ⚠️ 國道 161 車多，**不要為了拍照橫越馬路**，停車場在神社側
 """)
-    st.link_button("🚗 導航：白鬚神社", get_gmap_link("Shirahige Shrine Takashima", "driving"))
+    st.link_button("🚗 導航：白鬚神社", get_gmap_link("35.274213263032365, 136.01084250538855", "driving"))
     st.divider()
 
     # ==========================================
     # 4. 可刪加碼
     # ==========================================
-    st.subheader("4️⃣ ○ 加碼（小孩還有力再去）")
+    st.subheader("4️⃣ 加碼(小孩還有力再去)")
     st.markdown("""
 * **○ びわ湖こどもの国**（白鬚往北 10 分）：免費大型遊具＋室內館，1hr
 * **○ メタセコイア並木**（再往北 40 分）：❄ **有雪才去**，雪白隧道；回京都會多 40 分
@@ -75,11 +75,11 @@ def show():
 
     c1, c2, c3 = st.columns(3)
     with c1:
-        st.link_button("🅿️ 停車場1", get_gmap_link("34.98197527382824, 135.75692279994257", "driving"), width="stretch")
+        st.link_button("🅿️1 飯店", get_gmap_link("34.98197527382824, 135.75692279994257", "driving"), width="stretch")
     with c2:
-        st.link_button("🅿️ 停車場2", get_gmap_link("34.98251532812083, 135.75747844958318", "driving"), width="stretch")
+        st.link_button("🅿️2 飯店", get_gmap_link("34.98251532812083, 135.75747844958318", "driving"), width="stretch")
     with c3:
-        st.link_button("🅿️ 停車場3", get_gmap_link("34.983058834733335, 135.75752110124756", "driving"), width="stretch")
+        st.link_button("🅿️3 飯店", get_gmap_link("34.983058834733335, 135.75752110124756", "driving"), width="stretch")
     st.divider()
 
     # ==========================================
