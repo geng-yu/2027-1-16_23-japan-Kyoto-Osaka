@@ -135,7 +135,7 @@ st.markdown("""
 #[SUGI藥局](https://d1grca2t3zpuug.cloudfront.net/2025/02/sugidrug20260228-855x1300.webp)｜
 #""")
 
-st.divider()
+#st.divider()
 
 # --- 顯示內容 ---
 selected_data = trip_dates[selected_key]
