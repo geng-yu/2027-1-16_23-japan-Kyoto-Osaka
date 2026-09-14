@@ -53,13 +53,13 @@ def show():
     # ==========================================
     st.subheader("4️⃣ 加碼(小孩還有力再去)")
     st.markdown("""
-* **○ びわ湖こどもの国**（白鬚往北 10 分）：免費大型遊具＋室內館，1hr
-* **○ メタセコイア並木**（再往北 40 分）：❄ **有雪才去**，雪白隧道；回京都會多 40 分
+* **○ 琵琶湖兒童之國公園**（白鬚往北 10 分）：免費大型遊具＋室內館，1hr
+* **○ 水杉林蔭大道**（再往北 40 分）：❄ **有雪才去**，雪白隧道；回京都會多 40 分
 * **○ 浮御堂**（回程堅田出口）：湖上佛堂，20 分
 """)
     c1, c2, c3 = st.columns(3) 
     with c1:
-        st.link_button("🚗 こどもの国", get_gmap_link("Biwako Kodomo no Kuni", "driving"), width="stretch")
+        st.link_button("🚗 琵琶湖兒童之國公園", get_gmap_link("Biwako Kodomo no Kuni", "driving"), width="stretch")
     with c2:
         st.link_button("🚗 水杉大道", get_gmap_link("Metasequoia Namiki Makino", "driving"), width="stretch")
     with c3:
