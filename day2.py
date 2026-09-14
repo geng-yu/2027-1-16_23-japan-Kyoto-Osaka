@@ -81,7 +81,7 @@ def show():
 * 看 **NEXCO 西日本** 縱貫道路況
 """)
     st.divider()
-
+    show_food_table("京都飯店")
 
 
 
