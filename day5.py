@@ -11,8 +11,9 @@ def show():
     st.subheader("1️⃣ 還車")
     st.markdown("""
 * **07:45** 還車（先加滿油、拿走 ETC 明細）
-* 走到京都站前巴士總站
 """)
+    st.link_button("⛽ 加油站(24H)", get_gmap_link("34.97324984490103, 135.74648147860697", "driving"))
+    st.link_button("🚗 還車:豐田租車 京都站新幹線口店(AM 8點)", get_gmap_link("トヨタレンタカー 京都駅新幹線口店", "driving"))
     st.divider()
 
     # ==========================================
