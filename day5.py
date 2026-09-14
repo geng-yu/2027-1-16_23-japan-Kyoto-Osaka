@@ -1,91 +1,119 @@
 import streamlit as st
 from utils import get_gmap_link, show_food_table
 
+
 def show():
-    st.caption("3/18")
-    # ==========================================
-    # 1. 牧歌之里 (玩雪 & 午餐)
-    # ==========================================
-    st.subheader("1️⃣ 牧歌之里")
-    st.markdown("**Step 1：車機導航**")
-    st.code("電話：0575-73-2888", language="text")
-    st.markdown("**Step 2：手機導航**")
-    st.link_button("⛄ 導航：牧歌之里", get_gmap_link("Bokka no Sato", "driving"))
-    st.warning("⚠️ 取裝備")
-    with st.expander("🍽️ 餐點"):
-        st.markdown("""
-        * **木花之鄉1F**：霜淇淋
-        * **木花之鄉2F**：蛋包飯、泰式雞腿咖哩、培根義大利麵(辣)、熱牛奶巧克力棒
-        * **溫泉木花1F**：霜淇淋、牛肉可樂餅、炸雞、豬肉丼飯(辣)、味增雞肉定食、烤牛肉
-        """)
+    st.caption("1/20 (三)｜金閣寺 → teamLab → 鬧區")
 
+    # ==========================================
+    # 1. 還車
+    # ==========================================
+    st.subheader("1️⃣ 還車")
+    st.markdown("""
+* **07:45** 還車（先加滿油、拿走 ETC 明細）
+* 走到京都站前巴士總站
+""")
     st.divider()
 
     # ==========================================
-    # 2. 犬山城 (國寶名城)
+    # 2. 205 → 金閣寺
     # ==========================================
-    st.subheader("2️⃣ 犬山城🏯")
-    st.warning("⚠️ **時間**：16:30 最後入場，17:00 關門")
-
-    st.markdown("**Step 1：車機導航**")
-    st.caption("目的地：犬山城第1停車場")
-    st.code("MapCode：70 157 836*35\n電話：0568-61-1711", language="text")
-
-    st.markdown("**Step 2：手機導航**")
-    st.link_button("🅿️ 導航：犬山城第1停車場", get_gmap_link("35.38565193464993, 136.93729569046315", "driving"))
-    st.link_button("🅿️ 導航：犬山城第2停車場", get_gmap_link("35.38657174316102, 136.9422415405705", "driving"))
-    with st.expander("🍽️ 犬山城小吃"):
-        st.markdown("""
-        * **戀小町糰子 (茶処くらや)**
-        * **五平餅 (山田五平餅店)**
-        * **水果糖葫蘆**
-        """)
-    
+    st.subheader("2️⃣ 市巴士 205 → 金閣寺")
+    st.markdown("""
+* **07:55** 京都站前 搭 **市巴士 205（金閣寺・北大路方向）**，起站一定有位
+* 看站牌上寫「金閣寺道」的乘車處
+* **08:40** 金閣寺道 下車，走 5 分
+* 車資大人 ¥230、小孩 ¥120，用 ICOCA
+""")
+    st.link_button("🚌 導航：京都站前巴士總站", get_gmap_link("Kyoto Station Bus Terminal", "walking"))
     st.divider()
 
     # ==========================================
-    # 3. 還車 (TOYOTA 白川店)
+    # 3. 金閣寺
     # ==========================================
-    st.subheader("3️⃣ 名古屋白川店還車")
-    st.markdown("記得附近加滿油再還車")
-    
-    st.markdown("**Step 1：車機導航**")
-    st.caption("TOYOTA租車 名古屋白川店")
-    st.code("電話：052-204-0100\nMapCode：428 849 4*83", language="text")
-
-    st.markdown("**Step 2：手機導航**")
-    st.link_button("🚗 導航：Toyota租車 白川店", get_gmap_link("Toyota Rent a Car Shirakawa Shop", "driving"))
-    
-    st.caption("加油站建議：Google Map 搜尋附近的 \"Gas Station\"。")
-
+    st.subheader("3️⃣ ★ 金閣寺")
+    st.markdown("""
+* **09:00** 開門第一批進（人最少），❄ 有雪就是全日本最美的畫面
+* 大人 ¥500、小孩 ¥300，一圈 30-40 分
+* **09:45** 離開 → 205 反方向回京都站（約 40 分）→ **10:30** 到
+""")
+    st.link_button("📍 導航：金閣寺", get_gmap_link("Kinkakuji Temple", "walking"))
     st.divider()
 
     # ==========================================
-    # 4. 飯店 Check-in
+    # 4. teamLab
     # ==========================================
-    st.subheader("4️⃣ 榮弗爾札飯店 (Hotel Forza)")
-    st.markdown("還車後，步行前往飯店 Check-in。")
-
-    st.markdown("**Step 1：步行導航**")
-    st.link_button("🏨 導航：Hotel Forza Nagoya Sakae", get_gmap_link("Hotel Forza Nagoya Sakae", "walking"))
-
+    st.subheader("4️⃣ ★ teamLab Biovortex Kyoto")
+    st.markdown("""
+* 京都站 **八條口走 7 分**
+* **11:00** 場（提前買時段票），館內 2.5-3hr，像迷宮沒有順路，**先裝官方 App** 看地圖免得漏
+* 票 大人 ¥3,800~（浮動）、小學生約 ¥1,200-1,500
+* 穿好走的鞋，部分區域地面會反光，帶小孩注意
+""")
+    st.link_button("🚶 導航：teamLab Biovortex Kyoto", get_gmap_link("teamLab Biovortex Kyoto", "walking"))
     st.divider()
 
     # ==========================================
-    # 5. 晚餐 (味噌豬排)
+    # 5. 錦市場
     # ==========================================
-    st.subheader("5️⃣ 晚餐：黑豚屋 (Kurobutaya)")
-    st.markdown("名古屋必吃美食：味噌豬排")
-
-    st.markdown("**Step 1：步行導航**")
-    st.link_button("🐷 導航：名古屋味噌豬排黑豚屋", get_gmap_link("Kurobutaya Ramuchii Nagoya", "walking"))
-
-    with st.expander("🥢 推薦菜單"):
-        st.markdown("""
-        * **味噌炸豬排定食**：濃郁的紅味噌醬汁淋在酥脆豬排上
-        * **蔥花味噌豬排**：加上大量蔥花，口感更清爽
-        """)
+    st.subheader("5️⃣ ★ 錦市場（午餐邊走邊吃）")
+    st.markdown("""
+* **14:00** 走回京都站 → 地鐵烏丸線 2 站 → **四條站**（或 五條站）→ 走 10 分
+* 玉子燒、豆乳甜甜圈、烤麻糬、章魚蛋，邊走邊吃當午餐
+* 大部分店 18:00 前收
+""")
+    st.link_button("🚃 導航：錦市場", get_gmap_link("Nishiki Market", "transit"))
     st.divider()
-    show_food_table("榮商圈")
+
+    # ==========================================
+    # 6. 新京極 / 寺町
+    # ==========================================
+    st.subheader("6️⃣ ★ 新京極、寺町通")
+    st.markdown("""
+* 錦市場東口出來就是，兩條平行的商店街
+* 扭蛋、文具、藥妝
+""")
+    st.link_button("📍 導航：新京極商店街", get_gmap_link("Shinkyogoku Shopping Street", "walking"))
+    st.divider()
+
+    # ==========================================
+    # 7. Nintendo / 寶可夢
+    # ==========================================
+    st.subheader("7️⃣ ★ Nintendo KYOTO ＋ 寶可夢中心")
+    st.markdown("""
+* **Nintendo KYOTO**：京都高島屋 S.C.（T8）**7F**，四條河原町
+* **寶可夢中心京都**：SUINA 室町 **4F**，四條烏丸站直結
+* 兩間走路 10 分，先 Nintendo 再寶可夢（回程順路到烏丸站）
+""")
+    st.link_button("📍 導航：Nintendo KYOTO", get_gmap_link("Nintendo KYOTO", "walking"))
+    st.link_button("📍 導航：寶可夢中心京都", get_gmap_link("Pokemon Center Kyoto", "walking"))
+    st.divider()
+
+    # ==========================================
+    # 8. 可刪
+    # ==========================================
+    st.subheader("8️⃣ ○ 二條城 → ○ 鴨川散步")
+    st.markdown("""
+* **○ 二條城**：地鐵烏丸御池 → 二條城前，**16:00 前入城**（二之丸御殿鶯聲地板）
+* **○ 鴨川**：四條大橋往下走河堤，傍晚 20 分
+* 🍽 晚餐：河原町
+""")
+    st.link_button("🚃 導航：二條城", get_gmap_link("Nijo Castle", "transit"))
+    st.divider()
+
+    # ==========================================
+    # 9. 今晚要做
+    # ==========================================
+    st.subheader("9️⃣ 今晚要做")
+    st.info("""
+✅ 整理行李（明天 10:00 退房）
+✅ 環球門票、Express Pass 確認手機都開得出來
+✅ 存好 D6 路線：京都站 → 大阪 → 西九条 → 環球城
+""")
+    st.divider()
+
+    show_food_table("河原町")
+
+
 if __name__ == "__main__":
     show()
