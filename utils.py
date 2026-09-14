@@ -1,5 +1,5 @@
 import streamlit as st
-import pandas as pd
+from urllib.parse import quote
 
 
 def get_gmap_link(query, mode="transit"):
@@ -87,15 +87,14 @@ def show_food_table(region):
             {"店名": "Universal Citywalk", "時間": "11:00-22:00", "備註": "園外飯店旁，晚餐用，たこ焼きミュージアム"},
         ],
     }
-
-        if region not in data_source:
+    if region not in data_source:
         st.warning(f"⚠️ 找不到 '{region}' 的資料，請檢查名稱是否正確。")
         return
 
     rows = data_source[region]
     lines = ["| 店名 | 時間 | 備註 |", "|---|---|---|"]
     for r in rows:
-        url = f"https://www.google.com/maps/search/?api=1&query={r['店名'].replace(' ', '+')}"
+        url = f"https://www.google.com/maps/search/?api=1&query={quote(r['店名'])}"
         name = f"[📍 {r['店名']}]({url})"
         note = r["備註"].replace("|", "｜")
         lines.append(f"| {name} | {r['時間']} | {note} |")
