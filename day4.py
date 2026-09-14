@@ -107,6 +107,7 @@ def show():
 ✂️ **時間不夠先砍的順序**：向井酒造 → 元伊勢籠神社 → 傘松公園（View Land 那側看過就夠）
 """)
     st.link_button("🚗 導航：22 PIECES", get_gmap_link("22 PIECES Kyoto", "driving"))
+    st.link_button("⛽ 加油站(24H)", get_gmap_link("34.97324984490103, 135.74648147860697", "driving"))
     st.link_button("🚗 還車:豐田租車 京都站新幹線口店(PM 8點前、滿油)", get_gmap_link("トヨタレンタカー 京都駅新幹線口店", "driving"))
     c1, c2, c3 = st.columns(3)
     with c1:
