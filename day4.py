@@ -24,7 +24,7 @@ def show():
     
 * 搭單軌或吊椅上山，**南側「股間望景」**，山頂有小型遊樂設施，1hr
 """)
-    st.link_button(" 導航：天橋立 View Land", get_gmap_link("Amanohashidate Chairlift and Monorail", "walking"))
+    st.link_button(" 📍 導航：天橋立 View Land", get_gmap_link("Amanohashidate Chairlift and Monorail", "walking"))
     st.divider()
 
     # ==========================================
@@ -65,11 +65,11 @@ def show():
 """)
     c1, c2, c3 = st.columns(3)
     with c1:
-        st.link_button("🅿️ 停車場1", get_gmap_link("35.67584540607587, 135.28772869192494", "driving"), width="stretch")
+        st.link_button("🅿️1 舟屋", get_gmap_link("35.67584540607587, 135.28772869192494", "driving"), width="stretch")
     with c2:
-        st.link_button("🅿️ 停車場2", get_gmap_link("35.67500125343802, 135.28802197600007", "driving"), width="stretch")
+        st.link_button("🅿️2 舟屋", get_gmap_link("35.67500125343802, 135.28802197600007", "driving"), width="stretch")
     with c3:
-        st.link_button("🅿️ 停車場3", get_gmap_link("35.674810315711255, 135.29151710239807", "driving"), width="stretch")
+        st.link_button("🅿️3 舟屋", get_gmap_link("35.674810315711255, 135.29151710239807", "driving"), width="stretch")
     st.link_button("📍 導航：伊根灣遊覽船乘船處", get_gmap_link("Ine Bay Tour Boat", "walking"))
     st.divider()
 
@@ -105,11 +105,11 @@ def show():
     st.link_button("🚗 導航：豐田租車 京都站新幹線口店", get_gmap_link("トヨタレンタカー 京都駅新幹線口店", "driving"))
     c1, c2, c3 = st.columns(3)
     with c1:
-        st.link_button("🅿️ 停車場1", get_gmap_link("34.98197527382824, 135.75692279994257", "driving"), width="stretch")
+        st.link_button("🅿️1 飯店", get_gmap_link("34.98197527382824, 135.75692279994257", "driving"), width="stretch")
     with c2:
-        st.link_button("🅿️ 停車場2", get_gmap_link("34.98251532812083, 135.75747844958318", "driving"), width="stretch")
+        st.link_button("🅿️2 飯店", get_gmap_link("34.98251532812083, 135.75747844958318", "driving"), width="stretch")
     with c3:
-        st.link_button("🅿️ 停車場3", get_gmap_link("34.983058834733335, 135.75752110124756", "driving"), width="stretch")
+        st.link_button("🅿️3 飯店", get_gmap_link("34.983058834733335, 135.75752110124756", "driving"), width="stretch")
     st.divider()
 
     # ==========================================
