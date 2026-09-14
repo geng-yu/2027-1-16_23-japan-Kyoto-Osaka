@@ -60,17 +60,22 @@ def show():
     st.link_button("🚗 導航：浮御堂", get_gmap_link("Ukimido Katata", "driving"))
     st.divider()
 
-    # ==========================================
+   # ==========================================
     # 5. 回京都
     # ==========================================
     st.subheader("5️⃣ 回京都")
     st.markdown("""
 * 🍽 晚餐：京都站周邊
 """)
-    st.link_button("🏠 導航：22 PIECES", get_gmap_link("22 PIECES Kyoto", "driving"))
-    st.link_button("🅿️ 停車場1", get_gmap_link("34.98197527382824, 135.75692279994257", "driving"))
-    st.link_button("🅿️ 停車場2", get_gmap_link("34.98251532812083, 135.75747844958318", "driving"))
-    st.link_button("🅿️ 停車場3", get_gmap_link("34.983058834733335, 135.75752110124756", "driving"))
+    st.link_button("🚗 導航：22 PIECES", get_gmap_link("22 PIECES Kyoto", "driving"))
+
+    c1, c2, c3 = st.columns(3)
+    with c1:
+        st.link_button("🅿️ 1", get_gmap_link("34.98197527382824, 135.75692279994257", "driving"), width="stretch")
+    with c2:
+        st.link_button("🅿️ 2", get_gmap_link("34.98251532812083, 135.75747844958318", "driving"), width="stretch")
+    with c3:
+        st.link_button("🅿️ 3", get_gmap_link("34.983058834733335, 135.75752110124756", "driving"), width="stretch")
     st.divider()
 
     # ==========================================
