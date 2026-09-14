@@ -1,124 +1,114 @@
 import streamlit as st
 from utils import get_gmap_link, show_food_table
 
+
 def show():
-    st.caption("3/17")
+    st.caption("1/19 (二)｜舟屋日（可與 D3 對調）｜自駕 Day2")
+
     # ==========================================
-    # 1. 宮川朝市 (08:30)
+    # 1. 出發
     # ==========================================
-    st.subheader("1️⃣ 宮川朝市")
-    st.caption("建議早一點去吃吃逛逛")
-
-    st.markdown("🅿️ **停車場 (依照優先順序)**")
-    
-    # 停車場列表
-    st.markdown("停車場可能客滿，有四個選擇")
-    
-    col1, col2 = st.columns(2)
-    with col1:
-        st.link_button("🅿️ P1. 本町三丁目 (Honchosan)", get_gmap_link("36.14472073037889, 137.25700573910498", "driving"))
-        st.link_button("🅿️ P2. 天木屋 (Amakiya)", get_gmap_link("36.14457034860217, 137.2571380595572", "driving"))
-    with col2:
-        st.link_button("🅿️ P3. 市營彌生橋", get_gmap_link("36.146588473755976, 137.25774135784505", "driving"))
-        st.link_button("🅿️ P4. 松井停車場", get_gmap_link("36.147686767843254, 137.25768119085558", "driving"))
-
-    with st.expander("🍎 朝市必買必吃"):
-        st.markdown("""
-        * **飛驒牛握壽司** 、 **高山布丁**
-        * **餅乾杯濃縮咖啡** 、 **章魚燒/仙貝**
-        * **工藝品**：猿寶寶手工藝品
-        """)
-
+    st.subheader("1️⃣ 京都 → 天橋立")
+    st.markdown("""
+* **08:00** 出發（京都縱貫道約 2hr）
+* 大雪時縱貫道可能雪鏈管制／封閉，出發前看 NEXCO 西日本，封閉就當天對調成雪日
+""")
+    st.link_button("🚗 導航：天橋立 View Land", get_gmap_link("Amanohashidate View Land", "driving"))
     st.divider()
 
     # ==========================================
-    # 2. 新穗高纜車
+    # 2. View Land
     # ==========================================
-    st.subheader("2️⃣ 新穗高纜車")
-    st.info("💡 **小提醒**：如果風大纜車可能會停駛，出發前建議先看一下官網運行狀況。")
-    st.markdown("[新穗高纜車官網](https://shinhotaka-ropeway.jp/)")
-    
-    st.markdown("**Option 1: 新穗高溫泉停車場**")
-    st.link_button("🅿️ 導航：新穗高溫泉停車場", get_gmap_link("Shinhodaka Hot Spring Parking Lot", "driving"))
-
-    st.markdown("**Option 2: 新穗高第1停車場**")
-    st.link_button("🅿️ 導航：新穗高第1停車場", get_gmap_link("36.286129739124846, 137.5756970360327", "driving"))
-    
-    st.markdown("**Option 3: 新穗高第2停車場**")
-    st.link_button("🅿️ 導航：新穗高第2停車場", get_gmap_link("Shinhotaka No.2 Parking Lot", "driving"))
-    with st.expander("🍎 新穗高必買必吃"):
-        st.markdown("""
-        * **雪廊 (Snow Corridor)** : 霜淇淋、熱可可
-        * **阿爾卑斯麵包房(第2站白樺平站)** : 牛角麵包
-        """)
-    
-
+    st.subheader("2️⃣ ★ 天橋立 View Land")
+    st.markdown("""
+* **10:00** 到，停 View Land 停車場（或智恩寺周邊停車場）
+* 搭單軌或吊椅上山，**南側「股間望景」**，山頂有小型遊樂設施，1hr
+""")
     st.divider()
 
     # ==========================================
-    # 4. 飛驒高山老街 (午餐)
+    # 3. 智恩寺 / 沙洲
     # ==========================================
-    st.subheader("3️⃣ 飛驒高山老街(午餐)")
-
-    st.markdown("**市營神明停車場** (停1f)")
-    st.markdown("**Step 1：車機導航**")
-    st.code("電話：0577-32-5388", language="text")
-    st.markdown("**Step 2：手機導航**")
-    st.link_button("🅿️ 導航：市營神明停車場(5分)", get_gmap_link("Takayama City Municipal Shinmei Parking Lot", "driving"))
-    st.link_button("🅿️ 導航：中橋停車場(3分)", get_gmap_link("36.13960478190352, 137.25891920165688", "driving"))
-    st.link_button("🅿️ 導航：市營空町停車場(15分)", get_gmap_link("Takayama City Municipal Soramachi Parking Lot", "driving"))
-    st.warning("⚠️ 停車收現金 (限1000元鈔)")
-    st.link_button("🚶  導航：高山老街", get_gmap_link("36.14009405289713, 137.2596009170065", "walking"))
-    with st.expander("🍣 老街午餐 & 必吃"):
-        st.markdown("""
-        * **握壽司**：三種盛合(こって牛)
-        * **包子**： (喜八郎)
-        * **餐廳**： 握壽司、蕎麥麵、牛肉飯(坂口屋)
-        * **逛街重點**：味噌、清酒
-        """)
-
-    st.divider()
-    # ==========================================
-    # 3. Train Bleu (麵包店)
-    # ==========================================
-    st.subheader("4️⃣ Train Bleu (トラン・ブルー)")
-    st.markdown("知名的麵包店，特別是可頌")
-
-    st.markdown("**Step 1：車機導航**")
-    st.code("電話：0577-33-3989", language="text")
-
-    st.markdown("**Step 2：手機導航**")
-    st.link_button("🥖 導航：Train Bleu", get_gmap_link("Train Bleu Takayama", "driving"))
-    
-    st.warning("⚠️ **注意**：人氣極高，可能需要排隊或提早售完")
-
+    st.subheader("3️⃣ ★ 智恩寺 → ★ 沙洲騎腳踏車")
+    st.markdown("""
+* **智恩寺**（文殊菩薩，門前吃智慧之餅）
+* 智恩寺旁租腳踏車，**穿越沙洲單程 20 分**，可在對岸（傘松側）還車
+* 不騎的話走路單程約 45 分
+""")
+    st.link_button("📍 導航：智恩寺", get_gmap_link("Chionji Temple Amanohashidate", "walking"))
     st.divider()
 
     # ==========================================
-    # 4. 吉田製麵所 (午餐)
+    # 4. 傘松公園
     # ==========================================
-    st.subheader("5️⃣ 吉田製麵所 (Yoshida Seimenjo)")
-    st.markdown("享用道地的烏龍麵/寬扁麵 (Kishimen)。")
-
-    st.markdown("**Step 1：車機導航**")
-    st.caption("地址：3 Chome-609-12 Nishinoisshikimachi")
-    st.markdown("**Step 2：手機導航**")
-    st.link_button("🍜 導航：吉田製麵所", get_gmap_link("36.1353954027542, 137.2467511630958", "driving"))
-
+    st.subheader("4️⃣ ★ 傘松公園 → ○ 元伊勢籠神社")
+    st.markdown("""
+* 沙洲對岸（府中）搭纜車上山，**北側「股間望景」**，30 分
+* ○ 元伊勢籠神社：纜車站旁，10 分
+* 🍽 午餐：這側簡餐，或忍到伊根吃鰤魚涮涮鍋
+* ⚠️ 車還停在 View Land 側：騎腳踏車回去取車，或安排一人回去開車到府中接
+""")
+    st.link_button("📍 導航：傘松公園 纜車站", get_gmap_link("Kasamatsu Park Cable Car", "walking"))
     st.divider()
 
     # ==========================================
-    # 5. 返回飯店
+    # 5. 伊根
     # ==========================================
-    st.subheader("6️⃣ FAV HOTEL 飛驒高山")
-
-    st.markdown("**Step 1：車機導航**")
-    st.code("電話：0577-32-8885", language="text")
-
-    st.markdown("**Step 2：手機導航**")
-    st.link_button("🏨 導航：FAV HOTEL 飛驒高山", get_gmap_link("FAV HOTEL HIDA TAKAYAMA", "driving"))
-    st.link_button("🅿️ 導航：第二停車場", get_gmap_link("36.14020065983774, 137.2497155792492", "driving"))
+    st.subheader("5️⃣ ★ 伊根舟屋")
+    st.markdown("""
+* **13:00** 出發 → 伊根約 30 分
+* **★ 舟屋之里公園**：停車免費，整個伊根灣舟屋全景
+* **★ 海上計程車**：漁師小船開進舟屋群底下，約 ¥1,000/人，現場找（小孩首選）
+  * 或 **伊根灣遊覽船**（25 分，船上餵海鷗，冬天約每小時一班）
+* **★ 舟屋街散步** 30 分 → ○ 向井酒造（伊根滿開紅色米酒，大人）
+""")
+    st.link_button("🚗 導航：舟屋之里公園", get_gmap_link("Funaya no Sato Park Ine", "driving"))
+    st.link_button("📍 導航：伊根灣遊覽船乘船處", get_gmap_link("Ine Bay Tour Boat", "walking"))
     st.divider()
-    show_food_table("飛驒高山")
+
+    # ==========================================
+    # 6. 回程 / 貴船
+    # ==========================================
+    st.subheader("6️⃣ 15:00 準時出發 → 貴船")
+    st.markdown("""
+* **15:00** 伊根出發（這條線不能拖，決定貴船和停車）→ **17:00** 京都南IC
+* **15:00 看貴船神社官網公告**
+  * ❄ **有點燈** → 貴船神社（18:00-19:30，停車位少，早到）
+  * **沒雪** → 貴船看燈籠石階＋水占卜（17:30-18:30）→ ○ 鞍馬站看天狗雕像
+* 大雪日不要開上貴船，改叡山電車（出町柳 → 貴船口）
+""")
+    st.link_button("🚗 導航：貴船神社", get_gmap_link("Kifune Shrine", "driving"))
+    st.link_button("📍 導航：鞍馬站 (天狗)", get_gmap_link("Kurama Station", "driving"))
+    st.divider()
+
+    # ==========================================
+    # 7. 回京都
+    # ==========================================
+    st.subheader("7️⃣ 回京都")
+    st.markdown("""
+* **19:00** 回京都，車停投幣停車場
+* 🍽 晚餐：京都站周邊
+""")
+    st.link_button("🚗 導航：22 PIECES", get_gmap_link("22 PIECES Kyoto", "driving"))
+
+    st.warning("""
+✂️ **時間不夠先砍的順序**：向井酒造 → 元伊勢籠神社 → 傘松公園（View Land 那側看過就夠）
+""")
+    st.divider()
+
+    # ==========================================
+    # 8. 今晚要做
+    # ==========================================
+    st.subheader("8️⃣ 今晚要做")
+    st.info("""
+✅ 確認 D5 teamLab 11:00 場票
+✅ 205 公車發車時間（京都站前 → 金閣寺道）
+✅ 加油：還車要滿油，看租車店規定
+""")
+    st.divider()
+
+    show_food_table("天橋立伊根")
+
+
 if __name__ == "__main__":
     show()
