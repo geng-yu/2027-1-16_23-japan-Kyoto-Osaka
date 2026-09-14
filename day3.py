@@ -55,9 +55,13 @@ def show():
 * **○ メタセコイア並木**（再往北 40 分）：❄ **有雪才去**，雪白隧道；回京都會多 40 分
 * **○ 浮御堂**（回程堅田出口）：湖上佛堂，20 分
 """)
-    st.link_button("🚗 導航：びわ湖こどもの国", get_gmap_link("Biwako Kodomo no Kuni", "driving"))
-    st.link_button("🚗 導航：メタセコイア並木", get_gmap_link("Metasequoia Namiki Makino", "driving"))
-    st.link_button("🚗 導航：浮御堂", get_gmap_link("Ukimido Katata", "driving"))
+       c1, c2, c3 = st.columns(3)
+    with c1:
+        st.link_button("🚗 こどもの国", get_gmap_link("Biwako Kodomo no Kuni", "driving"), width="stretch")
+    with c2:
+        st.link_button("🚗 水杉大道", get_gmap_link("Metasequoia Namiki Makino", "driving"), width="stretch")
+    with c3:
+        st.link_button("🚗 浮御堂", get_gmap_link("Ukimido Katata", "driving"), width="stretch")
     st.divider()
 
    # ==========================================
@@ -71,11 +75,11 @@ def show():
 
     c1, c2, c3 = st.columns(3)
     with c1:
-        st.link_button("🅿️ 1", get_gmap_link("34.98197527382824, 135.75692279994257", "driving"), width="stretch")
+        st.link_button("🅿️ 停車場1", get_gmap_link("34.98197527382824, 135.75692279994257", "driving"), width="stretch")
     with c2:
-        st.link_button("🅿️ 2", get_gmap_link("34.98251532812083, 135.75747844958318", "driving"), width="stretch")
+        st.link_button("🅿️ 停車場2", get_gmap_link("34.98251532812083, 135.75747844958318", "driving"), width="stretch")
     with c3:
-        st.link_button("🅿️ 3", get_gmap_link("34.983058834733335, 135.75752110124756", "driving"), width="stretch")
+        st.link_button("🅿️ 停車場3", get_gmap_link("34.983058834733335, 135.75752110124756", "driving"), width="stretch")
     st.divider()
 
     # ==========================================
