@@ -84,7 +84,7 @@ def show_food_table(region):
     table_height = (len(df) + 1) * 38 + 3
 
     with st.expander(f"🍽️ {region} 美食清單", expanded=False):
-        st.caption("營業時間以官網為準")
+        #st.caption("營業時間以官網為準")
         st.data_editor(
             df,
             column_config={
