@@ -32,6 +32,7 @@ def show():
 * **13:00** 下山
 """)
     st.link_button("🚗 導航：琵琶湖山谷 纜車山麓站", get_gmap_link("Biwako Valley Ropeway", "driving"))
+    show_food_table("琵琶湖山谷")
     st.divider()
 
     # ==========================================
@@ -44,6 +45,7 @@ def show():
 * ⚠️ 國道 161 車多，**不要為了拍照橫越馬路**，停車場在神社側
 """)
     st.link_button("🚗 導航：白鬚神社", get_gmap_link("35.274213263032365, 136.01084250538855", "driving"))
+    show_food_table("白鬚神社")
     st.divider()
 
     # ==========================================
