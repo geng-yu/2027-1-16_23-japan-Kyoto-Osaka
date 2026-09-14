@@ -86,11 +86,11 @@ def show():
 """)
     c1, c2, c3 = st.columns(3)
     with c1:
-        st.link_button("🅿️1 貴船神社", get_gmap_link("35.12210122259409, 135.76339418928197", "driving"), width="stretch")
+        st.link_button("🅿️1 貴船", get_gmap_link("35.12210122259409, 135.76339418928197", "driving"), width="stretch")
     with c2:
-        st.link_button("🅿️2 貴船神社", get_gmap_link("35.12055954695767, 135.7626417214197", "driving"), width="stretch")
+        st.link_button("🅿️2 貴船", get_gmap_link("35.12055954695767, 135.7626417214197", "driving"), width="stretch")
     with c3:
-        st.link_button("🅿️3 貴船神社", get_gmap_link("35.119117921926446, 135.76276126082237", "driving"), width="stretch")
+        st.link_button("🅿️3 貴船", get_gmap_link("35.119117921926446, 135.76276126082237", "driving"), width="stretch")
     st.link_button("📍 導航：鞍馬站 (天狗)", get_gmap_link("Kurama Station", "driving"))
     st.divider()
 
