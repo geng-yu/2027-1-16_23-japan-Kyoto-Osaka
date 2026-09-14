@@ -83,6 +83,7 @@ def show():
         st.link_button("🅿️2 飯店", get_gmap_link("34.98251532812083, 135.75747844958318", "driving"), width="stretch")
     with c3:
         st.link_button("🅿️3 飯店", get_gmap_link("34.983058834733335, 135.75752110124756", "driving"), width="stretch")
+    show_food_table("京都飯店")
     st.divider()
 
     # ==========================================
@@ -109,9 +110,8 @@ def show():
 * 看明天天氣、**NEXCO 西日本** 縱貫道路況（大雪會雪鏈管制或封閉）
 * 油量夠不夠（明天來回約 260 km）
 """)
-    st.divider()
 
-    show_food_table("京都飯店")
+    
 
 if __name__ == "__main__":
     show()
