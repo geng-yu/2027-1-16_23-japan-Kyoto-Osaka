@@ -88,37 +88,18 @@ def show_food_table(region):
         ],
     }
 
-    if region not in data_source:
+        if region not in data_source:
         st.warning(f"⚠️ 找不到 '{region}' 的資料，請檢查名稱是否正確。")
         return
 
-    df = pd.DataFrame(data_source[region])
+    rows = data_source[region]
+    lines = ["| 店名 | 時間 | 備註 |", "|---|---|---|"]
+    for r in rows:
+        url = f"https://www.google.com/maps/search/?api=1&query={r['店名'].replace(' ', '+')}"
+        name = f"[📍 {r['店名']}]({url})"
+        note = r["備註"].replace("|", "｜")
+        lines.append(f"| {name} | {r['時間']} | {note} |")
 
-    def make_link(name):
-        return f"https://www.google.com/maps/search/?api=1&query={name}"
-
-    df["導航"] = df["店名"].apply(make_link)
-    df = df[["店名", "導航", "時間", "備註"]]
-    table_height = (len(df) + 1) * 38 + 3
-
-    with st.expander(f"🍽️ {region} 美食清單", expanded=False):
-        #st.caption("營業時間以官網為準")
-        st.data_editor(
-            df,
-            column_config={
-                "店名": st.column_config.TextColumn("店名", width="medium"),
-                "導航": st.column_config.LinkColumn(
-                    "導航",
-                    display_text="📍 導航",
-                    help="點擊前往 Google Maps",
-                    validate="^https://.*",
-                    width="small"
-                ),
-                "時間": st.column_config.TextColumn("時間", width="medium"),
-                "備註": st.column_config.TextColumn("備註", width="large"),
-            },
-            hide_index=True,
-            disabled=True,
-            width="stretch",
-            height=table_height
-        )
+    with st.expander(f"🍽️ 點我看：{region} 美食店家清單", expanded=False):
+        st.caption("營業時間以官網為準，點店名開 Google Maps")
+        st.markdown("\n".join(lines))
