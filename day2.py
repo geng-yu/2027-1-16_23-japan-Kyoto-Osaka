@@ -13,16 +13,11 @@ def show():
 * **10:00** 時段入館，館內 3-4hr
 * **入館證**：入口核對證件，姓名要跟護照一致
 * **體驗區**：每人 10 枚硬幣，大型控制器、花札等每項扣幣，先看想玩什麼再花
-* **午餐**：館內 **HATENA BURGER**（要有票才進得去）
+* **午餐**：館內 **HATENA BURGER**
 * **紀念品**：館內限定，最後再逛
 """)
     st.link_button("📍 導航：任天堂博物館", get_gmap_link("Nintendo Museum", "transit"))
-    with st.expander("😋 逛／吃／買"):
-        st.markdown("""
-* **吃**：HATENA BURGER（館內）
-* **玩**：花札工房（另付費，館內當天用 App 預約，額滿就沒了，進館先看）
-* **買**：博物館商店限定：問號磚抱枕、花札、手把造型雜貨；出去前再買
-""")
+    
     st.divider()
 
     # ==========================================
@@ -31,7 +26,6 @@ def show():
     st.subheader("2️⃣ 宇治")
     st.markdown("""
 * **13:30** JR 小倉 → **宇治**（1 站，約 3 分）
-* 出站走 10 分到平等院
 """)
     st.link_button("🚃 導航：JR 宇治站", get_gmap_link("JR Uji Station", "transit"))
     st.divider()
@@ -41,8 +35,6 @@ def show():
     # ==========================================
     st.subheader("3️⃣ 平等院鳳凰堂")
     st.markdown("""
-* 10 円硬幣上的那棟，冬天人少
-* 鳳凰堂內部參觀要另外買時段票（現場排），時間不夠就只看外觀＋鳳翔館
 """)
     st.link_button("📍 導航：平等院", get_gmap_link("Byodoin Temple", "walking"))
     st.divider()
@@ -52,8 +44,7 @@ def show():
     # ==========================================
     st.subheader("4️⃣ 宇治橋 → ○ 宇治上神社")
     st.markdown("""
-* 從平等院走表參道 → **宇治橋**（紫式部像）→ 過橋走 10 分 → **宇治上神社**（日本最古神社建築，世界遺產，小巧 20 分）
-* 小孩累了宇治上神社直接跳過
+* 從平等院走表參道 → **宇治橋**（紫式部像）→ 過橋走 10 分 → **宇治上神社**
 """)
     st.link_button("📍 導航：宇治上神社", get_gmap_link("Ujigami Shrine", "walking"))
     st.divider()
@@ -64,7 +55,6 @@ def show():
     st.subheader("5️⃣ 🍽 中村藤吉本店")
     st.markdown("""
 * JR 宇治站前，抹茶果凍、抹茶聖代、抹茶蕎麥麵
-* 假日會排隊，先登記再去逛也可以
 """)
     st.link_button("📍 導航：中村藤吉本店", get_gmap_link("Nakamura Tokichi Honten", "walking"))
     st.divider()
