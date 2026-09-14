@@ -21,10 +21,9 @@ def show():
     # ==========================================
     st.subheader("2️⃣ 天橋立 View Land")
     st.markdown("""
-    
 * 搭單軌或吊椅上山，**南側「股間望景」**，山頂有小型遊樂設施，1hr
 """)
-    st.link_button(" 📍 導航：天橋立 View Land", get_gmap_link("Amanohashidate Chairlift and Monorail", "walking"))
+    st.link_button("📍 導航：天橋立 View Land", get_gmap_link("Amanohashidate Chairlift and Monorail", "walking"))
     st.divider()
 
     # ==========================================
@@ -99,7 +98,9 @@ def show():
     # ==========================================
     st.subheader("7️⃣ 回京都")
     st.markdown("""
-* **19:00** 回京都，車停投幣停車場
+* **19:00** 回京都
+* **有去貴船** → 車停飯店附近投幣停車場，明早 07:45 還車
+* **沒去貴船、20:00 前回得來** → 今晚直接還車（先加滿油），明早不用趕
 * 🍽 晚餐：京都站周邊
 """)
     st.warning("""
@@ -117,11 +118,13 @@ def show():
     st.divider()
 
     # ==========================================
-    # 8. 今晚要做
+    # 提醒
     # ==========================================
-    st.subheader("今晚要做")
     st.info("""
-✅ 確認 D5 teamLab 11:00 場票
+💡 **提醒**：明天金閣寺 → teamLab
+* 確認 **teamLab 11:00 場** 票在手機裡
+* 查 **205 公車** 京都站前的發車時間和乘車處
+* 車還沒還的話：明早 07:45 前還車，油要滿
 """)
     st.divider()
 
