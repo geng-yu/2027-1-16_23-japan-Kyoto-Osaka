@@ -28,6 +28,7 @@ def show():
 * **13:30** JR 小倉 → **宇治**（1 站，約 3 分）
 """)
     st.link_button("🚃 導航：JR 宇治站", get_gmap_link("JR Uji Station", "transit"))
+    show_food_table("宇治")
     st.divider()
 
     # ==========================================
@@ -81,7 +82,7 @@ def show():
 """)
     st.divider()
 
-    show_food_table("宇治")
+
 
 
 if __name__ == "__main__":
