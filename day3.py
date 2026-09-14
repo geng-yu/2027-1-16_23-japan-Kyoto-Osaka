@@ -111,7 +111,6 @@ def show():
 """)
     st.divider()
 
-    show_food_table("湖西")
     show_food_table("京都飯店")
 
 if __name__ == "__main__":
