@@ -64,6 +64,7 @@ def show():
         st.link_button("🚗 水杉大道", get_gmap_link("Metasequoia Namiki Makino", "driving"), width="stretch")
     with c3:
         st.link_button("🚗 浮御堂", get_gmap_link("Ukimido Katata", "driving"), width="stretch")
+    show_food_table("湖西其他")
     st.divider()
 
    # ==========================================
