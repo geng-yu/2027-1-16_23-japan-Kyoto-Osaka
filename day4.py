@@ -106,7 +106,7 @@ def show():
 ✂️ **時間不夠先砍的順序**：向井酒造 → 元伊勢籠神社 → 傘松公園（View Land 那側看過就夠）
 """)
     st.link_button("🚗 導航：22 PIECES", get_gmap_link("22 PIECES Kyoto", "driving"))
-    st.link_button("🚗 還車:豐田租車 京都站新幹線口店(PM 8點前)", get_gmap_link("トヨタレンタカー 京都駅新幹線口店", "driving"))
+    st.link_button("🚗 還車:豐田租車 京都站新幹線口店(PM 8點前、滿油)", get_gmap_link("トヨタレンタカー 京都駅新幹線口店", "driving"))
     c1, c2, c3 = st.columns(3)
     with c1:
         st.link_button("🅿️1 飯店", get_gmap_link("34.98197527382824, 135.75692279994257", "driving"), width="stretch")
@@ -119,11 +119,9 @@ def show():
     # ==========================================
     # 8. 今晚要做
     # ==========================================
-    st.subheader("8️⃣ 今晚要做")
+    st.subheader("今晚要做")
     st.info("""
 ✅ 確認 D5 teamLab 11:00 場票
-✅ 205 公車發車時間（京都站前 → 金閣寺道）
-✅ 加油：還車要滿油，看租車店規定
 """)
     st.divider()
 
