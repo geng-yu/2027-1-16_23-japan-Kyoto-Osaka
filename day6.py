@@ -19,20 +19,28 @@ def show():
     st.link_button("🏨 導航：京阪環球影城塔樓", get_gmap_link("Hotel Keihan Universal Tower", "transit"))
     st.divider()
 
-    # ==========================================
+        # ==========================================
     # 2A. 梅田採買
     # ==========================================
     st.subheader("2️⃣ 二選一｜A 梅田採買")
     st.markdown("""
-* 環球城 → 西九条 → **大阪站**（約 15 分）
-* **Nintendo OSAKA ＋ 寶可夢中心 DX**：大丸梅田 **13F**，兩間在同一層
-* **Yodobashi 梅田**：大阪站北口對面
-* **Grand Front 大阪**：Yodobashi 旁
+* 環球城 → 西九条 → **大阪站**
+* **LINKS UMEDA**（Yodobashi 那棟）：1-2F **UNIQLO UMEDA** 、3F **GU**、8F 餐廳街
+* **Grand Front 大阪**：北館 2-4F **無印良品** 、南館 5F **mont-bell**
+* **大丸梅田 13F**：Nintendo OSAKA ＋ 寶可夢中心 DX
 * **18:00** 回環球城
 """)
-    st.link_button("🚃 導航：大丸梅田 (Nintendo OSAKA)", get_gmap_link("Daimaru Umeda", "transit"))
+    c1, c2, c3 = st.columns(3)
+    with c1:
+        st.link_button("🛍️ LINKS UQ/GU", get_gmap_link("UNIQLO UMEDA LINKS UMEDA", "transit"), width="stretch")
+    with c2:
+        st.link_button("🛍️ GF MUJI/mont-bell", get_gmap_link("MUJI Grand Front Osaka", "walking"), width="stretch")
+    with c3:
+        st.link_button("🛍️ 大丸13F", get_gmap_link("Daimaru Umeda", "walking"), width="stretch")
+    show_food_table("梅田")
     st.divider()
 
+    
     # ==========================================
     # 2B. 海遊館
     # ==========================================
