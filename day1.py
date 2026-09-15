@@ -49,7 +49,7 @@ def show():
     
 
     show_food_table("京都飯店")
-
+    show_food_table("京都飯店逛")
 
 if __name__ == "__main__":
     show()
