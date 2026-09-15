@@ -85,13 +85,16 @@ div[role="radiogroup"] {
 }
 div[role="radiogroup"]::-webkit-scrollbar { display: none; }
 
-/* 藏掉左邊的圓點（新舊版 Streamlit 兩種結構都蓋到） */
-div[role="radiogroup"] label > div:first-child,
-div[role="radiogroup"] label [data-testid="stRadioIndicator"],
-div[role="radiogroup"] label input[type="radio"] {
+/* 藏掉左邊的圓點：label 裡除了文字容器，其他子元素全部隱藏 */
+div[role="radiogroup"] label > *:not(:has([data-testid="stMarkdownContainer"])) {
     display: none !important;
     width: 0 !important;
     margin: 0 !important;
+}
+div[role="radiogroup"] label > div:has([data-testid="stMarkdownContainer"]) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 div[role="radiogroup"] label {
