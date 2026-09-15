@@ -1,187 +1,165 @@
-# 檔案名稱：app.py
 import streamlit as st
-from datetime import datetime, date
-import pytz  # 用於處理時區
+from urllib.parse import quote
 
-# 匯入每一天的模組 (確保這些 .py 檔案都在同一個資料夾)
-import day1, day2, day3, day4, day5, day6, day7, day8
 
-# --- 頁面基本設定 ---
-st.set_page_config(
-    page_title="2027 京阪",
-    page_icon="🇯🇵",
-    layout="centered",
-    initial_sidebar_state="collapsed"
-)
+def get_gmap_link(query, mode="transit"):
+    # mode: driving (開車), walking (走路), transit (大眾運輸)
+    base_url = "https://www.google.com/maps/dir/?api=1"
+    return f"{base_url}&destination={query}&travelmode={mode}"
 
-# --- CSS 優化 ---
-st.markdown("""
-<style>
-/* ===== 整頁只能上下滑，禁止左右 ===== */
-html, body, .stApp,
-[data-testid="stAppViewContainer"],
-[data-testid="stMain"],
-.main, .block-container {
-    overflow-x: hidden !important;
-    max-width: 100vw !important;
-}
 
-/* 全域按鈕樣式 */
-.stButton button, .stLinkButton a {
-    width: 100%;
-    border-radius: 20px;
-    font-weight: bold;
-    border: 1px solid var(--text-color);
-    opacity: 0.85;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-/* 隱藏預設選單與頁尾 */
-#MainMenu {visibility: hidden;}
-footer {visibility: hidden;}
+def show_food_table(region):
+    """
+    顯示美食店家的表格，包含導航連結。
+    region: "京都站", "宇治", "湖西", "天橋立伊根", "河原町", "環球城"
+    營業時間以官網為準（每年會改）。
+    """
+    data_source = {
+        "京都飯店": [
+            {"店名": "京都拉麵小路 (京都駅ビル10F)", "時間": "11:00-22:00", "備註": "8間拉麵一次選，D1晚餐"},
+            {"店名": "本家 第一旭 たかばし本店", "時間": "06:00-01:00", "備註": "京都醬油拉麵名店，週四休，早餐也開"},
+            {"店名": "新福菜館 本店", "時間": "09:00-22:00", "備註": "第一旭隔壁，黑醬油炒飯，週三休"},
+            {"店名": "京都タワーサンド B1 美食街", "時間": "11:00-23:00", "備註": "京都塔樓下，小孩多選擇"},
+            {"店名": "JR京都伊勢丹 B2 食品館", "時間": "10:00-20:00", "備註": "便當、甜點、伴手禮"},
+            {"店名": "ヨドバシ京都 6F 餐廳街", "時間": "11:00-23:00", "備註": "車站北口對面"},
+        ],
+        "宇治": [
+            {"店名": "中村藤吉本店", "時間": "10:00-17:00", "備註": "抹茶果凍、抹茶蕎麥麵，會排隊"},
+            {"店名": "伊藤久右衛門 宇治本店", "時間": "10:00-18:00", "備註": "抹茶聖代，伴手禮"},
+            {"店名": "通圓 (宇治橋旁)", "時間": "09:30-17:30", "備註": "850年老茶店，抹茶冰"},
+        ],
+        "琵琶湖山谷": [
+            {"店名": "Terrace Cafe Biwako Terrace", "時間": "09:00-17:00", "備註": "山頂站旁主餐廳，咖哩、漢堡排，；一人至少點一份"},
+            {"店名": "Cafe Stand at North Terrace", "時間": "10:00-16:00", "備註": "北Terrace外帶式，琵琶湖咖哩¥1,300，座位少，適合買了坐雪地旁吃"},
+            {"店名": "Cafe 360 Biwako Valley", "時間": "10:00-15:30", "備註": "蓬萊山頂，景最好，最後點餐15:00"},
+            {"店名": "Biwako Valley Ropeway", "時間": "09:30-16:30", "備註": "雪橇、手套、暖暖包、雪具租借"},
+        ],
+        "白鬚神社": [
+            {"店名": "白鬚喫茶", "時間": "10:00-18:00", "備註": "咖啡店，2樓看鳥居，布丁有名"},
+            {"店名": "Seikousha Cafe ルヴァン", "時間": "11:00-17:00", "備註": "湖邊小屋咖啡"},
+            {"店名": "道の駅 藤樹の里あどがわ", "時間": "09:00-18:00", "備註": "農產直賣所、十割蕎麥美食街、炸雞丼，有Lawson"},
+        ],
+        "浮御堂": [
+            {"店名": "道の駅 びわ湖大橋米プラザ", "時間": "09:00-17:00", "備註": "伴手禮、2樓看琵琶湖大橋，廁所24H"},
+            {"店名": "Lameri Store 堅田", "時間": "11:30-15:00", "備註": "咖哩三拼很紅，週二五休"},
+            {"店名": "What's The Life Style", "時間": "11:00-16:00 / 17:00-21:00", "備註": "漢堡排、巴斯克蛋糕，週二三休"},
+        ],
+        "湖西其他": [
+            {"店名": "びわ湖こどもの国", "時間": "09:00-17:00", "備註": "免門票、停車¥500，超大戶外遊具＋室內遊戲館"},
+            {"店名": "Namiki Cafe Metasequoia", "時間": "10:30-16:30", "備註": "鬆餅、咖哩，停車免費"},
+        ],
+        "天橋立": [
+            {"店名": "Goods Stall Amanohashidate View Land", "時間": "09:00-18:00", "備註": "單軌售票機旁賣店，濃郁牛奶布丁¥450很紅"},
+            {"店名": "Amanohashidate View Land", "時間": "09:00-17:00", "備註": "山頂賣店霜淇淋、輕食"},
+        ],
+        "智恩寺沙洲": [
+            {"店名": "文珠荘 勘七茶屋", "時間": "09:00-17:00", "備註": "300年老店，智慧之餅¥270＋抹茶¥400，週三四休"},
+            {"店名": "吉野茶屋 天橋立", "時間": "10:00-17:30", "備註": "炸物：大牡蠣、可樂餅、竹輪"},
+            {"店名": "はしだて茶屋", "時間": "10:30-16:00", "備註": "蛤蜊丼／蛤蜊烏龍麵，炭火烤牡蠣，週四休"},
+        ],
+        "傘松籠神社": [
+            {"店名": "茶房 かむながら", "時間": "12:00-16:30", "備註": "停車場內，抹茶＋和菓子，週三休"},
+            {"店名": "Amanohashidate Winery", "時間": "10:00-17:00", "備註": "去伊根路上5分，午餐¥2,000吃到飽1hr、霜淇淋，週三休"},
+        ],
+        "伊根": [
+            {"店名": "兵四楼 伊根", "時間": "11:00-14:00", "備註": "鰤魚涮涮鍋、海鮮丼"},
+            {"店名": "舟屋食堂 伊根", "時間": "11:00-15:00", "備註": "烤魚定食"},
+            {"店名": "INE CAFE", "時間": "11:00-17:00", "備註": "舟屋日和內海景咖啡"},
+            {"店名": "向井酒造", "時間": "09:00-17:00", "備註": "伊根滿開紅色米酒，伴手禮"},
+        ],
+        "舞鶴": [
+            {"店名": "道の駅 舞鶴港とれとれセンター", "時間": "09:00-18:00", "備註": "海鮮市場，松葉蟹、牡蠣現買現烤"},
+            {"店名": "舞鶴赤れんがパーク", "時間": "09:00-17:00", "備註": "紅磚倉庫，海軍咖哩、咖啡"},
+        ],
+        "金閣寺": [
+            {"店名": "金閣寺 不動釜茶所", "時間": "09:00-16:30", "備註": "抹茶＋金箔和菓子"},
+        ],
+        "teamLab周邊": [
+            {"店名": "イオンモールKYOTO", "時間": "10:00-21:00", "備註": "八條口，1F KOHYO超市、UNIQLO、MUJI、mont-bell；teamLab進場前上廁所買水"},
+            {"店名": "本家 第一旭 たかばし本店", "時間": "06:00-01:00", "備註": "teamLab走12分，京都醬油拉麵"},
+        ],
+        "錦市場": [
+            {"店名": "三木鶏卵", "時間": "09:00-17:00", "備註": "玉子燒"},
+            {"店名": "こんなもんじゃ 錦市場", "時間": "10:00-18:00", "備註": "豆乳甜甜圈8個¥400、豆乳霜淇淋、糰子"},
+            {"店名": "カリカリ博士 錦市場", "時間": "10:00-20:00", "備註": "章魚燒¥260售票機點餐"},
+            {"店名": "麩嘉 錦店", "時間": "09:30-17:30", "備註": "麩饅頭（艾草＋紅豆）"},
+            {"店名": "錦天満宮", "時間": "08:00-20:00", "備註": "市場東端，摸牛、御神水"},
+        ],
+        "新京極寺町": [
+            {"店名": "天丼まきの 京都寺町店", "時間": "11:00-20:30", "備註": "天丼＋蛤蜊湯份量大"},
+            {"店名": "名代とんかつ かつくら 三条本店", "時間": "11:00-20:30", "備註": "炸豬排、自己磨芝麻，飯高麗菜可續"},
+            {"店名": "京極かねよ", "時間": "11:30-15:00 / 17:00-20:00", "備註": "鰻魚錦絲丼，⚠️週三休"},
+            {"店名": "京都ロフト ミーナ京都", "時間": "11:00-21:00", "備註": "文具雜貨3層，退稅櫃台到20:30"},
+            {"店名": "GU ミーナ京都", "時間": "11:00-21:00", "備註": "Loft樓上7F"},
+            {"店名": "無印良品 京都BAL", "時間": "11:00-20:00", "備註": "河原町三条"},
+        ],
+        "四條河原町": [
+            {"店名": "Nintendo KYOTO", "時間": "10:00-20:00", "備註": "京都高島屋S.C. 7F，京都限定商品"},
+            {"店名": "ポケモンセンターキョウト", "時間": "10:00-20:00", "備註": "SUINA室町4F，四條烏丸站直結"},
+            {"店名": "京都高島屋 B1 食品館", "時間": "10:00-20:00", "備註": "便當甜點"},
+            {"店名": "一蘭 京都河原町店", "時間": "24hr", "備註": "備案"},
+        ],
+        "二條城鴨川": [
+            {"店名": "茶房 前田 二条城", "時間": "09:30-16:00", "備註": "抹茶、刨冰、冰淇淋汽水"},
+            {"店名": "スターバックス 京都三条大橋店", "時間": "08:00-23:00", "備註": "河景座位、廁所"},
+            {"店名": "祇園辻利 四条祇園本店", "時間": "10:30-20:00", "備註": "抹茶霜淇淋、抹茶漂浮"},
+        ],
+        "梅田": [
+            {"店名": "UNIQLO UMEDA", "時間": "10:00-21:00", "備註": "LINKS UMEDA 1-2F"},
+            {"店名": "GU LINKS UMEDA", "時間": "10:00-21:00", "備註": "同棟3F"},
+            {"店名": "無印良品 グランフロント大阪", "時間": "11:00-21:00", "備註": "北館2-4F三層樓"},
+            {"店名": "モンベル うめきた店", "時間": "11:00-21:00", "備註": "Grand Front南館5F"},
+            {"店名": "UMEDA FOOD HALL 阪急三番街", "時間": "11:00-23:00", "備註": "北館B2大美食街"},
+            {"店名": "LINKS UMEDA 8F 餐廳街", "時間": "11:00-23:00", "備註": "燒肉、拉麵、迴轉壽司"},
+        ],
+        "海遊館": [
+            {"店名": "天保山大観覧車", "時間": "10:00-21:00", "備註": "海遊館旁，15分一圈，Klook比現場便宜"},
+            {"店名": "なにわ食いしんぼ横丁", "時間": "11:00-20:00", "備註": "天保山Marketplace 2F昭和風美食街"},
+            {"店名": "レゴランド ディスカバリーセンター大阪", "時間": "10:00-18:00", "備註": "Marketplace 3F室內樂高，3-10歲，2-3hr；⚠️現場不賣票，要前一天Klook買"},
+            {"店名": "Captain Line 海遊館 乗り場", "時間": "10:00-18:00", "備註": "回環球城的船在海遊館西側碼頭，約每小時一班，先看時刻表"},
+        ],
+        "環球城": [
+            {"店名": "大阪たこ焼きミュージアム Universal Citywalk", "時間": "11:00-22:00", "備註": "Citywalk 4F"},
+            {"店名": "Gottie's BEEF Universal Citywalk", "時間": "11:00-23:00", "備註": "5F，和牛牛排、漢堡排"},
+            {"店名": "Bubba Gump Shrimp Universal Citywalk", "時間": "11:00-23:00", "備註": "5F，阿甘蝦美式餐廳"},
+            {"店名": "Hamburg 2910 Universal Citywalk", "時間": "11:00-23:00", "備註": "5F，漢堡排專門"},
+            {"店名": "神戸元町ドリア Universal Citywalk", "時間": "11:00-23:00", "備註": "5F，焗烤飯、鐵板蛋包飯"},
+            {"店名": "ローソン ユニバーサルシティウォーク大阪店", "時間": "24hr", "備註": "早餐、飲料"},
+        ],
+        "環球影城": [
+            {"店名": "Kinopio's Cafe (キノピオ・カフェ)", "時間": "開園-閉園", "備註": "任天堂世界區內，蘑菇湯、瑪利歐漢堡，要有整理券"},
+            {"店名": "Yoshi's Snack Island", "時間": "開園-閉園", "備註": "任天堂世界區內，耀西蛋造型點心、飲料"},
+            {"店名": "Three Broomsticks (三本の箒)", "時間": "開園-閉園", "備註": "哈利波特區，英式烤雞、奶油啤酒"},
+            {"店名": "Studio Stars Restaurant", "時間": "開園-閉園", "備註": "好萊塢區大門附近，自助取餐式定食"},
+            {"店名": "Mel's Drive-In", "時間": "開園-閉園", "備註": "好萊塢區，美式漢堡薯條"},
+            {"店名": "Happiness Cafe", "時間": "開園-閉園", "備註": "小小兵區旁，小小兵造型餐"},
+            {"店名": "Louie's N.Y. Pizza Parlor", "時間": "開園-閉園", "備註": "紐約區，披薩、義大利麵"},
+            {"店名": "Discovery Restaurant", "時間": "開園-閉園", "備註": "侏羅紀區，火雞腿、漢堡"},
+            {"店名": "Snoopy's Backlot Cafe", "時間": "開園-閉園", "備註": "Wonderland 區，三明治、甜點"},
+            {"店名": "Beverly Hills Boulangerie", "時間": "開園-閉園", "備註": "入口右手邊，麵包三明治"},
+        ],
+        "臨空港": [
+            {"店名": "RINKU FOOD PARK", "時間": "10:00-20:00", "備註": "美食街，披薩、拉麵、天婦羅"},
+            {"店名": "豆狸 りんくうプレミアムアウトレット", "時間": "11:00-21:00", "備註": "2F天丼、烏龍麵"},
+            {"店名": "りんくうタウン駅 コインロッカー", "時間": "-", "備註": "站內置物櫃¥800"},
+        ],
+        "關空": [
+            {"店名": "551蓬莱 関西空港店", "時間": "07:00-21:00", "備註": "T1 2F國內線側，豚まん外帶上飛機當最後一餐，會排隊"},
+            {"店名": "関西国際空港 第1ターミナル", "時間": "-", "備註": "2F餐廳街（拉麵、烏龍、咖哩）、3F伴手禮街；稅關KIOSK在出境層，先做持出確認再託運"},
+        ],
+    }
+    if region not in data_source:
+        st.warning(f"⚠️ 找不到 '{region}' 的資料，請檢查名稱是否正確。")
+        return
 
-/* ===== columns 手機不換行、不撐寬 ===== */
-div[data-testid="stHorizontalBlock"] {
-    flex-wrap: nowrap !important;
-    gap: 6px;
-    max-width: 100%;
-}
-div[data-testid="stHorizontalBlock"] > div[data-testid="stColumn"],
-div[data-testid="stHorizontalBlock"] > div[data-testid="column"] {
-    min-width: 0 !important;
-    flex: 1 1 0 !important;
-}
+    rows = data_source[region]
+    lines = ["| 店名 | 時間 | 備註 |", "|---|---|---|"]
+    for r in rows:
+        url = f"https://www.google.com/maps/search/?api=1&query={quote(r['店名'])}"
+        name = f"[📍 {r['店名']}]({url})"
+        note = r["備註"].replace("|", "｜")
+        lines.append(f"| {name} | {r['時間']} | {note} |")
 
-/* ===== Markdown 表格自動換行、不撐寬 ===== */
-[data-testid="stMarkdownContainer"] table {
-    width: 100% !important;
-    table-layout: fixed;
-    display: table;
-}
-[data-testid="stMarkdownContainer"] th,
-[data-testid="stMarkdownContainer"] td {
-    white-space: normal !important;
-    word-break: break-word;
-    font-size: 13px;
-    padding: 4px 6px;
-}
-[data-testid="stMarkdownContainer"] th:nth-child(1),
-[data-testid="stMarkdownContainer"] td:nth-child(1) { width: 36%; }
-[data-testid="stMarkdownContainer"] th:nth-child(2),
-[data-testid="stMarkdownContainer"] td:nth-child(2) { width: 22%; }
-
-/* ===== 日期選單：只有這一列可以左右滑 ===== */
-[data-testid="stRadio"] { max-width: 100%; }
-div[role="radiogroup"] {
-    flex-direction: row;
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    overflow-y: hidden;
-    gap: 8px;
-    padding-bottom: 5px;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-}
-div[role="radiogroup"]::-webkit-scrollbar { display: none; }
-
-/* 藏掉左邊的圓點（新舊版 Streamlit 兩種結構都蓋到） */
-div[role="radiogroup"] label > div:first-child,
-div[role="radiogroup"] label [data-testid="stRadioIndicator"],
-div[role="radiogroup"] label input[type="radio"] {
-    display: none !important;
-    width: 0 !important;
-    margin: 0 !important;
-}
-
-div[role="radiogroup"] label {
-    flex: 0 0 auto;
-    background-color: var(--secondary-background-color);
-    color: var(--text-color);
-    padding: 6px 8px;
-    border-radius: 12px;
-    border: 1px solid rgba(128, 128, 128, 0.3);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    min-width: 72px;
-    height: 55px;
-}
-div[role="radiogroup"] label p {
-    font-size: 14px;
-    line-height: 1.3;
-    font-weight: bold;
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 100%;
-    white-space: pre-wrap;
-    text-align: center;
-}
-/* 選中的那格：紅框＋淡紅底 */
-div[role="radiogroup"] label:has(input:checked) {
-    border: 2px solid #ff4b4b !important;
-    background-color: rgba(255, 75, 75, 0.12) !important;
-}
-</style>
-""", unsafe_allow_html=True)
-
-# --- 資料設定 ---
-# 格式: Key顯示文字 : (日期物件, 模組, 完整標題)
-trip_dates = {
-    "Day1\n1/16 六": (date(2027, 1, 16), day1, "Day 1(六): 出發 & 京都"),
-    "Day2\n1/17 日": (date(2027, 1, 17), day2, "Day 2(日): 任天堂博物館 & 宇治"),
-    "Day3\n1/18 一": (date(2027, 1, 18), day3, "Day 3(一): 雪日｜琵琶湖山谷 & 湖西"),
-    "Day4\n1/19 二": (date(2027, 1, 19), day4, "Day 4(二): 舟屋日｜天橋立 & 伊根"),
-    "Day5\n1/20 三": (date(2027, 1, 20), day5, "Day 5(三): 金閣寺 & teamLab & 鬧區"),
-    "Day6\n1/21 四": (date(2027, 1, 21), day6, "Day 6(四): 移動 & 大阪"),
-    "Day7\n1/22 五": (date(2027, 1, 22), day7, "Day 7(五): 環球影城"),
-    "Day8\n1/23 六": (date(2027, 1, 23), day8, "Day 8(六): 回程"),
-}
-
-# --- 自動判斷日期邏輯 (使用日本時間) ---
-japan_tz = pytz.timezone('Asia/Tokyo')
-today = datetime.now(japan_tz).date()
-
-# --- 測試區 (測試完請註解掉下面這行) ---
-# today = date(2027, 1, 18)
-# ------------------------------------
-
-default_index = 0
-options = list(trip_dates.keys())
-for i, key in enumerate(options):
-    d = trip_dates[key][0]
-    if d == today:
-        default_index = i
-        break
-
-# --- 介面呈現 ---
-st.title("🇯🇵 2027 京阪")
-st.caption("1/16~23")
-
-# 橫向按鈕選單
-selected_key = st.radio(
-    "選擇行程日期",
-    options,
-    index=default_index,
-    horizontal=True,
-    label_visibility="collapsed"
-)
-
-st.markdown("""
-🎫 [唐吉訶德](https://japanportal.donki-global.com/coupon/?ptcd=0015000103)｜
-[BicCamera](https://d1grca2t3zpuug.cloudfront.net/2025/06/biccameracoupontwhk-1787x2527-1750209030.webp)｜
-[愛電王](https://osaka.letsgojp.com/coupon/389838/)  
-💊 [松本清/Cocokara](https://d1grca2t3zpuug.cloudfront.net/2025/01/20250131matsucoupontw-1631x2475.webp)｜
-[大國藥局](https://d1grca2t3zpuug.cloudfront.net/2023/08/daikokucoupon-1751874722.webp)｜
-[SUGI藥局](https://d1grca2t3zpuug.cloudfront.net/2025/02/sugidrug20260228-855x1300.webp)
-""")
-
-# --- 顯示內容 ---
-selected_data = trip_dates[selected_key]
-target_module = selected_data[1]
-full_title = selected_data[2]
-
-st.markdown(f"### {full_title}")
-target_module.show()
+    with st.expander(f"🍽️ {region} 周邊", expanded=False):
+        st.caption("營業時間以官網為準，點店名開 Google Maps")
+        st.markdown("\n".join(lines))
