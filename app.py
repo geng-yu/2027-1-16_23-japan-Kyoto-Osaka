@@ -48,7 +48,7 @@ html, body, .stApp,
     width: 100%;
     border-radius: 20px;
     font-weight: bold;
-    border: 1.5px solid #ff4b4b !important;
+    border: 1.5px solid rgba(255, 75, 75, 0.6) !important;
     background-color: transparent !important;
     color: var(--text-color) !important;
 }
