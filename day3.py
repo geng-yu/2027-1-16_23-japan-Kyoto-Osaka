@@ -131,7 +131,8 @@ def show():
         st.link_button("飯店🅿️2", get_gmap_link("34.98251532812083, 135.75747844958318", "driving"), width="stretch")
     with c3:
         st.link_button("飯店🅿️3", get_gmap_link("34.983058834733335, 135.75752110124756", "driving"), width="stretch")
-    show_food_table("京都飯店")
+    show_food_table("京都飯店-吃")
+    show_food_table("京都飯店-逛")
 
         # ==========================================
     # 提醒
