@@ -95,6 +95,6 @@ def show_food_table(region):
         note = r["備註"].replace("|", "｜")
         lines.append(f"| {name} | {r['時間']} | {note} |")
 
-    with st.expander(f"🍽️ 點我看：{region} 美食店家清單", expanded=False):
+    with st.expander(f"🍽️ {region} 周邊", expanded=False):
         st.caption("營業時間以官網為準，點店名開 Google Maps")
         st.markdown("\n".join(lines))
