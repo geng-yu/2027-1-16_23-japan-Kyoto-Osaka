@@ -29,6 +29,7 @@ def show():
 * 搭單軌或吊椅上山，**南側「股間望景」**，山頂有小型遊樂設施，1hr
 """)
     st.link_button("📍 天橋立 View Land", get_gmap_link("Amanohashidate Chairlift and Monorail", "walking"))
+    show_food_table("天橋立")
     st.divider()
 
     # ==========================================
@@ -42,6 +43,7 @@ def show():
 * 不騎的話走路單程約 45 分
 """)
     st.link_button("📍 智恩寺", get_gmap_link("Chionji Temple Amanohashidate", "walking"))
+    show_food_table("智恩寺沙洲")
     st.divider()
 
     # ==========================================
@@ -56,6 +58,7 @@ def show():
 * ⚠️ 車還停在 View Land 側：騎腳踏車回去取車，或安排一人回去開車到府中接
 """)
     st.link_button("📍 傘松公園 纜車站", get_gmap_link("Kasamatsu Park Cable Car", "walking"))
+    show_food_table("傘松籠神社")
     st.divider()
 
     # ==========================================
@@ -77,6 +80,7 @@ def show():
     with c3:
         st.link_button("舟屋🅿️3", get_gmap_link("35.674810315711255, 135.29151710239807", "driving"), width="stretch")
     st.link_button("📍 導航：伊根灣遊覽船乘船處", get_gmap_link("Ine Bay Tour Boat", "walking"))
+    show_food_table("伊根")
     st.divider()
 
     # ==========================================
@@ -94,6 +98,7 @@ def show():
         st.link_button("🦀 海鮮市場🅿️", get_gmap_link("35.44998819450579, 135.3147607872948", "driving"), width="stretch")
     with c2:
         st.link_button("🧱 舞鶴紅磚公園", get_gmap_link("35.4743250743178, 135.38572558092937"), width="stretch")
+    show_food_table("舞鶴")
     st.divider()
 
 
