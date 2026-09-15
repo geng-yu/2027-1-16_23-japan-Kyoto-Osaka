@@ -68,7 +68,7 @@ def show():
 * 🍽 晚餐：**Universal Citywalk**（飯店旁，たこ焼きミュージアム、各式餐廳）
 """)
     st.link_button("🏨 導航：京阪環球影城塔樓", get_gmap_link("Hotel Keihan Universal Tower", "transit"))
-    show_food_table("環球影城")
+    show_food_table("環球城")
 
     # ==========================================
     # 提醒
