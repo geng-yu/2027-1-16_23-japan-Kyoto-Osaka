@@ -63,7 +63,7 @@ def show():
         st.link_button("🚗 琵琶湖兒童之國公園", get_gmap_link("Biwako Kodomo no Kuni", "driving"), width="stretch")
     with c3:
         st.link_button("🚗 水杉大道", get_gmap_link("Metasequoia Namiki Makino", "driving"), width="stretch")
-    show_food_table("湖西其他")
+    show_food_table("浮御堂")
     st.divider()
 
      # ==========================================
@@ -73,7 +73,11 @@ def show():
     st.markdown("""
 * 大天狗合照(5分)→ 多聞堂牛若餅(買了車上吃)→ 仁王門(只看門不進去）
 """)
-    st.link_button("👺 鞍馬站🅿️", get_gmap_link("35.11250546865591, 135.7725978505011", "driving"))
+    c1, c2 = st.columns(2) 
+    with c1:
+        st.link_button("👺 鞍馬站🅿️", get_gmap_link("35.11250546865591, 135.7725978505011", "driving"), width="stretch")
+    with c2:
+        st.link_button("🍪 多聞堂 鞍馬", get_gmap_link("35.11322385274119, 135.77326701479515", "walking"), width="stretch")
 
     st.divider()
 
@@ -95,6 +99,7 @@ def show():
         st.link_button("🅿️2 貴船", get_gmap_link("35.12055954695767, 135.7626417214197", "driving"), width="stretch")
     with c3:
         st.link_button("🅿️3 貴船", get_gmap_link("35.119117921926446, 135.76276126082237", "driving"), width="stretch")
+    
     st.link_button("⛩️ 貴船神社(燈)", get_gmap_link("35.12122600441969, 135.76316511443252", "walking"))
     
     st.divider()
