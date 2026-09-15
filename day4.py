@@ -18,7 +18,7 @@ def show():
     with c1:
         st.link_button("中途休息站🅿️", get_gmap_link("35.155487637910184, 135.4151181669732", "driving"), width="stretch")
     with c2:
-        st.link_button("導航：天橋立 View Land🅿️", get_gmap_link("35.55598937942707, 135.18432345495142", "driving"), width="stretch")
+        st.link_button("天橋立 View Land🅿️", get_gmap_link("35.55598937942707, 135.18432345495142", "driving"), width="stretch")
     st.divider()
 
     # ==========================================
@@ -28,7 +28,7 @@ def show():
     st.markdown("""
 * 搭單軌或吊椅上山，**南側「股間望景」**，山頂有小型遊樂設施，1hr
 """)
-    st.link_button("📍 導航：天橋立 View Land", get_gmap_link("Amanohashidate Chairlift and Monorail", "walking"))
+    st.link_button("📍 天橋立 View Land", get_gmap_link("Amanohashidate Chairlift and Monorail", "walking"))
     st.divider()
 
     # ==========================================
@@ -41,7 +41,7 @@ def show():
 * 智恩寺旁租腳踏車，**穿越沙洲單程 20 分**，可在對岸（傘松側）還車
 * 不騎的話走路單程約 45 分
 """)
-    st.link_button("📍 導航：智恩寺", get_gmap_link("Chionji Temple Amanohashidate", "walking"))
+    st.link_button("📍 智恩寺", get_gmap_link("Chionji Temple Amanohashidate", "walking"))
     st.divider()
 
     # ==========================================
@@ -55,7 +55,7 @@ def show():
 * 🍽 午餐：這側簡餐，或忍到伊根吃鰤魚涮涮鍋
 * ⚠️ 車還停在 View Land 側：騎腳踏車回去取車，或安排一人回去開車到府中接
 """)
-    st.link_button("📍 導航：傘松公園 纜車站", get_gmap_link("Kasamatsu Park Cable Car", "walking"))
+    st.link_button("📍 傘松公園 纜車站", get_gmap_link("Kasamatsu Park Cable Car", "walking"))
     st.divider()
 
     # ==========================================
@@ -107,7 +107,7 @@ def show():
 * 20:00前趕不到租車店→ 車停飯店附近投幣停車場，明早07:45還
 """)
     
-    st.link_button("🚗 導航：22 PIECES", get_gmap_link("22 PIECES Kyoto", "driving"))
+    st.link_button("🚗 22 PIECES", get_gmap_link("22 PIECES Kyoto", "driving"))
     c1, c2 = st.columns(2)
     with c1:
         st.link_button("⛽1 加油站(24H)", get_gmap_link("34.97324984490103, 135.74648147860697", "driving"), width="stretch")
