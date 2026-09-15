@@ -69,7 +69,7 @@ def show():
 * 🍽 晚餐：京都站周邊
 """)
     st.link_button("🏠 22 PIECES", get_gmap_link("22 PIECES Kyoto", "transit"))
-    st.divider()
+    show_food_table("京都飯店")
 
     # ==========================================
     # 提醒
@@ -79,8 +79,7 @@ def show():
 * 看 **琵琶湖山谷官網 TOP 頁** 營業情報（纜車有沒有預告停駛）
 * 看隔天 **風速** 預報：風小 → 雪日；風大 → 舟屋日
 """)
-    st.divider()
-    show_food_table("京都飯店")
+
 
 
 
