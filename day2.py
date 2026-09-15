@@ -16,7 +16,7 @@ def show():
 * **午餐**：館內 **HATENA BURGER**
 * **紀念品**：館內限定，最後再逛
 """)
-    st.link_button("📍 導航：任天堂博物館", get_gmap_link("Nintendo Museum", "transit"))
+    st.link_button("📍 任天堂博物館", get_gmap_link("Nintendo Museum", "transit"))
     
     st.divider()
 
@@ -27,7 +27,7 @@ def show():
     st.markdown("""
 * **13:30** JR 小倉 → **宇治**（1 站，約 3 分）
 """)
-    st.link_button("🚃 導航：JR 宇治站", get_gmap_link("JR Uji Station", "transit"))
+    st.link_button("🚃 JR 宇治站", get_gmap_link("JR Uji Station", "transit"))
     show_food_table("宇治")
     st.divider()
 
@@ -37,7 +37,7 @@ def show():
     st.subheader("3️⃣ 平等院鳳凰堂")
     st.markdown("""
 """)
-    st.link_button("📍 導航：平等院", get_gmap_link("Byodoin Temple", "walking"))
+    st.link_button("📍 平等院", get_gmap_link("Byodoin Temple", "walking"))
     st.divider()
 
     # ==========================================
@@ -47,7 +47,7 @@ def show():
     st.markdown("""
 * 從平等院走表參道 → **宇治橋**（紫式部像）→ 過橋走 10 分 → **宇治上神社**
 """)
-    st.link_button("📍 導航：宇治上神社", get_gmap_link("Ujigami Shrine", "walking"))
+    st.link_button("📍 宇治上神社", get_gmap_link("Ujigami Shrine", "walking"))
     st.divider()
 
     # ==========================================
@@ -57,7 +57,7 @@ def show():
     st.markdown("""
 * JR 宇治站前，抹茶果凍、抹茶聖代、抹茶蕎麥麵
 """)
-    st.link_button("📍 導航：中村藤吉本店", get_gmap_link("Nakamura Tokichi Honten", "walking"))
+    st.link_button("📍 中村藤吉本店", get_gmap_link("Nakamura Tokichi Honten", "walking"))
     st.divider()
 
     # ==========================================
@@ -68,7 +68,7 @@ def show():
 * **17:00** JR 宇治 → 京都站（普通車約 30 分，快速約 20 分）
 * 🍽 晚餐：京都站周邊
 """)
-    st.link_button("🏠 導航：22 PIECES", get_gmap_link("22 PIECES Kyoto", "transit"))
+    st.link_button("🏠 22 PIECES", get_gmap_link("22 PIECES Kyoto", "transit"))
     st.divider()
 
     # ==========================================
