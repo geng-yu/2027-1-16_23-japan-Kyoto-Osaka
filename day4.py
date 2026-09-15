@@ -97,7 +97,7 @@ def show():
     with c1:
         st.link_button("🦀 海鮮市場🅿️", get_gmap_link("35.44998819450579, 135.3147607872948", "driving"), width="stretch")
     with c2:
-        st.link_button("🧱 舞鶴紅磚公園", get_gmap_link("35.4743250743178, 135.38572558092937"), width="stretch")
+        st.link_button("🧱 舞鶴紅磚公園", get_gmap_link("35.4743250743178, 135.38572558092937", "driving"), width="stretch")
     show_food_table("舞鶴")
     st.divider()
 
