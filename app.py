@@ -26,14 +26,14 @@ html, body, .stApp,
     max-width: 100vw !important;
 }
 
-/* ===== 導航按鈕：亮/暗模式都看得到 ===== */
+/* ===== 導航按鈕：紅框、無底色 ===== */
 [data-testid="stLinkButton"] a,
 [data-testid^="stBaseLinkButton-"] {
     width: 100%;
     border-radius: 20px;
     font-weight: bold;
     border: 1.5px solid #ff4b4b !important;
-    background-color: rgba(255, 75, 75, 0.12) !important;
+    background-color: transparent !important;
     color: var(--text-color) !important;
     opacity: 1 !important;
     white-space: nowrap;
@@ -42,8 +42,16 @@ html, body, .stApp,
 }
 [data-testid="stLinkButton"] a:hover,
 [data-testid^="stBaseLinkButton-"]:hover {
-    background-color: rgba(255, 75, 75, 0.28) !important;
-    border-color: #ff4b4b !important;
+    background-color: rgba(255, 75, 75, 0.15) !important;
+}
+.stButton button {
+    width: 100%;
+    border-radius: 20px;
+    font-weight: bold;
+    border: 1.5px solid #ff4b4b !important;
+    background-color: transparent !important;
+    color: var(--text-color) !important;
+}
 }
 /* 一般按鈕（如果有用到 st.button）同一套 */
 .stButton button {
