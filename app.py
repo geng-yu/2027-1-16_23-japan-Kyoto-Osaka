@@ -14,24 +14,38 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# --- CSS 優化 (深色模式適應 + 橫向捲動 + 按鈕置中) ---
+# --- CSS 優化 ---
 st.markdown("""
 <style>
+/* ===== 整頁只能上下滑，禁止左右 ===== */
+html, body, .stApp,
+[data-testid="stAppViewContainer"],
+[data-testid="stMain"],
+.main, .block-container {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+}
+
 /* 全域按鈕樣式 */
-.stButton button {
+.stButton button, .stLinkButton a {
     width: 100%;
     border-radius: 20px;
     font-weight: bold;
     border: 1px solid var(--text-color);
-    opacity: 0.8;
+    opacity: 0.85;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 /* 隱藏預設選單與頁尾 */
 #MainMenu {visibility: hidden;}
 footer {visibility: hidden;}
-/* columns 手機不換行 */
+
+/* ===== columns 手機不換行、不撐寬 ===== */
 div[data-testid="stHorizontalBlock"] {
     flex-wrap: nowrap !important;
     gap: 6px;
+    max-width: 100%;
 }
 div[data-testid="stHorizontalBlock"] > div[data-testid="stColumn"],
 div[data-testid="stHorizontalBlock"] > div[data-testid="column"] {
@@ -39,53 +53,76 @@ div[data-testid="stHorizontalBlock"] > div[data-testid="column"] {
     flex: 1 1 0 !important;
 }
 
-/* --- 橫向滑動導覽列 --- */
+/* ===== Markdown 表格自動換行、不撐寬 ===== */
+[data-testid="stMarkdownContainer"] table {
+    width: 100% !important;
+    table-layout: fixed;
+    display: table;
+}
+[data-testid="stMarkdownContainer"] th,
+[data-testid="stMarkdownContainer"] td {
+    white-space: normal !important;
+    word-break: break-word;
+    font-size: 13px;
+    padding: 4px 6px;
+}
+[data-testid="stMarkdownContainer"] th:nth-child(1),
+[data-testid="stMarkdownContainer"] td:nth-child(1) { width: 36%; }
+[data-testid="stMarkdownContainer"] th:nth-child(2),
+[data-testid="stMarkdownContainer"] td:nth-child(2) { width: 22%; }
+
+/* ===== 日期選單：只有這一列可以左右滑 ===== */
+[data-testid="stRadio"] { max-width: 100%; }
 div[role="radiogroup"] {
     flex-direction: row;
-    overflow-x: auto;
     flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    overflow-y: hidden;
     gap: 8px;
     padding-bottom: 5px;
     -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
 }
-div[role="radiogroup"] label > div:first-child {
+div[role="radiogroup"]::-webkit-scrollbar { display: none; }
+
+/* 藏掉左邊的圓點（新舊版 Streamlit 兩種結構都蓋到） */
+div[role="radiogroup"] label > div:first-child,
+div[role="radiogroup"] label [data-testid="stRadioIndicator"],
+div[role="radiogroup"] label input[type="radio"] {
     display: none !important;
+    width: 0 !important;
+    margin: 0 !important;
 }
+
 div[role="radiogroup"] label {
+    flex: 0 0 auto;
     background-color: var(--secondary-background-color);
     color: var(--text-color);
-    padding: 6px 4px;
+    padding: 6px 8px;
     border-radius: 12px;
-    border: 1px solid rgba(128, 128, 128, 0.2);
+    border: 1px solid rgba(128, 128, 128, 0.3);
     cursor: pointer;
-    transition: all 0.2s;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    min-width: 68px;
+    min-width: 72px;
     height: 55px;
 }
 div[role="radiogroup"] label p {
     font-size: 14px;
     line-height: 1.3;
     font-weight: bold;
-    margin: 0px !important;
-    padding: 0px !important;
+    margin: 0 !important;
+    padding: 0 !important;
     width: 100%;
     white-space: pre-wrap;
     text-align: center;
 }
-div[role="radiogroup"] label:hover {
-    border-color: #ff4b4b;
-    background-color: var(--background-color);
-}
-div[role="radiogroup"] label[data-baseweb="radio"] {
-    border-color: #ff4b4b !important;
-    background-color: var(--background-color) !important;
-}
-div[role="radiogroup"]::-webkit-scrollbar {
-    display: none;
+/* 選中的那格：紅框＋淡紅底 */
+div[role="radiogroup"] label:has(input:checked) {
+    border: 2px solid #ff4b4b !important;
+    background-color: rgba(255, 75, 75, 0.12) !important;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -133,19 +170,13 @@ selected_key = st.radio(
 )
 
 st.markdown("""
-🎫 **優惠券：** [唐吉訶德](https://japanportal.donki-global.com/coupon/?ptcd=0015000103)｜
+🎫 [唐吉訶德](https://japanportal.donki-global.com/coupon/?ptcd=0015000103)｜
 [BicCamera](https://d1grca2t3zpuug.cloudfront.net/2025/06/biccameracoupontwhk-1787x2527-1750209030.webp)｜
-[山田電機](https://d1grca2t3zpuug.cloudfront.net/2025/03/yamada2025_tw65-1612x2442-1742810701.webp)｜
-[愛電王](https://osaka.letsgojp.com/coupon/389838/)｜
+[愛電王](https://osaka.letsgojp.com/coupon/389838/)  
+💊 [松本清/Cocokara](https://d1grca2t3zpuug.cloudfront.net/2025/01/20250131matsucoupontw-1631x2475.webp)｜
+[大國藥局](https://d1grca2t3zpuug.cloudfront.net/2023/08/daikokucoupon-1751874722.webp)｜
+[SUGI藥局](https://d1grca2t3zpuug.cloudfront.net/2025/02/sugidrug20260228-855x1300.webp)
 """)
-#st.markdown("""
-#💊 [松本清](https://d1grca2t3zpuug.cloudfront.net/2025/01/20250131matsucoupontw-1631x2475.webp)｜
-#[大國藥局](https://d1grca2t3zpuug.cloudfront.net/2023/08/daikokucoupon-1751874722.webp)｜
-#[Cocokarafine](https://d1grca2t3zpuug.cloudfront.net/2025/01/20250131matsucoupontw-1631x2475.webp)｜
-#[SUGI藥局](https://d1grca2t3zpuug.cloudfront.net/2025/02/sugidrug20260228-855x1300.webp)｜
-#""")
-
-#st.divider()
 
 # --- 顯示內容 ---
 selected_data = trip_dates[selected_key]
