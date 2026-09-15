@@ -47,7 +47,7 @@ def show():
 """)
     st.link_button("📍 京都拉麵小路", get_gmap_link("Kyoto Ramen Koji", "walking"))
 
-    show_food_table("京都飯店")
+    show_food_table("京都飯店-吃")
     show_food_table("京都飯店-逛")
 
     
