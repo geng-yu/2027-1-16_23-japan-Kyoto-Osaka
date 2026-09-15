@@ -22,7 +22,7 @@ def show():
     st.subheader("2️⃣ 地鐵九條 → 北大路 → 金閣寺")
     st.markdown("""
 * **九條站** → 烏丸線往國際會館方向 → **北大路站**（約 15 分）
-* 北大路站地下就是 **北大路巴士總站**：搭 **205／204／M1** 到「金閣寺道」約 10 分
+* **北大路巴士總站**：搭 **205／204／M1** 到「金閣寺道」約 10 分
 * 或出站搭 **計程車** 到金閣寺約 10 分、¥1,000-1,300，4 人分下來跟公車差不多
 * 車資公車大人 ¥230、小孩 ¥120，用 ICOCA
 """)
@@ -39,6 +39,7 @@ def show():
 * **09:45** 離開 → 計程車或公車回 **北大路站** → 烏丸線往京都方向 → **九條站**（約 15 分）
 """)
     st.link_button("📍 導航：金閣寺", get_gmap_link("Kinkakuji Temple", "walking"))
+    show_food_table("金閣寺")
     st.divider()
 
     # ==========================================
@@ -51,6 +52,7 @@ def show():
 * 票 大人 ¥3,800~（浮動）、小學生約 ¥1,200-1,500
 """)
     st.link_button("🚶 導航：teamLab Biovortex Kyoto", get_gmap_link("teamLab Biovortex Kyoto", "walking"))
+    show_food_table("teamLab周邊")
     st.divider()
 
     # ==========================================
@@ -63,6 +65,7 @@ def show():
 * 大部分店 18:00 前收
 """)
     st.link_button("🚃 導航：錦市場", get_gmap_link("Nishiki Market", "transit"))
+    show_food_table("錦市場")
     st.divider()
 
     # ==========================================
@@ -74,6 +77,7 @@ def show():
 * 扭蛋、文具、藥妝
 """)
     st.link_button("📍 導航：新京極商店街", get_gmap_link("Shinkyogoku Shopping Street", "walking"))
+    show_food_table("新京極寺町")
     st.divider()
 
     # ==========================================
@@ -90,6 +94,7 @@ def show():
         st.link_button("📍 導航：Nintendo KYOTO", get_gmap_link("Nintendo KYOTO", "walking"), width="stretch")
     with c2:
         st.link_button("📍 導航：寶可夢中心京都", get_gmap_link("Pokemon Center Kyoto", "walking"), width="stretch")
+        show_food_table("四條河原町")
     st.divider()
 
     # ==========================================
@@ -113,7 +118,6 @@ def show():
 """)
     st.link_button("🏠 導航：22 PIECES", get_gmap_link("22 PIECES Kyoto", "transit"))
     show_food_table("京都飯店")
-    st.divider()
 
 if __name__ == "__main__":
     show()
