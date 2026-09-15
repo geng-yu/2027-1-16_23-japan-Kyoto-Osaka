@@ -96,9 +96,9 @@ def show():
     with c1:
         st.link_button("貴船🅿️1", get_gmap_link("35.12210122259409, 135.76339418928197", "driving"), width="stretch")
     with c2:
-        st.link_button(" 貴船🅿️2", get_gmap_link("35.12055954695767, 135.7626417214197", "driving"), width="stretch")
+        st.link_button("貴船🅿️2", get_gmap_link("35.12055954695767, 135.7626417214197", "driving"), width="stretch")
     with c3:
-        st.link_button(" 貴船 🅿️3", get_gmap_link("35.119117921926446, 135.76276126082237", "driving"), width="stretch")
+        st.link_button("貴船🅿️3", get_gmap_link("35.119117921926446, 135.76276126082237", "driving"), width="stretch")
     
     st.link_button("⛩️ 貴船神社(燈)", get_gmap_link("35.12122600441969, 135.76316511443252", "walking"))
     
@@ -126,11 +126,11 @@ def show():
 
     c1, c2, c3 = st.columns(3)
     with c1:
-        st.link_button("🅿️1 飯店", get_gmap_link("34.98197527382824, 135.75692279994257", "driving"), width="stretch")
+        st.link_button("飯店🅿️1", get_gmap_link("34.98197527382824, 135.75692279994257", "driving"), width="stretch")
     with c2:
-        st.link_button("🅿️2 飯店", get_gmap_link("34.98251532812083, 135.75747844958318", "driving"), width="stretch")
+        st.link_button("飯店🅿️2", get_gmap_link("34.98251532812083, 135.75747844958318", "driving"), width="stretch")
     with c3:
-        st.link_button("🅿️3 飯店", get_gmap_link("34.983058834733335, 135.75752110124756", "driving"), width="stretch")
+        st.link_button("飯店🅿️3", get_gmap_link("34.983058834733335, 135.75752110124756", "driving"), width="stretch")
     show_food_table("京都飯店")
     st.divider()
 
