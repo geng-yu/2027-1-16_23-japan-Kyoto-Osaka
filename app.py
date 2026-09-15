@@ -182,7 +182,7 @@ japan_tz = pytz.timezone('Asia/Tokyo')
 today = datetime.now(japan_tz).date()
 
 # --- 測試區 (測試完請註解掉下面這行) ---
-# today = date(2027, 1, 18)
+ today = date(2027, 1, 18)
 # ------------------------------------
 
 default_index = 0
