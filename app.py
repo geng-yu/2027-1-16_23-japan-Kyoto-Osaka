@@ -26,14 +26,15 @@ html, body, .stApp,
     max-width: 100vw !important;
 }
 
-/* ===== 導航按鈕：紅框、無底色 ===== */
+
+/* ===== 導航按鈕：灰底、白框（亮模式自動變黑框） ===== */
 [data-testid="stLinkButton"] a,
 [data-testid^="stBaseLinkButton-"] {
     width: 100%;
     border-radius: 20px;
     font-weight: bold;
-    border: 1.5px solid rgba(255, 75, 75, 0.6) !important;
-    background-color: transparent !important;
+    border: 1.5px solid var(--text-color) !important;
+    background-color: rgba(128, 128, 128, 0.18) !important;
     color: var(--text-color) !important;
     opacity: 1 !important;
     white-space: nowrap;
@@ -42,16 +43,15 @@ html, body, .stApp,
 }
 [data-testid="stLinkButton"] a:hover,
 [data-testid^="stBaseLinkButton-"]:hover {
-    background-color: rgba(255, 75, 75, 0.15) !important;
+    background-color: rgba(128, 128, 128, 0.35) !important;
 }
 .stButton button {
     width: 100%;
     border-radius: 20px;
     font-weight: bold;
-    border: 1.5px solid rgba(255, 75, 75, 0.6) !important;
-    background-color: transparent !important;
+    border: 1.5px solid var(--text-color) !important;
+    background-color: rgba(128, 128, 128, 0.18) !important;
     color: var(--text-color) !important;
-}
 }
 /* 一般按鈕（如果有用到 st.button）同一套 */
 .stButton button {
