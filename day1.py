@@ -19,7 +19,7 @@ def show():
 * **15:45** JR 關西機場站 搭 **Haruka**（直達京都約 75 分）
 
 """)
-    st.link_button("🚶 導航：JR 關西機場站 (Haruka 月台)", get_gmap_link("Kansai-Airport Station JR", "walking"))
+    st.link_button("🚶 JR 關西機場站 (Haruka 月台)", get_gmap_link("Kansai-Airport Station JR", "walking"))
 
     with st.expander("💡 落地要做的事"):
         st.markdown("""
@@ -35,7 +35,7 @@ def show():
     st.markdown("""
 * **17:00** 抵京都站 → 走路到飯店
 """)
-    st.link_button("🏠 導航：22 PIECES", get_gmap_link("22 PIECES Kyoto", "walking"))
+    st.link_button("🏠 22 PIECES", get_gmap_link("22 PIECES Kyoto", "walking"))
     st.divider()
 
     # ==========================================
@@ -45,7 +45,7 @@ def show():
     st.markdown("""
 * **京都拉麵小路**（京都駅ビル 10F）
 """)
-    st.link_button("📍 導航：京都拉麵小路", get_gmap_link("Kyoto Ramen Koji", "walking"))
+    st.link_button("📍 京都拉麵小路", get_gmap_link("Kyoto Ramen Koji", "walking"))
     
     st.divider()
 
