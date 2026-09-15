@@ -26,16 +26,33 @@ html, body, .stApp,
     max-width: 100vw !important;
 }
 
-/* 全域按鈕樣式 */
-.stButton button, .stLinkButton a {
+/* ===== 導航按鈕：亮/暗模式都看得到 ===== */
+[data-testid="stLinkButton"] a,
+[data-testid^="stBaseLinkButton-"] {
     width: 100%;
     border-radius: 20px;
     font-weight: bold;
-    border: 1px solid var(--text-color);
-    opacity: 0.85;
+    border: 1.5px solid #ff4b4b !important;
+    background-color: rgba(255, 75, 75, 0.12) !important;
+    color: var(--text-color) !important;
+    opacity: 1 !important;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+[data-testid="stLinkButton"] a:hover,
+[data-testid^="stBaseLinkButton-"]:hover {
+    background-color: rgba(255, 75, 75, 0.28) !important;
+    border-color: #ff4b4b !important;
+}
+/* 一般按鈕（如果有用到 st.button）同一套 */
+.stButton button {
+    width: 100%;
+    border-radius: 20px;
+    font-weight: bold;
+    border: 1.5px solid #ff4b4b !important;
+    background-color: rgba(255, 75, 75, 0.12) !important;
+    color: var(--text-color) !important;
 }
 /* 隱藏預設選單與頁尾 */
 #MainMenu {visibility: hidden;}
