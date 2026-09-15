@@ -50,26 +50,34 @@ def show():
     # ==========================================
     # 4. 可刪加碼
     # ==========================================
-    st.subheader("4️⃣ 加碼")
+    st.subheader("4️⃣ 浮御堂(加碼)")
     st.markdown("""
-* **○ 浮御堂**（回程順路）：湖上佛堂，20分，14:15-14:35
+* **浮御堂**（回程順路）：湖上佛堂，20分，14:15-14:35
 * **▲ 琵琶湖兒童之國公園**（往北10分）
 * **▲ 水杉林蔭大道**（再往北40分）**只有放棄貴船才去**
 """)
     c1, c2, c3 = st.columns(3) 
     with c1:
-        st.link_button("🚗 琵琶湖兒童之國公園", get_gmap_link("Biwako Kodomo no Kuni", "driving"), width="stretch")
+        st.link_button("🚗 浮御堂🅿️", get_gmap_link("35.110234089508126, 135.92081966978157", "driving"), width="stretch")
     with c2:
-        st.link_button("🚗 水杉大道", get_gmap_link("Metasequoia Namiki Makino", "driving"), width="stretch")
+        st.link_button("🚗 琵琶湖兒童之國公園", get_gmap_link("Biwako Kodomo no Kuni", "driving"), width="stretch")
     with c3:
-        st.link_button("🚗 浮御堂", get_gmap_link("Ukimido Katata", "driving"), width="stretch")
+        st.link_button("🚗 水杉大道", get_gmap_link("Metasequoia Namiki Makino", "driving"), width="stretch")
     show_food_table("湖西其他")
     st.divider()
 
+     # ==========================================
+    # 6. 加碼
+    # ==========================================
+    st.subheader("5️⃣ 鞍馬大天狗(加碼)")
+    st.markdown("""
+* 大天狗合照(5分)→ 多聞堂牛若餅(買了車上吃)→ 仁王門(只看門不進去）
+""")
+    st.link_button("👺 鞍馬站🅿️", get_gmap_link("35.11250546865591, 135.7725978505011", "driving"))
     # ==========================================
     # 5. 貴船神社
     # ==========================================
-    st.subheader("5️⃣ 貴船神社（黃昏燈籠）")
+    st.subheader("6️⃣ 貴船神社（黃昏燈籠）")
     st.markdown("""
 * 堅田 → 途中越（國道 367）經大原 → **15:45** 貴船（約 1hr10；大雪封路改湖西道路→京都市區→貴船，多 15 分）
 * 參道燈籠**每天傍晚都點**，冬天約 16:30 亮、日落 17:10、**18:00 閉門**
@@ -87,7 +95,7 @@ def show():
     st.link_button("⛩️ 貴船神社(燈)", get_gmap_link("35.12122600441969, 135.76316511443252", "walking"))
     st.link_button("🅿️ 貴船神社(奧宮)", get_gmap_link("35.128346903080796, 135.76514244871177", "driving"))
     st.divider()
-
+    
    # ==========================================
     # 5. 回京都
     # ==========================================
