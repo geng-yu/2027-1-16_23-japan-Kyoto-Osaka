@@ -86,22 +86,32 @@ div[role="radiogroup"] {
 div[role="radiogroup"]::-webkit-scrollbar { display: none; }
 
 /* 藏掉左邊的圓點：label 裡除了文字容器，其他子元素全部隱藏 */
-div[role="radiogroup"] label > *:not(:has([data-testid="stMarkdownContainer"])) {
-    display: none !important;
-    width: 0 !important;
-    margin: 0 !important;
+/* ===== 日期選單：只有這一列可以左右滑 ===== */
+[data-testid="stRadio"] { max-width: 100%; }
+[data-testid="stRadioGroup"] {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    overflow-y: hidden;
+    gap: 8px;
+    padding-bottom: 5px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
 }
-div[role="radiogroup"] label > div:has([data-testid="stMarkdownContainer"]) {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+[data-testid="stRadioGroup"]::-webkit-scrollbar { display: none; }
+
+/* 藏掉圓點：選項裡凡是「不是文字容器、也不是它的祖先或子孫」的元素全部隱藏 */
+[data-testid="stRadioOption"] *:not(:has([data-testid="stMarkdownContainer"])):not([data-testid="stMarkdownContainer"]):not([data-testid="stMarkdownContainer"] *) {
+    display: none !important;
 }
 
-div[role="radiogroup"] label {
+[data-testid="stRadioOption"] {
     flex: 0 0 auto;
     background-color: var(--secondary-background-color);
     color: var(--text-color);
-    padding: 6px 8px;
+    padding: 6px 10px;
+    margin: 0 !important;
     border-radius: 12px;
     border: 1px solid rgba(128, 128, 128, 0.3);
     cursor: pointer;
@@ -112,18 +122,17 @@ div[role="radiogroup"] label {
     min-width: 72px;
     height: 55px;
 }
-div[role="radiogroup"] label p {
+[data-testid="stRadioOption"] [data-testid="stMarkdownContainer"] p {
     font-size: 14px;
     line-height: 1.3;
     font-weight: bold;
     margin: 0 !important;
     padding: 0 !important;
-    width: 100%;
     white-space: pre-wrap;
     text-align: center;
 }
 /* 選中的那格：紅框＋淡紅底 */
-div[role="radiogroup"] label:has(input:checked) {
+[data-testid="stRadioOption"]:has(input:checked) {
     border: 2px solid #ff4b4b !important;
     background-color: rgba(255, 75, 75, 0.12) !important;
 }
