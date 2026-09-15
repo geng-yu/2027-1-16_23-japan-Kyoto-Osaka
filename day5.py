@@ -94,7 +94,7 @@ def show():
         st.link_button("📍 導航：Nintendo KYOTO", get_gmap_link("Nintendo KYOTO", "walking"), width="stretch")
     with c2:
         st.link_button("📍 導航：寶可夢中心京都", get_gmap_link("Pokemon Center Kyoto", "walking"), width="stretch")
-        show_food_table("四條河原町")
+    show_food_table("四條河原町")
     st.divider()
 
     # ==========================================
