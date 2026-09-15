@@ -109,10 +109,8 @@ def show():
 * 四條站 → 烏丸線 → 京都站，走回飯店
 """)
     st.link_button("🏠 導航：22 PIECES", get_gmap_link("22 PIECES Kyoto", "transit"))
+    show_food_table("京都飯店")
     st.divider()
-    
-    show_food_table("河原町")
-
 
 if __name__ == "__main__":
     show()
