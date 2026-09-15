@@ -85,8 +85,11 @@ def show():
 * **寶可夢中心京都**：SUINA 室町 **4F**，四條烏丸站直結
 * 兩間走路 10 分，先 Nintendo 再寶可夢（回程順路到烏丸站）
 """)
-    st.link_button("📍 導航：Nintendo KYOTO", get_gmap_link("Nintendo KYOTO", "walking"))
-    st.link_button("📍 導航：寶可夢中心京都", get_gmap_link("Pokemon Center Kyoto", "walking"))
+    c1, c2 = st.columns(2)
+    with c1:
+        st.link_button("📍 導航：Nintendo KYOTO", get_gmap_link("Nintendo KYOTO", "walking"), width="stretch")
+    with c2:
+        st.link_button("📍 導航：寶可夢中心京都", get_gmap_link("Pokemon Center Kyoto", "walking"), width="stretch")
     st.divider()
 
     # ==========================================
