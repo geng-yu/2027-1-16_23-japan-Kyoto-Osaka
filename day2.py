@@ -69,7 +69,8 @@ def show():
 * 🍽 晚餐：京都站周邊
 """)
     st.link_button("🏠 22 PIECES", get_gmap_link("22 PIECES Kyoto", "transit"))
-    show_food_table("京都飯店")
+    show_food_table("京都飯店-吃")
+    show_food_table("京都飯店-逛")
 
     # ==========================================
     # 提醒
