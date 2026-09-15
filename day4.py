@@ -90,7 +90,7 @@ def show():
     st.markdown("""
 * **15:00** 伊根出發
 * 走舞鶴若狹道回京都會經過舞鶴，多約 40 分，**16:00-16:40** 停一個就好：
-  * **道の駅 舞鶴港**：海鮮市場，松葉蟹、牡蠣現烤現吃，比天橋立吃蟹便宜一半
+  * **道の駅 舞鶴港**：海鮮市場(PM 5點前)，松葉蟹、牡蠣現烤現吃
   * **舞鶴紅磚公園**：明治海軍紅磚倉庫群
 """)
     c1, c2 = st.columns(2)
@@ -98,7 +98,6 @@ def show():
         st.link_button("🦀 海鮮市場🅿️", get_gmap_link("35.44998819450579, 135.3147607872948", "driving"), width="stretch")
     with c2:
         st.link_button("🧱 舞鶴紅磚公園", get_gmap_link("35.4743250743178, 135.38572558092937", "driving"), width="stretch")
-    show_food_table("舞鶴")
     st.divider()
 
 
