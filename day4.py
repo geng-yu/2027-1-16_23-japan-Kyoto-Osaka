@@ -139,8 +139,5 @@ def show():
 """)
     st.divider()
 
-    show_food_table("天橋立伊根")
-
-
 if __name__ == "__main__":
     show()
