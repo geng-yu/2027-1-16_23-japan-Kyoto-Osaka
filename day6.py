@@ -46,13 +46,17 @@ def show():
     # ==========================================
     st.subheader("2️⃣ 二選一｜B 海遊館（親子）")
     st.markdown("""
-* 環球城碼頭搭 **Captain Line** 船 10 分 → 海遊館（船本身小孩就很愛）
+* 環球城碼頭搭 **Captain Line** 船 10 分 → 海遊館
 * **海遊館**：鯨鯊、太平洋大水槽，2hr
 * ○ 天保山摩天輪
 * 船回環球城
 """)
-    st.link_button("🚶 導航：Captain Line 環球城碼頭", get_gmap_link("Captain Line Universal City Port", "walking"))
-    st.link_button("📍 導航：海遊館", get_gmap_link("Osaka Aquarium Kaiyukan", "walking"))
+    c1, c2 = st.columns(2)
+    with c1:
+        st.link_button("🚶 導航：Captain Line 環球城碼頭", get_gmap_link("Captain Line Universal City Port", "transit"), width="stretch")
+    with c2:
+        st.link_button("📍 導航：海遊館", get_gmap_link("Osaka Aquarium Kaiyukan", "walking"), width="stretch")
+    show_food_table("海遊館")
     st.divider()
 
     # ==========================================
@@ -64,7 +68,7 @@ def show():
 * 🍽 晚餐：**Universal Citywalk**（飯店旁，たこ焼きミュージアム、各式餐廳）
 """)
     st.link_button("🏨 導航：京阪環球影城塔樓", get_gmap_link("Hotel Keihan Universal Tower", "transit"))
-    st.divider()
+    show_food_table("環球影城")
 
     # ==========================================
     # 提醒
@@ -75,9 +79,7 @@ def show():
 * 早餐先買好
 * 明天穿：保暖＋好走的鞋，園內風大
 """)
-    st.divider()
 
-    show_food_table("環球城")
 
 
 if __name__ == "__main__":
