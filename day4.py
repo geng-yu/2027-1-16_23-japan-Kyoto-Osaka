@@ -8,7 +8,7 @@ def show():
     # ==========================================
     # 1. 出發
     # ==========================================
-    st.subheader("1️⃣ 天橋立 🅿️")
+    st.subheader("1️⃣ 天橋立🅿️")
     st.markdown("""
 * **08:00** 出發（京都縱貫道約 2hr）
 * ○ 道の駅 京丹波 味夢の里（縱貫道中間休息站，廁所、丹波栗、黑豆點心，10 分）
@@ -16,9 +16,9 @@ def show():
 """)
     c1, c2 = st.columns(2)
     with c1:
-        st.link_button("🅿️ 中途休息站", get_gmap_link("35.155487637910184, 135.4151181669732", "driving"), width="stretch")
+        st.link_button("中途休息站🅿️", get_gmap_link("35.155487637910184, 135.4151181669732", "driving"), width="stretch")
     with c2:
-        st.link_button("🅿️ 導航：天橋立 View Land 停車場", get_gmap_link("35.55598937942707, 135.18432345495142", "driving"), width="stretch")
+        st.link_button("導航：天橋立 View Land🅿️", get_gmap_link("35.55598937942707, 135.18432345495142", "driving"), width="stretch")
     st.divider()
 
     # ==========================================
@@ -71,11 +71,11 @@ def show():
 """)
     c1, c2, c3 = st.columns(3)
     with c1:
-        st.link_button("🅿️1 舟屋", get_gmap_link("35.67584540607587, 135.28772869192494", "driving"), width="stretch")
+        st.link_button("舟屋🅿️1", get_gmap_link("35.67584540607587, 135.28772869192494", "driving"), width="stretch")
     with c2:
-        st.link_button("🅿️2 舟屋", get_gmap_link("35.67500125343802, 135.28802197600007", "driving"), width="stretch")
+        st.link_button("舟屋🅿️2", get_gmap_link("35.67500125343802, 135.28802197600007", "driving"), width="stretch")
     with c3:
-        st.link_button("🅿️3 舟屋", get_gmap_link("35.674810315711255, 135.29151710239807", "driving"), width="stretch")
+        st.link_button("舟屋🅿️3", get_gmap_link("35.674810315711255, 135.29151710239807", "driving"), width="stretch")
     st.link_button("📍 導航：伊根灣遊覽船乘船處", get_gmap_link("Ine Bay Tour Boat", "walking"))
     st.divider()
 
@@ -91,7 +91,7 @@ def show():
 """)
     c1, c2 = st.columns(2)
     with c1:
-        st.link_button("🦀 海鮮市場", get_gmap_link("35.44998819450579, 135.3147607872948", "driving"), width="stretch")
+        st.link_button("🦀 海鮮市場🅿️", get_gmap_link("35.44998819450579, 135.3147607872948", "driving"), width="stretch")
     with c2:
         st.link_button("🧱 舞鶴紅磚公園", get_gmap_link("35.4743250743178, 135.38572558092937"), width="stretch")
     st.divider()
@@ -116,11 +116,11 @@ def show():
     st.link_button("🚗 還車:豐田租車 京都站新幹線口店(PM 8點前、滿油)", get_gmap_link("トヨタレンタカー 京都駅新幹線口店", "driving"))
     c1, c2, c3 = st.columns(3)
     with c1:
-        st.link_button("🅿️1 飯店", get_gmap_link("34.98197527382824, 135.75692279994257", "driving"), width="stretch")
+        st.link_button("飯店🅿️1", get_gmap_link("34.98197527382824, 135.75692279994257", "driving"), width="stretch")
     with c2:
-        st.link_button("🅿️2 飯店", get_gmap_link("34.98251532812083, 135.75747844958318", "driving"), width="stretch")
+        st.link_button("飯店🅿️2", get_gmap_link("34.98251532812083, 135.75747844958318", "driving"), width="stretch")
     with c3:
-        st.link_button("🅿️3 飯店", get_gmap_link("34.983058834733335, 135.75752110124756", "driving"), width="stretch")
+        st.link_button("飯店🅿️3", get_gmap_link("34.983058834733335, 135.75752110124756", "driving"), width="stretch")
     st.divider()
     # ==========================================
     # 提醒
