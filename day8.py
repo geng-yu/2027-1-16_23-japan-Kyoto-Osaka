@@ -26,14 +26,14 @@ def show():
     # ==========================================
     # 2. 臨空港 (可刪)
     # ==========================================
-    st.subheader("2️⃣ 臨空港 Outlet")
+    st.subheader("2️⃣ 臨空港 Outlet(備)")
     st.markdown("""
 * 關空 → **りんくうタウン** 1 站 5 分（南海或 JR 都可）
 * 行李放關空置物櫃（或 Outlet 置物櫃）
 * 逛到 **13:45** 搭回關空
-* 不想跑的話，關空 T1 本身也很多店，直接報到
 """)
     st.link_button("🚃 導航：臨空 Premium Outlets", get_gmap_link("Rinku Premium Outlets", "transit"))
+    show_food_table("臨空港")
     st.divider()
 
     # ==========================================
@@ -45,7 +45,7 @@ def show():
 * 登機前：手機下載好回程的影片給小孩
 """)
     st.link_button("🚶 導航：關西機場 T1", get_gmap_link("Kansai International Airport Terminal 1", "walking"))
-    st.divider()
+
 
     # ==========================================
     # 提醒
