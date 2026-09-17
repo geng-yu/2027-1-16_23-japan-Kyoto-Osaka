@@ -29,6 +29,7 @@ def show():
 * 🍽 午餐：山頂餐廳，或早上超市買飯捲帶上去
 * **12:30** 下山（下午有貴船，不要拖到 13:00）
 """)
+    st.code("MapCode：263 094 843*44", language="text")
     st.link_button("🚗 琵琶湖山谷 纜車山麓站🅿️", get_gmap_link("35.202950140659915, 135.90652083462672", "driving"))
     show_food_table("琵琶湖山谷")
     st.divider()
@@ -43,6 +44,7 @@ def show():
 * ⚠️ 國道 161 車多，**不要為了拍照橫越馬路**
 * **13:45** 出發
 """)
+    st.code("MapCode：263 376 499*57", language="text")
     st.link_button("⛩️ 白鬚神社", get_gmap_link("35.274213263032365, 136.01084250538855", "driving"))
     show_food_table("白鬚神社")
     st.divider()
@@ -55,6 +57,7 @@ def show():
 * **浮御堂**（回程順路）：湖上佛堂，20分，14:15-14:35
 * **▲ 琵琶湖兒童之國公園**（往北10分）
 * **▲ 水杉林蔭大道**（再往北40分）**只有放棄貴船才去**
+st.code("浮御堂MapCode：616 065 775*62", language="text")
 """)
     c1, c2, c3 = st.columns(3) 
     with c1:
@@ -73,6 +76,7 @@ def show():
     st.markdown("""
 * 大天狗合照(5分)→ 多聞堂牛若餅(買了車上吃)→ 仁王門(只看門不進去）
 """)
+    st.code("MapCode：479 108 091*04", language="text")
     c1, c2 = st.columns(2) 
     with c1:
         st.link_button("👺 鞍馬站🅿️", get_gmap_link("35.11250546865591, 135.7725978505011", "driving"), width="stretch")
@@ -92,6 +96,7 @@ def show():
 * 停車：本宮 10 台、奥宮 15 台
 * **17:45** 出發
 """)
+    st.code("MapCode：479 136 238*22", language="text")
     c1, c2, c3 = st.columns(3)
     with c1:
         st.link_button("貴船🅿️1", get_gmap_link("35.12210122259409, 135.76339418928197", "driving"), width="stretch")
@@ -122,6 +127,7 @@ def show():
     st.markdown("""
 * 🍽 晚餐：京都站周邊
 """)
+    st.code("MapCode：7 526 455*55", language="text")
     st.link_button("🚗 22 PIECES", get_gmap_link("22 PIECES Kyoto", "driving"))
 
     c1, c2, c3 = st.columns(3)
@@ -157,6 +163,7 @@ def show():
 
 **兩邊都不能上 → 今天改跑 D4 舟屋日內容，明天再賭雪日**
 """)
+    st.code("MapCode：380 059 028*16", language="text")
     st.link_button("🚗 箱館山滑雪場🅿️", get_gmap_link("35.42761994200102, 135.996006812276", "driving"))
 
 
