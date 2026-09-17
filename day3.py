@@ -57,8 +57,8 @@ def show():
 * **浮御堂**（回程順路）：湖上佛堂，20分，14:15-14:35
 * **▲ 琵琶湖兒童之國公園**（往北10分）
 * **▲ 水杉林蔭大道**（再往北40分）**只有放棄貴船才去**
-    st.code("浮御堂MapCode：616 065 775*62", language="text")
 """)
+    st.code("浮御堂MapCode：616 065 775*62", language="text")
     c1, c2, c3 = st.columns(3) 
     with c1:
         st.link_button("🚗 浮御堂🅿️", get_gmap_link("35.110234089508126, 135.92081966978157", "driving"), width="stretch")
