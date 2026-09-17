@@ -195,7 +195,7 @@ for i, key in enumerate(options):
 
 # --- 介面呈現 ---
 st.title("🇯🇵 2027 京阪")
-st.caption("1/16~23 任天堂‧琵琶湖‧天橋立‧舟屋‧環球影城")
+st.caption("1/16~23 任天堂‧宇治‧琵琶湖‧貴船‧天橋立‧舟屋‧環球影城")
 
 # 橫向按鈕選單
 selected_key = st.radio(
