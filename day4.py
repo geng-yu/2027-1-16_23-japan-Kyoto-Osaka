@@ -16,6 +16,11 @@ def show():
 """)
     c1, c2 = st.columns(2)
     with c1:
+        st.code("中途休息站MapCode：344 245 245*10", language="text")
+    with c2:
+        st.code("天橋立MapCode：197 202 313*41", language="text")
+    c1, c2 = st.columns(2)
+    with c1:
         st.link_button("中途休息站🅿️", get_gmap_link("35.155487637910184, 135.4151181669732", "driving"), width="stretch")
     with c2:
         st.link_button("天橋立 View Land🅿️", get_gmap_link("35.55598937942707, 135.18432345495142", "driving"), width="stretch")
@@ -72,6 +77,7 @@ def show():
   * 或 **伊根灣遊覽船**（25 分，船上餵海鷗，冬天約每小時一班）
 * **舟屋街散步** 30 分 → 向井酒造（伊根滿開紅色米酒）→ INE CAFE（舟屋日和內，海景咖啡）
 """)
+    st.code("MapCode：652 604 655*44", language="text")
     c1, c2, c3 = st.columns(3)
     with c1:
         st.link_button("舟屋🅿️1", get_gmap_link("35.67584540607587, 135.28772869192494", "driving"), width="stretch")
@@ -93,6 +99,7 @@ def show():
   * **道の駅 舞鶴港**：海鮮市場(PM 5點前)，松葉蟹、牡蠣現烤現吃
   * **舞鶴紅磚公園**：明治海軍紅磚倉庫群
 """)
+    st.code("海鮮市場MapCode：174 698 543*15", language="text")
     c1, c2 = st.columns(2)
     with c1:
         st.link_button("🦀 海鮮市場🅿️", get_gmap_link("35.44998819450579, 135.3147607872948", "driving"), width="stretch")
