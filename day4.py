@@ -117,8 +117,13 @@ def show():
 * 🍽 晚餐：京都站周邊
 * 20:00前趕不到租車店→ 車停飯店附近投幣停車場，明早07:45還
 """)
-    
+    st.code("22 PIECES MapCode：7 526 455*55", language="text")
     st.link_button("🚗 22 PIECES", get_gmap_link("22 PIECES Kyoto", "driving"))
+    c1, c2 = st.columns(2)
+    with c1:
+        st.code("⛽1 MapCode：7 494 357*86", language="text")
+    with c2:
+        st.code("⛽2 MapCode：7 557 390*10", language="text")
     c1, c2 = st.columns(2)
     with c1:
         st.link_button("⛽1 加油站(24H)", get_gmap_link("34.97324984490103, 135.74648147860697", "driving"), width="stretch")
