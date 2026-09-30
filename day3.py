@@ -98,14 +98,17 @@ def show():
 * 停車：本宮 10 台、奥宮 15 台
 * **17:45** 出發
 """)
+        st.info("""
+💡 **有就先停，上面路很小**
+""")
     st.code("MapCode：479 136 238*22", language="text")
     c1, c2, c3 = st.columns(3)
     with c1:
-        st.link_button("貴船🅿️1", get_gmap_link("35.12210122259409, 135.76339418928197", "driving"), width="stretch")
+        st.link_button("貴船🅿️1", get_gmap_link("35.11873070901179, 135.76225482481692", "driving"), width="stretch")
     with c2:
-        st.link_button("貴船🅿️2", get_gmap_link("35.12055954695767, 135.7626417214197", "driving"), width="stretch")
+        st.link_button("貴船🅿️2", get_gmap_link("35.119099435370714, 135.76280447851192", "driving"), width="stretch")
     with c3:
-        st.link_button("貴船🅿️3", get_gmap_link("35.119117921926446, 135.76276126082237", "driving"), width="stretch")
+        st.link_button("貴船🅿️3", get_gmap_link("35.12200558283188, 135.76338043890988", "driving"), width="stretch")
     
     st.link_button("⛩️ 貴船神社(燈)", get_gmap_link("35.12122600441969, 135.76316511443252", "walking"))
     
@@ -131,7 +134,7 @@ def show():
 """)
     st.code("MapCode：7 526 455*55", language="text")
     st.link_button("🚗 22 PIECES", get_gmap_link("22 PIECES Kyoto", "driving"))
-
+    
     c1, c2, c3 = st.columns(3)
     with c1:
         st.link_button("飯店🅿️1", get_gmap_link("34.98197527382824, 135.75692279994257", "driving"), width="stretch")
