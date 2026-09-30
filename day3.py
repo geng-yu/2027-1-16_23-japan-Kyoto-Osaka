@@ -98,7 +98,7 @@ def show():
 * 停車：本宮 10 台、奥宮 15 台
 * **17:45** 出發
 """)
-    st.info("""
+    st.error("""
 💡 **有就先停，上面路很小**
 """)
     st.code("MapCode：479 136 238*22", language="text")
