@@ -13,7 +13,7 @@ def show():
 * **07:45** 還車（先加滿油、拿走 ETC 明細）
 """)
     st.link_button("⛽ 加油站(24H)", get_gmap_link("34.97324984490103, 135.74648147860697", "driving"))
-    st.link_button("🚗 還車:豐田租車 京都站新幹線口店(AM 8點)", get_gmap_link("トヨタレンタカー 京都駅新幹線口店", "driving"))
+    st.link_button("🚶 NISSAN Rent A Car Kyoto", get_gmap_link("34.984459129730546, 135.7547459938482", "driving"))
     st.divider()
 
     # ==========================================
