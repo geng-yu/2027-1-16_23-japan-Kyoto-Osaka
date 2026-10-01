@@ -129,7 +129,7 @@ def show():
         st.link_button("⛽1 加油站(24H)", get_gmap_link("34.97324984490103, 135.74648147860697", "driving"), width="stretch")
     with c2:
         st.link_button("⛽2 加油站(24H)", get_gmap_link("34.99013004114884, 135.76410123994216", "driving"), width="stretch")
-    st.link_button("🚶 NISSAN Rent A Car Kyoto", get_gmap_link("34.984459129730546, 135.7547459938482", "walking"))
+    st.link_button("🚶 NISSAN Rent A Car Kyoto", get_gmap_link("34.984459129730546, 135.7547459938482", "driving"))
     c1, c2, c3 = st.columns(3)
     with c1:
         st.link_button("飯店🅿️1", get_gmap_link("34.98197527382824, 135.75692279994257", "driving"), width="stretch")
