@@ -113,7 +113,7 @@ def show():
     # ==========================================
     st.subheader("7️⃣ 回京都 → 還車")
     st.markdown("""
-* 加油 → **20:00 前**還車（滿油、拿 ETC 明細），明早不用趕
+* 加油 → **10pm 前**還車（滿油、拿 ETC 明細），明早不用趕
 * 🍽 晚餐：京都站周邊
 * 20:00前趕不到租車店→ 車停飯店附近投幣停車場，明早07:45還
 """)
@@ -129,7 +129,7 @@ def show():
         st.link_button("⛽1 加油站(24H)", get_gmap_link("34.97324984490103, 135.74648147860697", "driving"), width="stretch")
     with c2:
         st.link_button("⛽2 加油站(24H)", get_gmap_link("34.99013004114884, 135.76410123994216", "driving"), width="stretch")
-    st.link_button("🚗 還車:豐田租車 京都站新幹線口店(PM 8點前、滿油)", get_gmap_link("トヨタレンタカー 京都駅新幹線口店", "driving"))
+    st.link_button("🚶 NISSAN Rent A Car Kyoto", get_gmap_link("34.984459129730546, 135.7547459938482", "walking"))
     c1, c2, c3 = st.columns(3)
     with c1:
         st.link_button("飯店🅿️1", get_gmap_link("34.98197527382824, 135.75692279994257", "driving"), width="stretch")
