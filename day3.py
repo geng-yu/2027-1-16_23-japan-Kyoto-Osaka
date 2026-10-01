@@ -11,9 +11,10 @@ def show():
     st.subheader("1️⃣ 取車")
     st.markdown("""
 * **08:00** 京都站周邊租車店取車（48hr，雪胎＋ETC）
+* 預約號碼: 26093001336
 * 取車時確認：雪胎、ETC 卡插好、油箱滿、還車時間 D5 07:45
 """)
-    st.link_button("🚶 豐田租車 京都站新幹線口店", get_gmap_link("トヨタレンタカー 京都駅新幹線口店", "walking"))
+    st.link_button("🚶 NISSAN Rent A Car Kyoto", get_gmap_link("34.984459129730546, 135.7547459938482", "walking"))
     st.divider()
 
     # ==========================================
