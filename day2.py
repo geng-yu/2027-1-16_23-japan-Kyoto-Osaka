@@ -68,6 +68,8 @@ def show():
 * 抹茶果凍、抹茶聖代、抹茶蕎麥麵
 """)
     st.link_button("📍 河原町", get_gmap_link("35.00366275389363, 135.76729476517036", "transit"))
+    show_food_table("河原町-吃")
+    show_food_table("河原町-逛")
     st.divider()
 
     
