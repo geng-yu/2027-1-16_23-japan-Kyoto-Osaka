@@ -4,204 +4,1321 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>2027 京阪自由行手冊</title>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>2027 京阪</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🇯🇵</text></svg>">
   <style>
     :root {
-      --primary: #1a73e8;
-      --bg: #f5f6fa;
-      --card-bg: #ffffff;
-      --text: #202124;
-      --subtext: #5f6368;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.5;
-      padding-bottom: 40px;
-    }
-    header {
-      background: #ffffff;
-      padding: 16px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-      text-align: center;
-    }
-    header h1 { font-size: 1.25rem; font-weight: 700; }
-
-    /* 天數滑動導航列 */
-    .day-nav {
-      display: flex;
-      overflow-x: auto;
-      background: #ffffff;
-      padding: 10px 16px;
-      gap: 8px;
-      border-bottom: 1px solid #e0e0e0;
-      position: sticky;
-      top: 57px;
-      z-index: 99;
-      -webkit-overflow-scrolling: touch;
-    }
-    .day-nav::-webkit-scrollbar { display: none; }
-    .day-btn {
-      flex: 0 0 auto;
-      padding: 6px 14px;
-      border-radius: 20px;
-      border: 1px solid #dadce0;
-      background: transparent;
-      font-size: 0.9rem;
-      font-weight: 600;
-      cursor: pointer;
-      color: var(--subtext);
-    }
-    .day-btn.active {
-      background: var(--primary);
-      color: #ffffff;
-      border-color: var(--primary);
+      --bg-color: #ffffff;
+      --secondary-bg: #f0f2f6;
+      --text-color: #262730;
+      --subtext-color: #555867;
+      --border-color: rgba(128, 128, 128, 0.3);
+      --accent-red: #ff4b4b;
+      --accent-red-bg: rgba(255, 75, 75, 0.12);
+      --btn-bg: rgba(128, 128, 128, 0.18);
+      --btn-hover: rgba(128, 128, 128, 0.35);
+      --info-bg: #e8f4fd;
+      --info-border: #1c83e1;
+      --info-text: #0e4377;
+      --warn-bg: #fff8e6;
+      --warn-border: #f59e0b;
+      --warn-text: #7c4a03;
+      --err-bg: #fde8e8;
+      --err-border: #ff4b4b;
+      --err-text: #7f1d1d;
+      --code-bg: #f5f7f9;
+      --link-color: #0068c9;
     }
 
-    /* 內容容器 */
-    .container {
-      max-width: 680px;
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg-color: #0e1117;
+        --secondary-bg: #262730;
+        --text-color: #fafafa;
+        --subtext-color: #a3a8b8;
+        --border-color: rgba(250, 250, 250, 0.25);
+        --btn-bg: rgba(128, 128, 128, 0.22);
+        --btn-hover: rgba(128, 128, 128, 0.4);
+        --info-bg: rgba(28, 131, 225, 0.18);
+        --info-border: #3b9eff;
+        --info-text: #d6ecff;
+        --warn-bg: rgba(245, 158, 11, 0.18);
+        --warn-border: #fbbf24;
+        --warn-text: #fef3c7;
+        --err-bg: rgba(255, 75, 75, 0.18);
+        --err-border: #ff6b6b;
+        --err-text: #ffd6d6;
+        --code-bg: #1e222b;
+        --link-color: #58a6ff;
+      }
+    }
+
+    :root[data-theme="dark"] {
+      --bg-color: #0e1117;
+      --secondary-bg: #262730;
+      --text-color: #fafafa;
+      --subtext-color: #a3a8b8;
+      --border-color: rgba(250, 250, 250, 0.25);
+      --btn-bg: rgba(128, 128, 128, 0.22);
+      --btn-hover: rgba(128, 128, 128, 0.4);
+      --info-bg: rgba(28, 131, 225, 0.18);
+      --info-border: #3b9eff;
+      --info-text: #d6ecff;
+      --warn-bg: rgba(245, 158, 11, 0.18);
+      --warn-border: #fbbf24;
+      --warn-text: #fef3c7;
+      --err-bg: rgba(255, 75, 75, 0.18);
+      --err-border: #ff6b6b;
+      --err-text: #ffd6d6;
+      --code-bg: #1e222b;
+      --link-color: #58a6ff;
+    }
+
+    /* ===== 整頁只能上下滑，禁止左右 ===== */
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden !important;
+      max-width: 100vw !important;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.55;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .main-container {
+      max-width: 700px;
       margin: 0 auto;
-      padding: 16px;
+      padding: 16px 14px 60px 14px;
+      overflow-x: hidden;
     }
-    .day-content { display: none; }
-    .day-content.active { display: block; }
 
-    /* 行程景點卡片 */
-    .spot-card {
-      background: var(--card-bg);
-      border-radius: 14px;
-      padding: 16px;
-      margin-bottom: 14px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-    .spot-header {
+    /* ===== 標題與主題切換 ===== */
+    .top-bar {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 8px;
+      align-items: center;
     }
-    .time-tag {
-      font-size: 0.8rem;
-      font-weight: 700;
-      background: #e8f0fe;
-      color: var(--primary);
-      padding: 2px 8px;
-      border-radius: 6px;
+    h1 {
+      font-size: 1.85rem;
+      margin: 0 0 4px 0;
+      font-weight: 800;
     }
-    .spot-name {
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-top: 4px;
+    .theme-toggle {
+      background: var(--secondary-bg);
+      border: 1px solid var(--border-color);
+      color: var(--text-color);
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    .spot-desc {
-      font-size: 0.95rem;
-      color: var(--subtext);
+    .caption {
+      font-size: 0.88rem;
+      color: var(--subtext-color);
       margin-bottom: 12px;
     }
 
-    /* Google Maps 導航按鈕 */
-    .map-btn {
-      display: inline-flex;
+    /* ===== 日期選單：只有這一列可以左右滑 ===== */
+    .day-radio-group {
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      overflow-x: auto !important;
+      overflow-y: hidden;
+      gap: 8px;
+      padding-bottom: 6px;
+      margin-bottom: 12px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .day-radio-group::-webkit-scrollbar {
+      display: none;
+    }
+    .day-option {
+      flex: 0 0 auto;
+      background-color: var(--secondary-bg);
+      color: var(--text-color);
+      padding: 6px 10px;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-width: 74px;
+      height: 55px;
+      font-size: 14px;
+      line-height: 1.3;
+      font-weight: bold;
+      white-space: pre-wrap;
+      user-select: none;
+    }
+    .day-option.active {
+      border: 2px solid var(--accent-red) !important;
+      background-color: var(--accent-red-bg) !important;
+    }
+
+    /* ===== 優惠券區塊 ===== */
+    .coupon-box {
+      font-size: 0.92rem;
+      margin: 8px 0 16px 0;
+      line-height: 1.7;
+    }
+    .coupon-box a {
+      color: var(--link-color);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .coupon-box a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== 內容與排版 ===== */
+    .day-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin: 12px 0 4px 0;
+    }
+    .subheader {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 18px 0 8px 0;
+    }
+    ul {
+      margin: 6px 0 12px 0;
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 4px;
+      font-size: 0.96rem;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid var(--border-color);
+      margin: 18px 0;
+    }
+    .border-card {
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin-bottom: 14px;
+    }
+    .border-card h3 {
+      margin: 0 0 6px 0;
+      font-size: 1.1rem;
+    }
+
+    /* ===== 導航按鈕：灰底、白框（亮模式自動變黑框） ===== */
+    .link-btn {
+      display: flex;
       align-items: center;
       justify-content: center;
       width: 100%;
-      padding: 10px 0;
-      background: #f1f3f4;
-      color: #1a73e8;
+      padding: 9px 10px;
+      margin: 6px 0;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 0.92rem;
+      border: 1.5px solid var(--text-color) !important;
+      background-color: var(--btn-bg) !important;
+      color: var(--text-color) !important;
       text-decoration: none;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: background-color 0.15s;
+    }
+    .link-btn:hover, .link-btn:active {
+      background-color: var(--btn-hover) !important;
+    }
+
+    /* ===== 多欄並排：手機不換行、不撐寬 ===== */
+    .cols {
+      display: flex;
+      flex-wrap: nowrap !important;
+      gap: 6px;
+      width: 100%;
+      max-width: 100%;
+      margin: 4px 0;
+    }
+    .cols > .col {
+      min-width: 0 !important;
+      flex: 1 1 0 !important;
+    }
+
+    /* ===== MapCode 區塊 ===== */
+    .code-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--code-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 6px 10px;
+      margin: 6px 0;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.84rem;
+      overflow-x: auto;
+    }
+    .copy-btn {
+      background: transparent;
+      border: 1px solid var(--border-color);
+      color: var(--subtext-color);
+      border-radius: 6px;
+      padding: 2px 7px;
+      font-size: 0.75rem;
+      cursor: pointer;
+      flex-shrink: 0;
+      margin-left: 6px;
+    }
+
+    /* ===== 摺疊區 (Expander) 與 表格 ===== */
+    details.expander {
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      margin: 10px 0;
+      background-color: var(--bg-color);
+      overflow: hidden;
+    }
+    details.expander summary {
+      padding: 10px 14px;
       font-weight: 600;
       font-size: 0.95rem;
-      border-radius: 8px;
-      transition: background 0.2s;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--secondary-bg);
     }
-    .map-btn:active { background: #e8eaed; }
+    details.expander summary::-webkit-details-marker {
+      display: none;
+    }
+    details.expander summary::after {
+      content: "▼";
+      font-size: 0.75rem;
+      transition: transform 0.2s;
+    }
+    details.expander[open] summary::after {
+      transform: rotate(180deg);
+    }
+    .expander-body {
+      padding: 10px 12px;
+    }
+
+    /* ===== Markdown 表格自動換行、不撐寬 ===== */
+    .food-table {
+      width: 100% !important;
+      table-layout: fixed;
+      border-collapse: collapse;
+      margin-top: 6px;
+    }
+    .food-table th, .food-table td {
+      border: 1px solid var(--border-color);
+      white-space: normal !important;
+      word-break: break-word;
+      font-size: 13px;
+      padding: 6px 6px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .food-table th {
+      background-color: var(--secondary-bg);
+      font-weight: 700;
+    }
+    .food-table th:nth-child(1), .food-table td:nth-child(1) { width: 36%; }
+    .food-table th:nth-child(2), .food-table td:nth-child(2) { width: 22%; }
+    .food-table td a {
+      color: var(--link-color);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* ===== 提示框 (info / warning / error) ===== */
+    .alert {
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin: 12px 0;
+      font-size: 0.93rem;
+      border-left: 4px solid;
+    }
+    .alert p { margin: 0 0 6px 0; font-weight: 700; }
+    .alert ul { margin: 4px 0 0 0; }
+    .alert-info {
+      background-color: var(--info-bg);
+      border-left-color: var(--info-border);
+      color: var(--info-text);
+    }
+    .alert-warn {
+      background-color: var(--warn-bg);
+      border-left-color: var(--warn-border);
+      color: var(--warn-text);
+    }
+    .alert-error {
+      background-color: var(--err-bg);
+      border-left-color: var(--err-border);
+      color: var(--err-text);
+    }
+
+    .day-pane { display: none; }
+    .day-pane.active { display: block; }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>🇯🇵 2027 京阪 8 天 7 夜行程</h1>
-  </header>
+<div class="main-container">
+  <div class="top-bar">
+    <h1>🇯🇵 2027 京阪</h1>
+    <button class="theme-toggle" id="themeBtn" title="切換深淺色模式">🌓</button>
+  </div>
+  <div class="caption">1/16~23 任天堂‧宇治‧琵琶湖‧貴船‧天橋立‧舟屋‧環球影城</div>
 
-  <!-- 天數切換列 -->
-  <nav class="day-nav">
-    <button class="day-btn active" onclick="switchDay('d1', this)">1/16 (五)</button>
-    <button class="day-btn" onclick="switchDay('d2', this)">1/17 (六)</button>
-    <button class="day-btn" onclick="switchDay('d3', this)">1/18 (日)</button>
-    <button class="day-btn" onclick="switchDay('d4', this)">1/19 (一)</button>
-    <button class="day-btn" onclick="switchDay('d5', this)">1/20 (二)</button>
-    <button class="day-btn" onclick="switchDay('d6', this)">1/21 (三)</button>
-    <button class="day-btn" onclick="switchDay('d7', this)">1/22 (四)</button>
-    <button class="day-btn" onclick="switchDay('d8', this)">1/23 (五)</button>
-  </nav>
+  <!-- 橫向日期選單 -->
+  <div class="day-radio-group" id="dayNav"></div>
 
-  <div class="container">
-
-    <!-- Day 1 -->
-    <section id="d1" class="day-content active">
-      <div class="spot-card">
-        <div class="spot-header">
-          <div>
-            <span class="time-tag">12:30</span>
-            <div class="spot-name">關西國際機場 (KIX)</div>
-          </div>
-        </div>
-        <div class="spot-desc">抵達關西機場第一航廈，領取實體票券或儲值交通卡，搭乘 HARUKA 特急前往京都。</div>
-        <!-- 點擊直接開啟 Google Maps App 並設定目的地導航 -->
-        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=關西國際機場" target="_blank">
-          🧭 導航至 關西機場
-        </a>
-      </div>
-
-      <div class="spot-card">
-        <div class="spot-header">
-          <div>
-            <span class="time-tag">15:00</span>
-            <div class="spot-name">京都車站 & 飯店 Check-in</div>
-          </div>
-        </div>
-        <div class="spot-desc">HARUKA 抵達京都車站，先至飯店辦理入住並卸下大件行李。</div>
-        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=京都車站" target="_blank">
-          📍 在地圖中查看 京都車站
-        </a>
-      </div>
-    </section>
-
-    <!-- Day 2 -->
-    <section id="d2" class="day-content">
-      <div class="spot-card">
-        <div class="spot-header">
-          <div>
-            <span class="time-tag">09:00</span>
-            <div class="spot-name">清水寺 & 二年坂三年坂</div>
-          </div>
-        </div>
-        <div class="spot-desc">早起避開人潮，參觀清水舞台、音羽之瀑，隨後沿石階散步。</div>
-        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=清水寺" target="_blank">
-          🧭 導航至 清水寺
-        </a>
-      </div>
-    </section>
-
-    <!-- Day 3 ~ Day 8 依此類推增加 -->
-
+  <!-- 優惠券連結 -->
+  <div class="coupon-box">
+    🎫 <a href="https://japanportal.donki-global.com/coupon/?ptcd=0015000103" target="_blank" rel="noopener">唐吉訶德</a>｜
+    <a href="https://d1grca2t3zpuug.cloudfront.net/2025/06/biccameracoupontwhk-1787x2527-1750209030.webp" target="_blank" rel="noopener">BicCamera</a>｜
+    <a href="https://osaka.letsgojp.com/coupon/389838/" target="_blank" rel="noopener">愛電王</a><br>
+    💊 <a href="https://d1grca2t3zpuug.cloudfront.net/2025/01/20250131matsucoupontw-1631x2475.webp" target="_blank" rel="noopener">松本清/Cocokara</a>｜
+    <a href="https://d1grca2t3zpuug.cloudfront.net/2023/08/daikokucoupon-1751874722.webp" target="_blank" rel="noopener">大國藥局</a>｜
+    <a href="https://d1grca2t3zpuug.cloudfront.net/2025/02/sugidrug20260228-855x1300.webp" target="_blank" rel="noopener">SUGI藥局</a>
   </div>
 
-  <script>
-    function switchDay(dayId, btn) {
-      document.querySelectorAll('.day-content').forEach(el => el.classList.remove('active'));
-      document.querySelectorAll('.day-btn').forEach(el => el.classList.remove('active'));
-      document.getElementById(dayId).classList.add('active');
-      btn.classList.add('active');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  </script>
+  <!-- 每日行程容器 -->
+  <div id="daysContainer"></div>
+</div>
+
+<script>
+// ==========================================
+// 1. 產生導航網址 (完全比照 utils.py get_gmap_link)
+// ==========================================
+function getGmapLink(query, mode = "transit") {
+  const baseUrl = "https://www.google.com/maps/dir/?api=1";
+  return `${baseUrl}&destination=${query}&travelmode=${mode}`;
+}
+
+// ==========================================
+// 2. 美食與商店資料庫 (完全比照 utils.py data_source)
+// ==========================================
+const DATA_SOURCE = {
+  "京都飯店-吃": [
+    {"店名": "京都拉麵小路 (京都駅ビル10F)", "時間": "11:00-22:00", "備註": "8間拉麵"},
+    {"店名": "本家 第一旭 たかばし本店", "時間": "06:00-01:00", "備註": "京都醬油拉麵名店，週四休，早餐也開"},
+    {"店名": "新福菜館 本店", "時間": "09:00-22:00", "備註": "第一旭隔壁，黑醬油炒飯，週三休"},
+    {"店名": "京都タワーサンド B1 美食街", "時間": "11:00-23:00", "備註": "京都塔樓下"},
+    {"店名": "JR京都伊勢丹 B2 食品館", "時間": "10:00-20:00", "備註": "便當、甜點、伴手禮"},
+    {"店名": "ヨドバシ京都 6F 餐廳街", "時間": "11:00-23:00", "備註": "車站北口對面"}
+  ],
+  "京都飯店-逛": [
+    {"店名": "京都アバンティ", "時間": "10:00-21:00", "備註": "京都AVANTI｜GU、藥妝、ABC、百圓店"},
+    {"店名": "ドン・キホーテ 京都アバンティ店", "時間": "24H", "備註": "唐吉訶德 AVANTI店"},
+    {"店名": "イオンモールKYOTO", "時間": "10:00-21:00", "備註": "AEON MALL京都｜UQ、MUJI、MontBell、ZARA、3coins"},
+    {"店名": "ダイコクドラッグ京都駅八条口店", "時間": "10:05-22:50", "備註": "大國藥局 京都站八条口店"},
+    {"店名": "ビックカメラ JR京都駅店", "時間": "10:00-21:00", "備註": "BicCamera JR京都站店"},
+    {"店名": "ヨドバシカメラ マルチメディア京都", "時間": "09:30-22:00", "備註": "Yodobashi電器"},
+    {"店名": "京都ポルタ", "時間": "10:00-20:30", "備註": "京都Porta地下街｜伴手禮、MUJI、UQ、3coins"}
+  ],
+  "宇治": [
+    {"店名": "中村藤吉本店", "時間": "10:00-17:00", "備註": "抹茶果凍、抹茶蕎麥麵，會排隊"},
+    {"店名": "伊藤久右衛門 宇治本店", "時間": "10:00-18:00", "備註": "抹茶聖代，伴手禮"},
+    {"店名": "通圓 (宇治橋旁)", "時間": "09:30-17:30", "備註": "850年老茶店，抹茶冰"}
+  ],
+  "琵琶湖山谷": [
+    {"店名": "Terrace Cafe Biwako Terrace", "時間": "09:00-17:00", "備註": "山頂站旁主餐廳，咖哩、漢堡排"},
+    {"店名": "Cafe Stand at North Terrace", "時間": "10:00-16:00", "備註": "北Terrace外帶式，琵琶湖咖哩¥1,300"},
+    {"店名": "Cafe 360 Biwako Valley", "時間": "10:00-15:30", "備註": "蓬萊山頂，最後點餐15:00"},
+    {"店名": "Biwako Valley Ropeway", "時間": "09:30-16:30", "備註": "雪橇、手套、暖暖包、雪具租借"}
+  ],
+  "白鬚神社": [
+    {"店名": "白鬚喫茶", "時間": "10:00-18:00", "備註": "咖啡店，2樓看鳥居，布丁有名"},
+    {"店名": "Seikousha Cafe ルヴァン", "時間": "11:00-17:00", "備註": "湖邊小屋咖啡"},
+    {"店名": "道の駅 藤樹の里あどがわ", "時間": "09:00-18:00", "備註": "農產直賣所、十割蕎麥美食街、炸雞丼、Lawson"}
+  ],
+  "浮御堂": [
+    {"店名": "道の駅 びわ湖大橋米プラザ", "時間": "09:00-17:00", "備註": "伴手禮、2樓看琵琶湖大橋，廁所24H"},
+    {"店名": "Lameri Store 堅田", "時間": "11:30-15:00", "備註": "咖哩三拼很紅，週二五休"},
+    {"店名": "What's The Life Style", "時間": "11:00-16:00 / 17:00-21:00", "備註": "漢堡排、巴斯克蛋糕，週二三休"}
+  ],
+  "湖西其他": [
+    {"店名": "びわ湖こどもの国", "時間": "09:00-17:00", "備註": "免門票、停車¥500，超大戶外遊具＋室內遊戲館"},
+    {"店名": "Namiki Cafe Metasequoia", "時間": "10:30-16:30", "備註": "鬆餅、咖哩，停車免費"}
+  ],
+  "天橋立": [
+    {"店名": "Goods Stall Amanohashidate View Land", "時間": "09:00-18:00", "備註": "單軌售票機旁賣店，濃郁牛奶布丁¥450"},
+    {"店名": "Amanohashidate View Land", "時間": "09:00-17:00", "備註": "山頂賣店霜淇淋、輕食"}
+  ],
+  "智恩寺沙洲": [
+    {"店名": "文珠荘 勘七茶屋", "時間": "09:00-17:00", "備註": "300年老店，智慧之餅¥270＋抹茶¥400，週三四休"},
+    {"店名": "吉野茶屋 天橋立", "時間": "10:00-17:30", "備註": "炸物：大牡蠣、可樂餅、竹輪"},
+    {"店名": "はしだて茶屋", "時間": "10:30-16:00", "備註": "蛤蜊丼／蛤蜊烏龍麵，炭火烤牡蠣，週四休"}
+  ],
+  "傘松籠神社": [
+    {"店名": "茶房 かむながら", "時間": "12:00-16:30", "備註": "停車場內，抹茶＋和菓子，週三休"},
+    {"店名": "Amanohashidate Winery", "時間": "10:00-17:00", "備註": "去伊根路上5分，午餐¥2,000吃到飽1hr、霜淇淋，週三休"}
+  ],
+  "伊根": [
+    {"店名": "兵四楼 伊根", "時間": "11:00-14:00", "備註": "鰤魚涮涮鍋、海鮮丼"},
+    {"店名": "舟屋食堂 伊根", "時間": "11:00-15:00", "備註": "烤魚定食"},
+    {"店名": "INE CAFE", "時間": "11:00-17:00", "備註": "舟屋日和內海景咖啡"},
+    {"店名": "向井酒造", "時間": "09:00-17:00", "備註": "伊根滿開紅色米酒，伴手禮"}
+  ],
+  "舞鶴": [
+    {"店名": "道の駅 舞鶴港とれとれセンター", "時間": "09:00-18:00", "備註": "海鮮市場，松葉蟹、牡蠣現買現烤"},
+    {"店名": "舞鶴赤れんがパーク", "時間": "09:00-17:00", "備註": "紅磚倉庫，海軍咖哩、咖啡"}
+  ],
+  "金閣寺": [
+    {"店名": "金閣寺 不動釜茶所", "時間": "09:00-16:30", "備註": "抹茶＋金箔和菓子"}
+  ],
+  "teamLab周邊": [
+    {"店名": "イオンモールKYOTO", "時間": "10:00-21:00", "備註": "八條口，1F KOHYO超市、UNIQLO、MUJI、mont-bell；teamLab進場前上廁所買水"},
+    {"店名": "本家 第一旭 たかばし本店", "時間": "06:00-01:00", "備註": "teamLab走12分，京都醬油拉麵"}
+  ],
+  "錦市場": [
+    {"店名": "三木鶏卵", "時間": "09:00-17:00", "備註": "玉子燒"},
+    {"店名": "こんなもんじゃ 錦市場", "時間": "10:00-18:00", "備註": "豆乳甜甜圈8個¥400、豆乳霜淇淋、糰子"},
+    {"店名": "カリカリ博士 錦市場", "時間": "10:00-20:00", "備註": "章魚燒¥260售票機點餐"},
+    {"店名": "麩嘉 錦店", "時間": "09:30-17:30", "備註": "麩饅頭（艾草＋紅豆）"},
+    {"店名": "錦天満宮", "時間": "08:00-20:00", "備註": "市場東端，摸牛、御神水"}
+  ],
+  "新京極寺町": [
+    {"店名": "天丼まきの 京都寺町店", "時間": "11:00-20:30", "備註": "天丼＋蛤蜊湯份量大"},
+    {"店名": "名代とんかつ かつくら 三条本店", "時間": "11:00-20:30", "備註": "炸豬排、自己磨芝麻"},
+    {"店名": "京極かねよ", "時間": "11:30-15:00 / 17:00-20:00", "備註": "鰻魚錦絲丼，⚠️週三休"},
+    {"店名": "京都ロフト ミーナ京都", "時間": "11:00-21:00", "備註": "文具雜貨3層，退稅櫃台到20:30"},
+    {"店名": "GU ミーナ京都", "時間": "11:00-21:00", "備註": "Loft樓上7F"},
+    {"店名": "無印良品 京都BAL", "時間": "11:00-20:00", "備註": "河原町三条"}
+  ],
+  "四條河原町": [
+    {"店名": "Nintendo KYOTO", "時間": "10:00-20:00", "備註": "京都高島屋S.C. 7F，京都限定商品"},
+    {"店名": "ポケモンセンターキョウト", "時間": "10:00-20:00", "備註": "SUINA室町4F，四條烏丸站直結"},
+    {"店名": "京都高島屋 B1 食品館", "時間": "10:00-20:00", "備註": "便當甜點"},
+    {"店名": "一蘭 京都河原町店", "時間": "24hr", "備註": "備案"}
+  ],
+  "二條城鴨川": [
+    {"店名": "茶房 前田 二条城", "時間": "09:30-16:00", "備註": "抹茶、刨冰、冰淇淋汽水"},
+    {"店名": "スターバックス 京都三条大橋店", "時間": "08:00-23:00", "備註": "河景座位、廁所"},
+    {"店名": "祇園辻利 四条祇園本店", "時間": "10:30-20:00", "備註": "抹茶霜淇淋、抹茶漂浮"}
+  ],
+  "梅田": [
+    {"店名": "UNIQLO UMEDA", "時間": "10:00-21:00", "備註": "LINKS UMEDA 1-2F"},
+    {"店名": "GU LINKS UMEDA", "時間": "10:00-21:00", "備註": "同棟3F"},
+    {"店名": "無印良品 グランフロント大阪", "時間": "11:00-21:00", "備註": "北館2-4F三層樓"},
+    {"店名": "モンベル うめきた店", "時間": "11:00-21:00", "備註": "Grand Front南館5F"},
+    {"店名": "UMEDA FOOD HALL 阪急三番街", "時間": "11:00-23:00", "備註": "北館B2大美食街"},
+    {"店名": "LINKS UMEDA 8F 餐廳街", "時間": "11:00-23:00", "備註": "燒肉、拉麵、迴轉壽司"}
+  ],
+  "海遊館": [
+    {"店名": "天保山大観覧車", "時間": "10:00-21:00", "備註": "海遊館旁，15分一圈，Klook比現場便宜"},
+    {"店名": "なにわ食いしんぼ横丁", "時間": "11:00-20:00", "備註": "天保山Marketplace 2F昭和風美食街"},
+    {"店名": "レゴランド ディスカバリーセンター大阪", "時間": "10:00-18:00", "備註": "Marketplace 3F室內樂高，3-10歲，2-3hr；⚠️現場不賣票，要前一天Klook買"},
+    {"店名": "Captain Line 海遊館 乗り場", "時間": "10:00-18:00", "備註": "回環球城的船在海遊館西側碼頭，約每小時一班，先看時刻表"}
+  ],
+  "環球城": [
+    {"店名": "大阪たこ焼きミュージアム Universal Citywalk", "時間": "11:00-22:00", "備註": "Citywalk 4F"},
+    {"店名": "Gottie's BEEF Universal Citywalk", "時間": "11:00-23:00", "備註": "5F，和牛牛排、漢堡排"},
+    {"店名": "Bubba Gump Shrimp Universal Citywalk", "時間": "11:00-23:00", "備註": "5F，阿甘蝦美式餐廳"},
+    {"店名": "Hamburg 2910 Universal Citywalk", "時間": "11:00-23:00", "備註": "5F，漢堡排專門"},
+    {"店名": "神戸元町ドリア Universal Citywalk", "時間": "11:00-23:00", "備註": "5F，焗烤飯、鐵板蛋包飯"},
+    {"店名": "ローソン ユニバーサルシティウォーク大阪店", "時間": "24hr", "備註": "早餐、飲料"}
+  ],
+  "環球影城": [
+    {"店名": "Kinopio's Cafe (キノピオ・カフェ)", "時間": "開園-閉園", "備註": "任天堂世界區內，蘑菇湯、瑪利歐漢堡，要有整理券"},
+    {"店名": "Yoshi's Snack Island", "時間": "開園-閉園", "備註": "任天堂世界區內，耀西蛋造型點心、飲料"},
+    {"店名": "Three Broomsticks (三本の箒)", "時間": "開園-閉園", "備註": "哈利波特區，英式烤雞、奶油啤酒"},
+    {"店名": "Studio Stars Restaurant", "時間": "開園-閉園", "備註": "好萊塢區大門附近，自助取餐式定食"},
+    {"店名": "Mel's Drive-In", "時間": "開園-閉園", "備註": "好萊塢區，美式漢堡薯條"},
+    {"店名": "Happiness Cafe", "時間": "開園-閉園", "備註": "小小兵區旁，小小兵造型餐"},
+    {"店名": "Louie's N.Y. Pizza Parlor", "時間": "開園-閉園", "備註": "紐約區，披薩、義大利麵"},
+    {"店名": "Discovery Restaurant", "時間": "開園-閉園", "備註": "侏羅紀區，火雞腿、漢堡"},
+    {"店名": "Snoopy's Backlot Cafe", "時間": "開園-閉園", "備註": "Wonderland 區，三明治、甜點"},
+    {"店名": "Beverly Hills Boulangerie", "時間": "開園-閉園", "備註": "入口右手邊，麵包三明治"}
+  ],
+  "臨空港": [
+    {"店名": "RINKU FOOD PARK", "時間": "10:00-20:00", "備註": "美食街，披薩、拉麵、天婦羅"},
+    {"店名": "豆狸 りんくうプレミアムアウトレット", "時間": "11:00-21:00", "備註": "2F天丼、烏龍麵"},
+    {"店名": "りんくうタウン駅 コインロッカー", "時間": "-", "備註": "站內置物櫃¥800"}
+  ],
+  "關空": [
+    {"店名": "551蓬莱 関西空港店", "時間": "07:00-21:00", "備註": "T1 2F國內線側，豚まん外帶上飛機當最後一餐，會排隊"},
+    {"店名": "関西国際空港 第1ターミナル", "時間": "-", "備註": "2F餐廳街（拉麵、烏龍、咖哩）、3F伴手禮街；稅關KIOSK在出境層，先做持出確認再託運"}
+  ]
+};
+
+// 產生 UI 元件輔助函式
+function btn(label, query, mode = "transit") {
+  return `<a class="link-btn" href="${getGmapLink(query, mode)}" target="_blank" rel="noopener">${label}</a>`;
+}
+
+function codeBlock(text) {
+  const rawCode = text.includes("：") ? text.split("：")[1].trim() : text;
+  return `
+    <div class="code-box">
+      <span>${text}</span>
+      <button class="copy-btn" onclick="copyText('${rawCode}', this)">複製</button>
+    </div>
+  `;
+}
+
+function copyText(str, el) {
+  navigator.clipboard.writeText(str).then(() => {
+    const old = el.innerText;
+    el.innerText = "已複製!";
+    setTimeout(() => { el.innerText = old; }, 1200);
+  });
+}
+
+function showFoodTable(region) {
+  // 相容 day2.py 的「河原町-吃」與「河原町-逛」
+  const aliasMap = {
+    "河原町-吃": "四條河原町",
+    "河原町-逛": "新京極寺町"
+  };
+  const actualKey = aliasMap[region] || region;
+  const rows = DATA_SOURCE[actualKey];
+  if (!rows) return "";
+
+  const trs = rows.map(r => {
+    const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(r["店名"])}`;
+    const note = r["備註"].replace(/\|/g, "｜");
+    return `<tr>
+      <td><a href="${url}" target="_blank" rel="noopener">📍 ${r["店名"]}</a></td>
+      <td>${r["時間"]}</td>
+      <td>${note}</td>
+    </tr>`;
+  }).join("");
+
+  return `
+    <details class="expander">
+      <summary>🍽️ ${region} 周邊</summary>
+      <div class="expander-body">
+        <div class="caption" style="margin-bottom:6px;">營業時間以官網為準，點店名開 Google Maps</div>
+        <table class="food-table">
+          <thead><tr><th>店名</th><th>時間</th><th>備註</th></tr></thead>
+          <tbody>${trs}</tbody>
+        </table>
+      </div>
+    </details>
+  `;
+}
+
+// ==========================================
+// 3. 每日行程定義 (Day 1 ~ Day 8)
+// ==========================================
+const TRIP_DAYS = [
+  {
+    key: "Day1\n1/16 六",
+    date: "2027-01-16",
+    fullTitle: "Day 1(六): 出發 & 京都",
+    caption: "1/16",
+    html: `
+      <div class="border-card">
+        <h3>🛫 國泰航空 CX564</h3>
+        <div>11:15 TPE 起飛 → 14:45 KIX 抵達</div>
+      </div>
+
+      <div class="subheader">1️⃣ 關空 → Haruka</div>
+      <ul>
+        <li><strong>14:45</strong> 落地 → 入關約 1hr</li>
+        <li><strong>15:45</strong> JR 關西機場站 搭 <strong>Haruka</strong>（直達京都約 75 分）</li>
+      </ul>
+      ${btn("🚶 JR 關西機場站 (Haruka 月台)", "Kansai-Airport Station JR", "walking")}
+      <details class="expander">
+        <summary>💡 落地要做的事</summary>
+        <div class="expander-body">
+          <ul>
+            <li>買 <strong>ICOCA(兒童)</strong> 或用手機 Suica</li>
+            <li>便利商店買水</li>
+          </ul>
+        </div>
+      </details>
+      <hr>
+
+      <div class="subheader">2️⃣ 京都站 → 22 PIECES</div>
+      <ul>
+        <li><strong>17:00</strong> 抵京都站 → 走路到飯店</li>
+      </ul>
+      ${btn("🏠 22 PIECES", "22 PIECES Kyoto", "walking")}
+      <hr>
+
+      <div class="subheader">3️⃣ 晚餐：京都站</div>
+      <ul>
+        <li><strong>京都拉麵小路</strong>（京都駅ビル 10F）</li>
+      </ul>
+      ${btn("📍 京都拉麵小路", "Kyoto Ramen Koji", "walking")}
+      ${showFoodTable("京都飯店-吃")}
+      ${showFoodTable("京都飯店-逛")}
+    `
+  },
+  {
+    key: "Day2\n1/17 日",
+    date: "2027-01-17",
+    fullTitle: "Day 2(日): 任天堂博物館 & 宇治",
+    caption: "1/17",
+    html: `
+      <div class="subheader">1️⃣ 任天堂博物館</div>
+      <ul>
+        <li><strong>10:00</strong> 時段入館，館內 3-4hr</li>
+        <li><strong>入館證</strong>：入口核對證件，姓名要跟護照一致</li>
+        <li><strong>體驗區</strong>：每人 10 枚硬幣，大型控制器、花札等每項扣幣，先看想玩什麼再花</li>
+        <li><strong>午餐</strong>：館內 <strong>HATENA BURGER</strong></li>
+        <li><strong>紀念品</strong>：館內限定，最後再逛</li>
+      </ul>
+      ${btn("📍 任天堂博物館", "Nintendo Museum", "transit")}
+      <hr>
+
+      <div class="subheader">2️⃣ 宇治</div>
+      <ul>
+        <li><strong>13:30</strong> JR 小倉 → <strong>宇治</strong>（1 站，約 3 分）</li>
+      </ul>
+      ${btn("🚃 JR 宇治站", "JR Uji Station", "transit")}
+      ${showFoodTable("宇治")}
+      <hr>
+
+      <div class="subheader">3️⃣ 平等院鳳凰堂</div>
+      ${btn("📍 平等院", "Byodoin Temple", "walking")}
+      <hr>
+
+      <div class="subheader">4️⃣ 宇治橋 → ○ 宇治上神社</div>
+      <ul>
+        <li>從平等院走表參道 → <strong>宇治橋</strong>（紫式部像）→ 過橋走 10 分 → <strong>宇治上神社</strong></li>
+      </ul>
+      ${btn("📍 宇治上神社", "Ujigami Shrine", "walking")}
+      <hr>
+
+      <div class="subheader">5️⃣ 🍽 中村藤吉 平等院店</div>
+      <ul>
+        <li>抹茶果凍、抹茶聖代、抹茶蕎麥麵</li>
+      </ul>
+      ${btn("📍 中村藤吉 平等院店", "34.891509646318, 135.80624121683988", "walking")}
+      <hr>
+
+      <div class="subheader">6️⃣ 河原町</div>
+      <ul>
+        <li>抹茶果凍、抹茶聖代、抹茶蕎麥麵</li>
+      </ul>
+      ${btn("📍 河原町", "35.00366275389363, 135.76729476517036", "transit")}
+      ${showFoodTable("河原町-吃")}
+      ${showFoodTable("河原町-逛")}
+      <hr>
+
+      <div class="subheader">6️⃣ 22 PIECES</div>
+      <ul>
+        <li><strong>17:00</strong> JR 宇治 → 京都站（普通車約 30 分，快速約 20 分）</li>
+        <li>🍽 晚餐：京都站周邊</li>
+      </ul>
+      ${btn("🏠 22 PIECES", "22 PIECES Kyoto", "transit")}
+      ${showFoodTable("京都飯店-吃")}
+      ${showFoodTable("京都飯店-逛")}
+
+      <div class="alert alert-info">
+        <p>💡 提醒：決定明天是雪日還是舟屋日</p>
+        <ul>
+          <li>看 <strong>琵琶湖山谷官網 TOP 頁</strong> 營業情報（纜車有沒有預告停駛）</li>
+          <li>看隔天 <strong>風速</strong> 預報：風小 → 雪日；風大 → 舟屋日</li>
+        </ul>
+      </div>
+    `
+  },
+  {
+    key: "Day3\n1/18 一",
+    date: "2027-01-18",
+    fullTitle: "Day 3(一): 雪日｜琵琶湖山谷 & 湖西",
+    caption: "1/18 (一)｜雪日（可與 D4 對調）｜自駕 Day1",
+    html: `
+      <div class="subheader">1️⃣ 取車</div>
+      <ul>
+        <li><strong>08:00</strong> 京都站周邊租車店取車（48hr，雪胎＋ETC）</li>
+        <li>預約號碼: 26093001336</li>
+        <li>取車時確認：雪胎、ETC 卡插好、油箱滿、還車時間 D5 07:45</li>
+      </ul>
+      ${btn("🚶 NISSAN Rent A Car Kyoto", "34.984459129730546, 135.7547459938482", "walking")}
+      <hr>
+
+      <div class="subheader">2️⃣ 琵琶湖山谷 (びわ湖バレイ)</div>
+      <ul>
+        <li><strong>08:50</strong> 到山麓站停車場，<strong>09:30</strong> 冬季第一班纜車上山（09:45 到山頂）</li>
+        <li><strong>09:45-10:20</strong> ★琵琶湖 Terrace 先拍（山頂站旁，早上逆光但人最少）</li>
+        <li><strong>10:30-12:00</strong> ★雪鞋健行（山頂集合；<strong>要事前預約</strong>，官網 12 月開放後訂平日場）</li>
+        <li><strong>12:00-12:45</strong> ★Snow Land 雪橇（山頂站正前方，雪橇租 ¥500/60 分）</li>
+        <li><strong>🎫 票</strong>：買「施設利用券（雪遊び／びわ湖テラス用）」＝ 纜車來回＋Terrace＋Snow Land；<strong>不要買滑雪券</strong>；雪鞋健行另外付
+          <ul><li>參考價 大人 ¥4,000 / 小學生 ¥2,000（Web 前售從 ¥3,200 / ¥1,600 起）</li></ul>
+        </li>
+        <li>○ Café 360 要再搭ホーライ吊椅（10:00-15:30），今天沒時間，跳過</li>
+        <li>🍽 午餐：早上超市買飯捲，12:45 下山前在山頂吃，或車上吃</li>
+        <li><strong>13:00</strong> 下山（比原本晚 30 分，下午浮御堂砍掉補回來）</li>
+      </ul>
+      ${codeBlock("MapCode：263 094 843*44")}
+      ${btn("🚗 琵琶湖山谷 纜車山麓站🅿️", "35.202950140659915, 135.90652083462672", "driving")}
+      ${showFoodTable("琵琶湖山谷")}
+      <hr>
+
+      <div class="subheader">3️⃣ 白鬚神社 湖中鳥居</div>
+      <ul>
+        <li><strong>13:00</strong> 到（往北約25分）</li>
+        <li>下午順光，站<strong>社務所前展望台</strong>拍鳥居，40 分</li>
+        <li>⚠️ 國道 161 車多，<strong>不要為了拍照橫越馬路</strong></li>
+        <li><strong>13:45</strong> 出發</li>
+      </ul>
+      ${codeBlock("MapCode：263 376 499*57")}
+      ${btn("⛩️ 白鬚神社", "35.274213263032365, 136.01084250538855", "driving")}
+      ${showFoodTable("白鬚神社")}
+      <hr>
+
+      <div class="subheader">4️⃣ 浮御堂(備)</div>
+      <ul>
+        <li><strong>浮御堂</strong>（回程順路）：湖上佛堂，20分，14:15-14:35</li>
+        <li><strong>▲ 琵琶湖兒童之國公園</strong>（往北10分）</li>
+        <li><strong>▲ 水杉林蔭大道</strong>（再往北40分）<strong>只有放棄貴船才去</strong></li>
+      </ul>
+      ${codeBlock("浮御堂MapCode：616 065 775*62")}
+      <div class="cols">
+        <div class="col">${btn("🚗 浮御堂🅿️", "35.110234089508126, 135.92081966978157", "driving")}</div>
+        <div class="col">${btn("🚗 琵琶湖兒童之國公園", "Biwako Kodomo no Kuni", "driving")}</div>
+        <div class="col">${btn("🚗 水杉大道", "Metasequoia Namiki Makino", "driving")}</div>
+      </div>
+      ${showFoodTable("浮御堂")}
+      ${showFoodTable("湖西其他")}
+      <hr>
+
+      <div class="subheader">5️⃣ 鞍馬大天狗(備)</div>
+      <ul>
+        <li>大天狗合照(5分)→ 多聞堂牛若餅(買了車上吃)→ 仁王門(只看門不進去）</li>
+      </ul>
+      ${codeBlock("MapCode：479 108 091*04")}
+      <div class="cols">
+        <div class="col">${btn("👺 鞍馬站🅿️", "35.11250546865591, 135.7725978505011", "driving")}</div>
+        <div class="col">${btn("🍪 多聞堂 鞍馬", "35.11322385274119, 135.77326701479515", "walking")}</div>
+      </div>
+      <hr>
+
+      <div class="subheader">6️⃣ 貴船神社（黃昏燈籠）</div>
+      <ul>
+        <li>堅田 → 途中越（國道 367）經大原 → <strong>15:45</strong> 貴船（約 1hr10；大雪封路改湖西道路→京都市區→貴船，多 15 分）</li>
+        <li>參道燈籠<strong>每天傍晚都點</strong>，冬天約 16:30 亮、日落 17:10、<strong>18:00 閉門</strong></li>
+        <li>紅燈籠石階→ 水占卜(紙放水裡才浮字)→ 結社</li>
+        <li>停車：本宮 10 台、奥宮 15 台</li>
+        <li><strong>17:45</strong> 出發</li>
+      </ul>
+      <div class="alert alert-error"><p>💡 有就先停，上面路很小</p></div>
+      ${codeBlock("MapCode：479 136 238*22")}
+      <div class="cols">
+        <div class="col">${btn("貴船🅿️1", "35.11873070901179, 135.76225482481692", "driving")}</div>
+        <div class="col">${btn("貴船🅿️2", "35.119099435370714, 135.76280447851192", "driving")}</div>
+        <div class="col">${btn("貴船🅿️3", "35.12200558283188, 135.76338043890988", "driving")}</div>
+      </div>
+      ${btn("⛩️ 貴船神社(燈)", "35.12122600441969, 135.76316511443252", "walking")}
+      <hr>
+
+      <div class="subheader">7️⃣ 貴船神社-奧宮(備)</div>
+      <ul>
+        <li>貴船最有「神域感」的地方</li>
+      </ul>
+      ${btn("⛩️ 貴船神社(奧宮🅿️)", "35.128346903080796, 135.76514244871177", "driving")}
+      <hr>
+
+      <div class="subheader">8️⃣ 回京都</div>
+      <ul>
+        <li>🍽 晚餐：京都站周邊</li>
+      </ul>
+      ${codeBlock("MapCode：7 526 455*55")}
+      ${btn("🚗 22 PIECES", "22 PIECES Kyoto", "driving")}
+      <div class="cols">
+        <div class="col">${btn("飯店🅿️1", "34.98197527382824, 135.75692279994257", "driving")}</div>
+        <div class="col">${btn("飯店🅿️2", "34.98251532812083, 135.75747844958318", "driving")}</div>
+        <div class="col">${btn("飯店🅿️3", "34.983058834733335, 135.75752110124756", "driving")}</div>
+      </div>
+      ${showFoodTable("京都飯店-吃")}
+      ${showFoodTable("京都飯店-逛")}
+
+      <div class="alert alert-info">
+        <p>💡 提醒：明天舟屋日</p>
+        <ul>
+          <li>明天 <strong>15:00 一定要從伊根出發</strong>，<strong>20:00 前還車</strong>（滿油）</li>
+          <li>看明天天氣、<strong>NEXCO 西日本</strong> 縱貫道路況（大雪會雪鏈管制或封閉）</li>
+          <li>油量夠不夠（明天來回約 260 km，回程順便加滿）</li>
+        </ul>
+      </div>
+      <hr>
+
+      <div class="subheader">備用方案</div>
+      <div class="alert alert-error">
+        <p>山谷纜車停駛 → 改箱館山（只換地點，其他不變）</p>
+        <ul>
+          <li>順序改成：白鬚神社 → 箱館山 → 回程</li>
+          <li>箱館山：8 人座纜車上山 8 分，Play Zone 雪遊區（有雪上電扶梯）、Snow Rafting 雪筏</li>
+          <li>京都出發約 1hr20，白鬚神社往北 25 分</li>
+        </ul>
+        <p style="margin-top:8px;">兩邊都不能上 → 今天改跑 D4 舟屋日內容，明天再賭雪日</p>
+      </div>
+      ${codeBlock("MapCode：380 059 028*16")}
+      ${btn("🚗 箱館山滑雪場🅿️", "35.42761994200102, 135.996006812276", "driving")}
+    `
+  },
+  {
+    key: "Day4\n1/19 二",
+    date: "2027-01-19",
+    fullTitle: "Day 4(二): 舟屋日｜天橋立 & 伊根",
+    caption: "1/19 (二)｜舟屋日（可與 D3 對調）｜自駕 Day2",
+    html: `
+      <div class="subheader">1️⃣ 天橋立</div>
+      <ul>
+        <li><strong>08:00</strong> 出發（京都縱貫道約 2hr）</li>
+        <li>○ 道の駅 京丹波 味夢の里（縱貫道中間休息站，廁所、丹波栗、黑豆點心，10 分）</li>
+        <li>大雪時縱貫道可能雪鏈管制／封閉，出發前看 NEXCO 西日本，封閉就當天對調成雪日</li>
+      </ul>
+      <div class="cols">
+        <div class="col">${codeBlock("中途休息站MapCode：344 245 245*10")}</div>
+        <div class="col">${codeBlock("天橋立MapCode：197 202 313*41")}</div>
+      </div>
+      <div class="cols">
+        <div class="col">${btn("中途休息站🅿️", "35.155487637910184, 135.4151181669732", "driving")}</div>
+        <div class="col">${btn("天橋立 View Land🅿️", "35.55598937942707, 135.18432345495142", "driving")}</div>
+      </div>
+      <hr>
+
+      <div class="subheader">2️⃣ 天橋立 View Land</div>
+      <ul>
+        <li>搭單軌或吊椅上山，<strong>南側「股間望景」</strong>，山頂有小型遊樂設施，1hr</li>
+      </ul>
+      ${btn("📍 天橋立 View Land", "Amanohashidate Chairlift and Monorail", "walking")}
+      ${showFoodTable("天橋立")}
+      <hr>
+
+      <div class="subheader">3️⃣ 智恩寺 → 沙洲騎腳踏車</div>
+      <ul>
+        <li><strong>智恩寺</strong>（文殊菩薩，門前吃智慧之餅）</li>
+        <li><strong>廻旋橋</strong>：智恩寺旁的紅色旋轉橋，有船經過整座轉 90 度</li>
+        <li>智恩寺旁租腳踏車，<strong>穿越沙洲單程 20 分</strong>，可在對岸（傘松側）還車</li>
+        <li>不騎的話走路單程約 45 分</li>
+      </ul>
+      ${btn("📍 智恩寺", "Chionji Temple Amanohashidate", "walking")}
+      ${showFoodTable("智恩寺沙洲")}
+      <hr>
+
+      <div class="subheader">4️⃣ 傘松公園 → 元伊勢籠神社(備)</div>
+      <ul>
+        <li>沙洲對岸（府中）搭纜車上山，<strong>北側「股間望景」</strong>，30分</li>
+        <li><strong>かわらけ投げ</strong>：山頂把小陶盤丟過石環，¥300，小孩最愛</li>
+        <li>元伊勢籠神社：纜車站旁，10分 → 真名井神社（籠神社走10分）</li>
+        <li>🍽 午餐：這側簡餐，或忍到伊根吃鰤魚涮涮鍋</li>
+        <li>⚠️ 車還停在 View Land 側：騎腳踏車回去取車，或安排一人回去開車到府中接</li>
+      </ul>
+      ${btn("📍 傘松公園 纜車站", "Kasamatsu Park Cable Car", "walking")}
+      ${showFoodTable("傘松籠神社")}
+      <hr>
+
+      <div class="subheader">5️⃣ 伊根舟屋</div>
+      <ul>
+        <li><strong>13:00</strong> 出發 → 伊根約 30 分</li>
+        <li><strong>舟屋之里公園</strong>：停車免費，整個伊根灣舟屋全景</li>
+        <li><strong>海上計程車</strong>：漁師小船開進舟屋群底下，約 ¥1,000/人，現場找
+          <ul><li>或 <strong>伊根灣遊覽船</strong>（25 分，船上餵海鷗，冬天約每小時一班）</li></ul>
+        </li>
+        <li><strong>舟屋街散步</strong> 30 分 → 向井酒造（伊根滿開紅色米酒）→ INE CAFE（舟屋日和內，海景咖啡）</li>
+      </ul>
+      ${codeBlock("MapCode：652 604 655*44")}
+      <div class="cols">
+        <div class="col">${btn("舟屋🅿️1", "35.67584540607587, 135.28772869192494", "driving")}</div>
+        <div class="col">${btn("舟屋🅿️2", "35.67500125343802, 135.28802197600007", "driving")}</div>
+        <div class="col">${btn("舟屋🅿️3", "35.674810315711255, 135.29151710239807", "driving")}</div>
+      </div>
+      ${btn("📍 導航：伊根灣遊覽船乘船處", "Ine Bay Tour Boat", "walking")}
+      ${showFoodTable("伊根")}
+      <hr>
+
+      <div class="subheader">6️⃣ 舞鶴（備二選一）</div>
+      <ul>
+        <li><strong>15:00</strong> 伊根出發</li>
+        <li>走舞鶴若狹道回京都會經過舞鶴，多約 40 分，<strong>16:00-16:40</strong> 停一個就好：
+          <ul>
+            <li><strong>道の駅 舞鶴港</strong>：海鮮市場(PM 5點前)，松葉蟹、牡蠣現烤現吃</li>
+            <li><strong>舞鶴紅磚公園</strong>：明治海軍紅磚倉庫群</li>
+          </ul>
+        </li>
+      </ul>
+      ${codeBlock("海鮮市場MapCode：174 698 543*15")}
+      <div class="cols">
+        <div class="col">${btn("🦀 海鮮市場🅿️", "35.44998819450579, 135.3147607872948", "driving")}</div>
+        <div class="col">${btn("🧱 舞鶴紅磚公園", "35.4743250743178, 135.38572558092937", "driving")}</div>
+      </div>
+      ${showFoodTable("舞鶴")}
+      <hr>
+
+      <div class="subheader">7️⃣ 回京都 → 還車</div>
+      <ul>
+        <li>加油 → <strong>10pm 前</strong>還車（滿油、拿 ETC 明細），明早不用趕</li>
+        <li>🍽 晚餐：京都站周邊</li>
+        <li>20:00前趕不到租車店→ 車停飯店附近投幣停車場，明早07:45還</li>
+      </ul>
+      ${codeBlock("22 PIECES MapCode：7 526 455*55")}
+      ${btn("🚗 22 PIECES", "22 PIECES Kyoto", "driving")}
+      <div class="cols">
+        <div class="col">${codeBlock("⛽1 MapCode：7 494 357*86")}</div>
+        <div class="col">${codeBlock("⛽2 MapCode：7 557 390*10")}</div>
+      </div>
+      <div class="cols">
+        <div class="col">${btn("⛽1 加油站(24H)", "34.97324984490103, 135.74648147860697", "driving")}</div>
+        <div class="col">${btn("⛽2 加油站(24H)", "34.99013004114884, 135.76410123994216", "driving")}</div>
+      </div>
+      ${btn("🚶 NISSAN Rent A Car Kyoto", "34.984459129730546, 135.7547459938482", "driving")}
+      <div class="cols">
+        <div class="col">${btn("飯店🅿️1", "34.98197527382824, 135.75692279994257", "driving")}</div>
+        <div class="col">${btn("飯店🅿️2", "34.98251532812083, 135.75747844958318", "driving")}</div>
+        <div class="col">${btn("飯店🅿️3", "34.983058834733335, 135.75752110124756", "driving")}</div>
+      </div>
+      ${showFoodTable("京都飯店-吃")}
+      ${showFoodTable("京都飯店-逛")}
+
+      <div class="alert alert-info">
+        <p>💡 提醒：明天金閣寺 → teamLab</p>
+        <ul>
+          <li>確認 <strong>teamLab 11:00 場</strong> 票在手機裡</li>
+          <li>查 <strong>地鐵九條 → 北大路</strong> 首班時間，北大路巴士總站 205 乘車處</li>
+          <li>車已還的話明早不用趕；沒還的話 07:45 前還，油要滿</li>
+        </ul>
+      </div>
+    `
+  },
+  {
+    key: "Day5\n1/20 三",
+    date: "2027-01-20",
+    fullTitle: "Day 5(三): 金閣寺 & teamLab & 鬧區",
+    caption: "1/20 (三)｜金閣寺 → teamLab → 鬧區",
+    html: `
+      <div class="subheader">1️⃣ 還車</div>
+      <ul>
+        <li><strong>07:45</strong> 還車（先加滿油、拿走 ETC 明細）</li>
+      </ul>
+      ${btn("⛽ 加油站(24H)", "34.97324984490103, 135.74648147860697", "driving")}
+      ${btn("🚶 NISSAN Rent A Car Kyoto", "34.984459129730546, 135.7547459938482", "driving")}
+      <hr>
+
+      <div class="subheader">2️⃣ 地鐵九條 → 北大路 → 金閣寺</div>
+      <ul>
+        <li><strong>九條站</strong> → 烏丸線往國際會館方向 → <strong>北大路站</strong>（約 15 分）</li>
+        <li><strong>北大路巴士總站</strong>：搭 <strong>205／204／M1</strong> 到「金閣寺道」約 10 分</li>
+        <li>或出站搭 <strong>計程車</strong> 到金閣寺約 10 分、¥1,000-1,300，4 人分下來跟公車差不多</li>
+        <li>車資公車大人 ¥230、小孩 ¥120，用 ICOCA</li>
+      </ul>
+      ${btn("🚃 導航：北大路巴士總站 (地鐵北大路站)", "Kitaoji Bus Terminal Kyoto", "transit")}
+      <hr>
+
+      <div class="subheader">3️⃣ 金閣寺</div>
+      <ul>
+        <li><strong>09:00</strong> 開門第一批進</li>
+        <li>大人 ¥500、小孩 ¥300，一圈 30-40 分</li>
+        <li><strong>09:45</strong> 離開 → 計程車或公車回 <strong>北大路站</strong> → 烏丸線往京都方向 → <strong>九條站</strong>（約 15 分）</li>
+      </ul>
+      ${btn("📍 導航：金閣寺", "Kinkakuji Temple", "walking")}
+      ${showFoodTable("金閣寺")}
+      <hr>
+
+      <div class="subheader">4️⃣ teamLab Biovortex Kyoto</div>
+      <ul>
+        <li>地鐵 <strong>九條站</strong> 出站走約 10 分（京都站八條口走 7 分、JR／京阪 <strong>東福寺站</strong> 走 8 分也到）</li>
+        <li><strong>11:00</strong> 場（提前買時段票），館內 2.5-3hr，像迷宮沒有順路，<strong>先裝官方 App</strong> 看地圖免得漏</li>
+        <li>票 大人 ¥3,800~（浮動）、小學生約 ¥1,200-1,500</li>
+      </ul>
+      ${btn("🚶 導航：teamLab Biovortex Kyoto", "teamLab Biovortex Kyoto", "walking")}
+      ${showFoodTable("teamLab周邊")}
+      <hr>
+
+      <div class="subheader">5️⃣ 錦市場</div>
+      <ul>
+        <li><strong>14:00</strong> 走回 <strong>九條站</strong> → 烏丸線 3 站 → <strong>四條站</strong> → 走 10 分</li>
+        <li>玉子燒、豆乳甜甜圈、烤麻糬、章魚蛋，邊走邊吃當午餐</li>
+        <li>大部分店 18:00 前收</li>
+      </ul>
+      ${btn("🚃 導航：錦市場", "Nishiki Market", "transit")}
+      ${showFoodTable("錦市場")}
+      <hr>
+
+      <div class="subheader">6️⃣ 新京極、寺町通</div>
+      <ul>
+        <li>錦市場東口出來就是，兩條平行的商店街</li>
+        <li>扭蛋、文具、藥妝</li>
+      </ul>
+      ${btn("📍 導航：新京極商店街", "Shinkyogoku Shopping Street", "walking")}
+      ${showFoodTable("新京極寺町")}
+      <hr>
+
+      <div class="subheader">7️⃣ Nintendo KYOTO ＋ 寶可夢中心</div>
+      <ul>
+        <li><strong>Nintendo KYOTO</strong>：京都高島屋 S.C.（T8）<strong>7F</strong>，四條河原町</li>
+        <li><strong>寶可夢中心京都</strong>：SUINA 室町 <strong>4F</strong>，四條烏丸站直結</li>
+        <li>兩間走路 10 分，先 Nintendo 再寶可夢（回程順路到烏丸站）</li>
+      </ul>
+      <div class="cols">
+        <div class="col">${btn("📍 導航：Nintendo KYOTO", "Nintendo KYOTO", "walking")}</div>
+        <div class="col">${btn("📍 導航：寶可夢中心京都", "Pokemon Center Kyoto", "walking")}</div>
+      </div>
+      ${showFoodTable("四條河原町")}
+      <hr>
+
+      <div class="subheader">8️⃣ 二條城 → 鴨川散步(備)</div>
+      <ul>
+        <li><strong>○ 二條城</strong>：地鐵烏丸御池 → 二條城前，<strong>16:00 前入城</strong>（二之丸御殿鶯聲地板）</li>
+        <li><strong>○ 鴨川</strong>：四條大橋往下走河堤，傍晚 20 分</li>
+        <li>🍽 晚餐：河原町</li>
+      </ul>
+      ${btn("🚃 導航：二條城", "Nijo Castle", "transit")}
+      ${showFoodTable("二條城鴨川")}
+      <hr>
+
+      <div class="subheader">9️⃣ 22 PIECES</div>
+      <ul>
+        <li>四條站 → 烏丸線 → 京都站，走回飯店</li>
+      </ul>
+      ${btn("🏠 導航：22 PIECES", "22 PIECES Kyoto", "transit")}
+      ${showFoodTable("京都飯店-吃")}
+      ${showFoodTable("京都飯店-逛")}
+    `
+  },
+  {
+    key: "Day6\n1/21 四",
+    date: "2027-01-21",
+    fullTitle: "Day 6(四): 移動 & 大阪",
+    caption: "1/21 (四)｜退房 → 環球城 → 大阪半天",
+    html: `
+      <div class="subheader">1️⃣ 退房 → 京阪環球影城塔樓</div>
+      <ul>
+        <li><strong>10:00</strong> 退房 → 走到京都站</li>
+        <li><strong>JR 新快速</strong> → 大阪（約 30 分）→ 環狀線 → <strong>西九条</strong> 轉 <strong>夢咲線</strong> → <strong>11:30</strong> 環球城</li>
+        <li>⚠️ 西九条換車：下車走到 1 號月台（夢咲線），3-5 分</li>
+        <li>帶行李用電梯，京都站中央口 → JR 剪票口有電梯</li>
+        <li>環球城站出來就是飯店，先寄行李（15:00 後入住）</li>
+      </ul>
+      ${btn("🏨 導航：京阪環球影城塔樓", "Hotel Keihan Universal Tower", "transit")}
+      <hr>
+
+      <div class="subheader">2️⃣ 二選一｜A 梅田採買</div>
+      <ul>
+        <li>環球城 → 西九条 → <strong>大阪站</strong></li>
+        <li><strong>LINKS UMEDA</strong>（Yodobashi 那棟）：1-2F <strong>UNIQLO UMEDA</strong> 、3F <strong>GU</strong>、8F 餐廳街</li>
+        <li><strong>Grand Front 大阪</strong>：北館 2-4F <strong>無印良品</strong> 、南館 5F <strong>mont-bell</strong></li>
+        <li><strong>大丸梅田 13F</strong>：Nintendo OSAKA ＋ 寶可夢中心 DX</li>
+        <li><strong>18:00</strong> 回環球城</li>
+      </ul>
+      <div class="cols">
+        <div class="col">${btn("🛍️ LINKS UQ/GU", "UNIQLO UMEDA LINKS UMEDA", "transit")}</div>
+        <div class="col">${btn("🛍️ GF MUJI/mont-bell", "MUJI Grand Front Osaka", "walking")}</div>
+        <div class="col">${btn("🛍️ 大丸13F", "Daimaru Umeda", "walking")}</div>
+      </div>
+      ${showFoodTable("梅田")}
+      <hr>
+
+      <div class="subheader">2️⃣ 二選一｜B 海遊館（親子）</div>
+      <ul>
+        <li>環球城碼頭搭 <strong>Captain Line</strong> 船 10 分 → 海遊館</li>
+        <li><strong>海遊館</strong>：鯨鯊、太平洋大水槽，2hr</li>
+        <li>○ 天保山摩天輪</li>
+        <li>船回環球城</li>
+      </ul>
+      <div class="cols">
+        <div class="col">${btn("🚶 導航：Captain Line 環球城碼頭", "Captain Line Universal City Port", "transit")}</div>
+        <div class="col">${btn("📍 導航：海遊館", "Osaka Aquarium Kaiyukan", "walking")}</div>
+      </div>
+      ${showFoodTable("海遊館")}
+      <hr>
+
+      <div class="subheader">3️⃣ 京阪環球影城塔樓 → 晚餐</div>
+      <ul>
+        <li><strong>15:00</strong> 後入住</li>
+        <li>🍽 晚餐：<strong>Universal Citywalk</strong>（飯店旁，たこ焼きミュージアム、各式餐廳）</li>
+      </ul>
+      ${btn("🏨 導航：京阪環球影城塔樓", "Hotel Keihan Universal Tower", "transit")}
+      ${showFoodTable("環球城")}
+
+      <div class="alert alert-info">
+        <p>💡 提醒：明天環球影城</p>
+        <ul>
+          <li>再看一次環球 App：<strong>區域入場整理券</strong> 怎麼抽</li>
+          <li>早餐先買好</li>
+          <li>明天穿：保暖＋好走的鞋，園內風大</li>
+        </ul>
+      </div>
+    `
+  },
+  {
+    key: "Day7\n1/22 五",
+    date: "2027-01-22",
+    fullTitle: "Day 7(五): 環球影城",
+    caption: "1/22 (五)｜環球影城 平日",
+    html: `
+      <div class="subheader">1️⃣ 走路到大門</div>
+      <ul>
+        <li>開園時間看官網當月公布，<strong>開園前 1hr 到大門</strong>排隊，常會提早放人</li>
+        <li>門票 QR 每人一張，小孩的也要能開</li>
+        <li>飲料可以帶（水壺、寶特瓶 OK），<strong>食物不能帶</strong>，早餐在飯店或 Lawson 吃完再進</li>
+      </ul>
+      ${btn("🚶 導航：環球影城 大門", "Universal Studios Japan", "walking")}
+      <hr>
+
+      <div class="subheader">2️⃣ 入園後：App 抽整理券</div>
+      <ul>
+        <li>入園掃票後<strong>立刻</strong>開官方 App → <strong>區域入場整理券</strong>（免費）→ 選 <strong>超級任天堂世界</strong></li>
+        <li>整理券選最早的時段，抽到就先往其他區玩</li>
+        <li>抽不到就一直重整，中午前後常會再放</li>
+      </ul>
+      <hr>
+
+      <div class="subheader">3️⃣ 超級任天堂世界 → 大金剛</div>
+      <ul>
+        <li><strong>瑪利歐賽車</strong>：室內 AR 賽車（身高 107cm 以上，需大人陪）</li>
+        <li><strong>耀西冒險</strong>：慢速遊園車（92cm 以上）</li>
+        <li><strong>大金剛 礦車</strong>：跳軌雲霄飛車（107cm 以上）</li>
+        <li><strong>能量手環</strong>：園內買，打磚塊、收集鑰匙，小孩很愛（一個約 ¥4,000-5,000）</li>
+        <li>🍽 <strong>Kinopio's Cafe</strong>：區內午餐，要在整理券時段內</li>
+      </ul>
+      <hr>
+
+      <div class="subheader">4️⃣ 小小兵 → 哈利波特</div>
+      <ul>
+        <li><strong>小小兵樂園</strong>：小小兵瘋狂乘車遊（102cm 以上）</li>
+        <li><strong>哈利波特</strong>：禁忌之旅（<strong>122cm 以上</strong>，7-8 歲要量身高）、鷹馬的飛行（92cm 以上）</li>
+        <li><strong>侏羅紀</strong>：飛天翼龍 132cm 以上（大人玩，小孩不行）</li>
+        <li>身高限制以官網為準，入園前量一次</li>
+      </ul>
+      ${showFoodTable("環球影城")}
+      <hr>
+      ${showFoodTable("環球城")}
+
+      <div class="alert alert-info">
+        <p>💡 提醒：明天回程</p>
+        <ul>
+          <li>利木津巴士班次再確認一次（乘車處 1）</li>
+          <li>行李先整理</li>
+        </ul>
+      </div>
+    `
+  },
+  {
+    key: "Day8\n1/23 六",
+    date: "2027-01-23",
+    fullTitle: "Day 8(六): 回程",
+    caption: "1/23 (六)｜回程｜16:15 起飛",
+    html: `
+      <div class="subheader">1️⃣ 關空利木津巴士</div>
+      <ul>
+        <li><strong>10:00</strong> 退房，行李最後檢查：護照、免稅品放拿得到的地方</li>
+        <li>日本環球影城 <strong>乘車處 1</strong> 上車 → 約 70 分 → 關空</li>
+      </ul>
+      ${btn("🚶 導航：利木津巴士 乘車處 1", "34.66914931884008, 135.4327468195929", "walking")}
+
+      <details class="expander">
+        <summary>🚃 巴士沒趕上的備案（JR）</summary>
+        <div class="expander-body">
+          <ul>
+            <li>JR 環球城 → <strong>西九条</strong> 轉 <strong>關空快速</strong>（西九条有停，看清楚車種）→ 關空 約 70 分</li>
+            <li>12:30 前到關空都來得及</li>
+          </ul>
+          ${btn("🚃 導航：關西機場 T1 (JR)", "Kansai International Airport Terminal 1", "transit")}
+        </div>
+      </details>
+      <hr>
+
+      <div class="subheader">2️⃣ 臨空港 Outlet(備)</div>
+      <ul>
+        <li>關空 → <strong>りんくうタウン</strong> 1 站 5 分（南海或 JR 都可）</li>
+        <li>行李放關空置物櫃（或 Outlet 置物櫃）</li>
+        <li>逛到 <strong>13:45</strong> 搭回關空</li>
+      </ul>
+      ${btn("🚃 導航：臨空 Premium Outlets", "Rinku Premium Outlets", "transit")}
+      ${showFoodTable("臨空港")}
+      <hr>
+
+      <div class="subheader">3️⃣ 14:15 前報到 → 16:15 起飛</div>
+      <ul>
+        <li>關空 T1 週六人多，<strong>14:15 前</strong>到櫃台</li>
+        <li>登機前：手機下載好回程的影片給小孩</li>
+      </ul>
+      ${btn("🚶 導航：關西機場 T1", "Kansai International Airport Terminal 1", "walking")}
+      ${showFoodTable("關空")}
+
+      <div class="alert alert-warn">
+        <p>💡 退稅提醒</p>
+        <ul>
+          <li>順序：<strong>先到機場稅關 KIOSK 掃護照做「持出確認」→ 再託運行李</strong></li>
+          <li>確認完後由店家或退稅業者退款（信用卡／App，各店不同，<strong>買的時候問清楚退款方式</strong>）</li>
+        </ul>
+      </div>
+    `
+  }
+];
+
+// ==========================================
+// 4. 初始化渲染與日本時間自動定位
+// ==========================================
+const navEl = document.getElementById("dayNav");
+const containerEl = document.getElementById("daysContainer");
+
+// 取得日本東京當前日期 (YYYY-MM-DD)
+const japanToday = new Intl.DateTimeFormat("en-CA", {
+  timeZone: "Asia/Tokyo",
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit"
+}).format(new Date());
+
+let defaultIndex = 0;
+TRIP_DAYS.forEach((d, idx) => {
+  if (d.date === japanToday) defaultIndex = idx;
+});
+
+TRIP_DAYS.forEach((d, idx) => {
+  // 建立按鈕
+  const btnEl = document.createElement("div");
+  btnEl.className = "day-option" + (idx === defaultIndex ? " active" : "");
+  btnEl.textContent = d.key;
+  btnEl.onclick = () => selectDay(idx);
+  navEl.appendChild(btnEl);
+
+  // 建立內容區塊
+  const paneEl = document.createElement("div");
+  paneEl.className = "day-pane" + (idx === defaultIndex ? " active" : "");
+  paneEl.id = `day-pane-${idx}`;
+  paneEl.innerHTML = `
+    <div class="day-title">${d.fullTitle}</div>
+    <div class="caption">${d.caption}</div>
+    ${d.html}
+  `;
+  containerEl.appendChild(paneEl);
+});
+
+function selectDay(index) {
+  document.querySelectorAll(".day-option").forEach((el, i) => {
+    el.classList.toggle("active", i === index);
+  });
+  document.querySelectorAll(".day-pane").forEach((el, i) => {
+    el.classList.toggle("active", i === index);
+  });
+}
+
+// 深淺色模式切換
+const themeBtn = document.getElementById("themeBtn");
+themeBtn.addEventListener("click", () => {
+  const root = document.documentElement;
+  const current = root.getAttribute("data-theme");
+  const isSystemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  if (!current) {
+    root.setAttribute("data-theme", isSystemDark ? "light" : "dark");
+  } else {
+    root.setAttribute("data-theme", current === "dark" ? "light" : "dark");
+  }
+});
+</script>
 </body>
 </html>
