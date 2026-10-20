@@ -271,17 +271,7 @@
       font-size: 0.84rem;
       overflow-x: auto;
     }
-    .copy-btn {
-      background: transparent;
-      border: 1px solid var(--border-color);
-      color: var(--subtext-color);
-      border-radius: 6px;
-      padding: 2px 7px;
-      font-size: 0.75rem;
-      cursor: pointer;
-      flex-shrink: 0;
-      margin-left: 6px;
-    }
+    
 
     /* ===== 摺疊區 (Expander) 與 表格 ===== */
     details.expander {
@@ -370,6 +360,15 @@
       border-left-color: var(--err-border);
       color: var(--err-text);
     }
+    details.expander.expander-error {
+  background-color: var(--err-bg);
+  border-color: var(--err-border);
+}
+details.expander.expander-error summary,
+details.expander.expander-error .expander-body {
+  background-color: var(--err-bg);
+  color: var(--err-text);
+}
 
     .day-pane { display: none; }
     .day-pane.active { display: block; }
@@ -563,21 +562,11 @@ function btn(label, query, mode = "transit") {
 }
 
 function codeBlock(text) {
-  const rawCode = text.includes("：") ? text.split("：")[1].trim() : text;
   return `
     <div class="code-box">
       <span>${text}</span>
-      <button class="copy-btn" onclick="copyText('${rawCode}', this)">複製</button>
     </div>
   `;
-}
-
-function copyText(str, el) {
-  navigator.clipboard.writeText(str).then(() => {
-    const old = el.innerText;
-    el.innerText = "已複製!";
-    setTimeout(() => { el.innerText = old; }, 1200);
-  });
 }
 
 function showFoodTable(region) {
@@ -854,18 +843,19 @@ const TRIP_DAYS = [
       </div>
       <hr>
 
-      <div class="subheader">備用方案</div>
-      <div class="alert alert-error">
-        <p>山谷纜車停駛 → 改箱館山（只換地點，其他不變）</p>
-        <ul>
-          <li>順序改成：白鬚神社 → 箱館山 → 回程</li>
-          <li>箱館山：8 人座纜車上山 8 分，Play Zone 雪遊區（有雪上電扶梯）、Snow Rafting 雪筏</li>
-          <li>京都出發約 1hr20，白鬚神社往北 25 分</li>
-        </ul>
-        <p style="margin-top:8px;">兩邊都不能上 → 今天改跑 D4 舟屋日內容，明天再賭雪日</p>
-      </div>
-      ${codeBlock("MapCode：380 059 028*16")}
-      ${btn("🚗 箱館山滑雪場🅿️", "35.42761994200102, 135.996006812276", "driving")}
+           <details class="expander expander-error">
+        <summary>備用方案 山谷纜車停駛 → 改箱館山</summary>
+        <div class="expander-body">
+          <ul>
+            <li>順序改成：白鬚神社 → 箱館山 → 回程</li>
+            <li>箱館山：8 人座纜車上山 8 分，Play Zone 雪遊區（有雪上電扶梯）、Snow Rafting 雪筏</li>
+            <li>京都出發約 1hr20，白鬚神社往北 25 分</li>
+          </ul>
+          <p style="margin-top:8px;">兩邊都不能上 → 今天改跑 D4 舟屋日內容，明天再賭雪日</p>
+          ${codeBlock("MapCode：380 059 028*16")}
+          ${btn("🚗 箱館山滑雪場🅿️", "35.42761994200102, 135.996006812276", "driving")}
+        </div>
+      </details>
     `
   },
   {
