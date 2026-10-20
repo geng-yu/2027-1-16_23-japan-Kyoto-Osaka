@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>2027 京阪自由行手冊</title>
+  <style>
+    :root {
+      --primary: #1a73e8;
+      --bg: #f5f6fa;
+      --card-bg: #ffffff;
+      --text: #202124;
+      --subtext: #5f6368;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding-bottom: 40px;
+    }
+    header {
+      background: #ffffff;
+      padding: 16px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+    header h1 { font-size: 1.25rem; font-weight: 700; }
+
+    /* 天數滑動導航列 */
+    .day-nav {
+      display: flex;
+      overflow-x: auto;
+      background: #ffffff;
+      padding: 10px 16px;
+      gap: 8px;
+      border-bottom: 1px solid #e0e0e0;
+      position: sticky;
+      top: 57px;
+      z-index: 99;
+      -webkit-overflow-scrolling: touch;
+    }
+    .day-nav::-webkit-scrollbar { display: none; }
+    .day-btn {
+      flex: 0 0 auto;
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid #dadce0;
+      background: transparent;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--subtext);
+    }
+    .day-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+
+    /* 內容容器 */
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+    .day-content { display: none; }
+    .day-content.active { display: block; }
+
+    /* 行程景點卡片 */
+    .spot-card {
+      background: var(--card-bg);
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 14px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .spot-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+    .time-tag {
+      font-size: 0.8rem;
+      font-weight: 700;
+      background: #e8f0fe;
+      color: var(--primary);
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+    .spot-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-top: 4px;
+    }
+    .spot-desc {
+      font-size: 0.95rem;
+      color: var(--subtext);
+      margin-bottom: 12px;
+    }
+
+    /* Google Maps 導航按鈕 */
+    .map-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 10px 0;
+      background: #f1f3f4;
+      color: #1a73e8;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+    .map-btn:active { background: #e8eaed; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🇯🇵 2027 京阪 8 天 7 夜行程</h1>
+  </header>
+
+  <!-- 天數切換列 -->
+  <nav class="day-nav">
+    <button class="day-btn active" onclick="switchDay('d1', this)">1/16 (五)</button>
+    <button class="day-btn" onclick="switchDay('d2', this)">1/17 (六)</button>
+    <button class="day-btn" onclick="switchDay('d3', this)">1/18 (日)</button>
+    <button class="day-btn" onclick="switchDay('d4', this)">1/19 (一)</button>
+    <button class="day-btn" onclick="switchDay('d5', this)">1/20 (二)</button>
+    <button class="day-btn" onclick="switchDay('d6', this)">1/21 (三)</button>
+    <button class="day-btn" onclick="switchDay('d7', this)">1/22 (四)</button>
+    <button class="day-btn" onclick="switchDay('d8', this)">1/23 (五)</button>
+  </nav>
+
+  <div class="container">
+
+    <!-- Day 1 -->
+    <section id="d1" class="day-content active">
+      <div class="spot-card">
+        <div class="spot-header">
+          <div>
+            <span class="time-tag">12:30</span>
+            <div class="spot-name">關西國際機場 (KIX)</div>
+          </div>
+        </div>
+        <div class="spot-desc">抵達關西機場第一航廈，領取實體票券或儲值交通卡，搭乘 HARUKA 特急前往京都。</div>
+        <!-- 點擊直接開啟 Google Maps App 並設定目的地導航 -->
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=關西國際機場" target="_blank">
+          🧭 導航至 關西機場
+        </a>
+      </div>
+
+      <div class="spot-card">
+        <div class="spot-header">
+          <div>
+            <span class="time-tag">15:00</span>
+            <div class="spot-name">京都車站 & 飯店 Check-in</div>
+          </div>
+        </div>
+        <div class="spot-desc">HARUKA 抵達京都車站，先至飯店辦理入住並卸下大件行李。</div>
+        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=京都車站" target="_blank">
+          📍 在地圖中查看 京都車站
+        </a>
+      </div>
+    </section>
+
+    <!-- Day 2 -->
+    <section id="d2" class="day-content">
+      <div class="spot-card">
+        <div class="spot-header">
+          <div>
+            <span class="time-tag">09:00</span>
+            <div class="spot-name">清水寺 & 二年坂三年坂</div>
+          </div>
+        </div>
+        <div class="spot-desc">早起避開人潮，參觀清水舞台、音羽之瀑，隨後沿石階散步。</div>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=清水寺" target="_blank">
+          🧭 導航至 清水寺
+        </a>
+      </div>
+    </section>
+
+    <!-- Day 3 ~ Day 8 依此類推增加 -->
+
+  </div>
+
+  <script>
+    function switchDay(dayId, btn) {
+      document.querySelectorAll('.day-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.day-btn').forEach(el => el.classList.remove('active'));
+      document.getElementById(dayId).classList.add('active');
+      btn.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
