@@ -18,10 +18,10 @@ function codeBlock(text) {
 
 function showFoodTable(region) {
   // 相容 day2.py 的「河原町-吃」與「河原町-逛」
-  const aliasMap = {
-    "河原町-吃": "四條河原町",
-    "河原町-逛": "新京極寺町"
-  };
+  //const aliasMap = {
+  //  "河原町-吃": "四條河原町",
+  //  "河原町-逛": "新京極寺町"
+  //};
   const actualKey = aliasMap[region] || region;
   const rows = DATA_SOURCE[actualKey];
   if (!rows) return "";
