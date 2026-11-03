@@ -8,7 +8,7 @@ function getDay4() {
       <div class="subheader">1️⃣ 天橋立</div>
       <ul>
         <li><strong>08:00</strong> 出發（京都縱貫道約 2hr）</li>
-        <li>○ 道の駅 京丹波 味夢の里（縱貫道中間休息站，廁所、丹波栗、黑豆點心，10 分）</li>
+        <li>道の駅 京丹波 味夢の里（休息站，廁所、丹波栗、黑豆點心，10 分）</li>
         <li>大雪時縱貫道可能雪鏈管制／封閉，出發前看 NEXCO 西日本，封閉就當天對調成雪日</li>
       </ul>
       <div class="cols">
@@ -43,9 +43,8 @@ function getDay4() {
       <div class="subheader">4️⃣ 傘松公園 → 元伊勢籠神社(備)</div>
       <ul>
         <li>沙洲對岸（府中）搭纜車上山，<strong>北側「股間望景」</strong>，30分</li>
-        <li><strong>かわらけ投げ</strong>：山頂把小陶盤丟過石環，¥300，小孩最愛</li>
+        <li><strong>かわらけ投げ</strong>：山頂把小陶盤丟過石環，¥300</li>
         <li>元伊勢籠神社：纜車站旁，10分 → 真名井神社（籠神社走10分）</li>
-        <li>🍽 午餐：這側簡餐，或忍到伊根吃鰤魚涮涮鍋</li>
         <li>⚠️ 車還停在 View Land 側：騎腳踏車回去取車，或安排一人回去開車到府中接</li>
       </ul>
       ${btn("📍 傘松公園 纜車站", "Kasamatsu Park Cable Car", "walking")}
@@ -55,11 +54,10 @@ function getDay4() {
       <div class="subheader">5️⃣ 伊根舟屋</div>
       <ul>
         <li><strong>13:00</strong> 出發 → 伊根約 30 分</li>
-        <li><strong>舟屋之里公園</strong>：停車免費，整個伊根灣舟屋全景</li>
-        <li><strong>海上計程車</strong>：漁師小船開進舟屋群底下，約 ¥1,000/人，現場找
-          <ul><li>或 <strong>伊根灣遊覽船</strong>（25 分，船上餵海鷗，冬天約每小時一班）</li></ul>
+        <li><strong>伊根灣遊覽船</strong>：（25 分，船上餵海鷗，冬天約每小時一班）
+          <ul><li>或 <strong>海上計程車</strong>漁師小船開進舟屋群底下，約 ¥1,000/人，現場找</li></ul>
         </li>
-        <li><strong>舟屋街散步</strong> 30 分 → 向井酒造（伊根滿開紅色米酒）→ INE CAFE（舟屋日和內，海景咖啡）</li>
+        <li><strong>舟屋街散步</strong> 30 分 → 向井酒造（伊根滿開紅色米酒）→ INE CAFE（海景咖啡）</li>
       </ul>
       ${codeBlock("MapCode：652 604 655*44")}
       <div class="cols">
@@ -93,7 +91,7 @@ function getDay4() {
       <ul>
         <li>加油 → <strong>10pm 前</strong>還車（滿油、拿 ETC 明細），明早不用趕</li>
         <li>🍽 晚餐：京都站周邊</li>
-        <li>20:00前趕不到租車店→ 車停飯店附近投幣停車場，明早07:45還</li>
+        <li>22:00前趕不到租車店→ 車停飯店附近投幣停車場，明早07:45還</li>
       </ul>
       ${codeBlock("22 PIECES MapCode：7 526 455*55")}
       ${btn("🚗 22 PIECES", "22 PIECES Kyoto", "driving")}
