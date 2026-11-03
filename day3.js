@@ -17,15 +17,12 @@ function getDay3() {
       <div class="subheader">2️⃣ 琵琶湖山谷 (びわ湖バレイ)</div>
       <ul>
         <li><strong>08:50</strong> 到山麓站停車場，<strong>09:30</strong> 冬季第一班纜車上山（09:45 到山頂）</li>
-        <li><strong>09:45-10:20</strong> ★琵琶湖 Terrace 先拍（山頂站旁，早上逆光但人最少）</li>
-        <li><strong>10:30-12:00</strong> ★雪鞋健行（山頂集合；<strong>要事前預約</strong>，官網 12 月開放後訂平日場）</li>
+        <li><strong>09:45-10:20</strong> ★琵琶湖 Terrace 先拍</li>
+        <li><strong>10:30-12:00</strong> ★雪鞋健行</li>
         <li><strong>12:00-12:45</strong> ★Snow Land 雪橇（山頂站正前方，雪橇租 ¥500/60 分）</li>
-        <li><strong>🎫 票</strong>：買「施設利用券（雪遊び／びわ湖テラス用）」＝ 纜車來回＋Terrace＋Snow Land；<strong>不要買滑雪券</strong>；雪鞋健行另外付
-          <ul><li>參考價 大人 ¥4,000 / 小學生 ¥2,000（Web 前售從 ¥3,200 / ¥1,600 起）</li></ul>
-        </li>
-        <li>○ Café 360 要再搭ホーライ吊椅（10:00-15:30），今天沒時間，跳過</li>
+        <li>○ Café 360 要再搭ホーライ吊椅（10:00-15:30）</li>
         <li>🍽 午餐：早上超市買飯捲，12:45 下山前在山頂吃，或車上吃</li>
-        <li><strong>13:00</strong> 下山（比原本晚 30 分，下午浮御堂砍掉補回來）</li>
+        <li><strong>13:00</strong> 下山</li>
       </ul>
       ${codeBlock("MapCode：263 094 843*44")}
       ${btn("🚗 琵琶湖山谷 纜車山麓站🅿️", "35.202950140659915, 135.90652083462672", "driving")}
@@ -62,7 +59,7 @@ function getDay3() {
 
       <div class="subheader">5️⃣ 鞍馬大天狗(備)</div>
       <ul>
-        <li>大天狗合照(5分)→ 多聞堂牛若餅(買了車上吃)→ 仁王門(只看門不進去）</li>
+        <li>大天狗合照(5分)→ 多聞堂牛若餅(車上吃)→ 仁王門(只看門不進去）</li>
       </ul>
       ${codeBlock("MapCode：479 108 091*04")}
       <div class="cols">
@@ -77,7 +74,6 @@ function getDay3() {
         <li>參道燈籠<strong>每天傍晚都點</strong>，冬天約 16:30 亮、日落 17:10、<strong>18:00 閉門</strong></li>
         <li>紅燈籠石階→ 水占卜(紙放水裡才浮字)→ 結社</li>
         <li>停車：本宮 10 台、奥宮 15 台</li>
-        <li><strong>17:45</strong> 出發</li>
       </ul>
       <div class="alert alert-error"><p>💡 有就先停，上面路很小</p></div>
       ${codeBlock("MapCode：479 136 238*22")}
@@ -113,7 +109,7 @@ function getDay3() {
       <div class="alert alert-info">
         <p>💡 提醒：明天舟屋日</p>
         <ul>
-          <li>明天 <strong>15:00 一定要從伊根出發</strong>，<strong>20:00 前還車</strong>（滿油）</li>
+          <li>明天 <strong>15:00 一定要從伊根出發</strong>，<strong>22:00 前還車</strong>（滿油）</li>
           <li>看明天天氣、<strong>NEXCO 西日本</strong> 縱貫道路況（大雪會雪鏈管制或封閉）</li>
           <li>油量夠不夠（明天來回約 260 km，回程順便加滿）</li>
         </ul>
