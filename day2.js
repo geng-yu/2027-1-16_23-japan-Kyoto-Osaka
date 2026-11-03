@@ -20,7 +20,7 @@ function getDay2() {
       ${btn("📍 平等院", "Byodoin Temple", "walking")}
       <hr>
 
-      <div class="subheader">3️⃣ 🍽 中村藤吉 平等院店（午餐）</div>
+      <div class="subheader">3️⃣ 中村藤吉 平等院店</div>
       <ul>
         <li><strong>11:30</strong> 抹茶蕎麥麵、抹茶果凍、抹茶聖代</li>
         <li>先到店登記候位再去逛</li>
@@ -29,7 +29,7 @@ function getDay2() {
       ${showFoodTable("宇治")}
       <hr>
 
-      <div class="subheader">4️⃣ 宇治橋 → ○ 宇治上神社</div>
+      <div class="subheader">4️⃣ 宇治橋 → 宇治上神社</div>
       <ul>
         <li><strong>13:00</strong> 從平等院走表參道 → <strong>宇治橋</strong>（紫式部像）→ 過橋走 10 分 → <strong>宇治上神社</strong></li>
         <li>小孩累了宇治上神社跳過，回程在 JR 宇治站前商店街買抹茶伴手禮</li>
@@ -43,7 +43,6 @@ function getDay2() {
         <li><strong>15:10</strong> 到門口，<strong>15:30 時段</strong>入館（勿遲到）；入館前可免費寄物，先上廁所</li>
       </ul>
       ${btn("🚃 JR 小倉站", "JR Ogura Station Uji", "transit")}
-      ${btn("📍 任天堂博物館", "Nintendo Museum", "walking")}
       <hr>
 
       <div class="subheader">6️⃣ 任天堂博物館</div>
@@ -55,6 +54,7 @@ function getDay2() {
         <li><strong>晚餐二選一</strong>：館內 <strong>HATENA BURGER</strong>（18:00 前後吃），或出館後到河原町吃</li>
         <li><strong>紀念品</strong>：館內限定，最後再逛</li>
       </ul>
+      ${btn("📍 任天堂博物館", "Nintendo Museum", "walking")}
       <hr>
 
       <div class="subheader">7️⃣ 河原町</div>
