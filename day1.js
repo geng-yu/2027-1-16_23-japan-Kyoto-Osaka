@@ -2,7 +2,7 @@ function getDay1() {
   return {
     key: "Day1\n1/16 六",
     date: "2027-01-16",
-    fullTitle: "Day 1( 1/16 六): 出發 & 京都",
+    fullTitle: "Day 1(六): 出發 & 京都",
     caption: "1/16",
     html: `
       <div class="border-card">
