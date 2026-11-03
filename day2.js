@@ -59,18 +59,15 @@ function getDay2() {
 
       <div class="subheader">7️⃣ 河原町</div>
       <ul>
-        <li><strong>20:00 關</strong>：Nintendo KYOTO、寶可夢中心、Sanrio Gallery、京都BAL（無印良品）</li>
-        <li><strong>21:00 關</strong>：Kiddy Land、ミーナ京都（UNIQLO／GU／Loft）、扭蛋百貨、河原町ガーデン；唐吉訶德約 01:00、松本清 23:00、Cocokara 22:45</li>
+        <li><strong>20:00 關</strong>：Nintendo KYOTO、寶可夢中心、Sanrio Gallery、京都BAL</li>
+        <li><strong>21:00 關</strong>：Kiddy Land、ミーナ京都（UNIQLO／GU／Loft）、扭蛋百貨、河原町ガーデン</li>
       </ul>
       <ul>
         <li><strong>走法</strong></li>
         <li>① <strong>四條河原町交叉口</strong>：京都河原町ガーデン（B1 扭蛋百貨、7F 北極星）→ 高島屋 7F Nintendo KYOTO、B1 食品館</li>
-        <li>② <strong>河原町通往北</strong>：Kiddy Land → 唐吉訶德 → ROUND1（給小孩放電）→ 三條口：ミーナ京都（UNIQLO B1-3F、GU 7F、Loft）、京都BAL（無印良品）</li>
+        <li>② <strong>河原町通往北</strong>：Kiddy Land → 唐吉訶德 → ROUND1 → 三條口：ミーナ京都（UNIQLO B1-3F、GU 7F、Loft）、京都BAL（無印良品）</li>
         <li>③ <strong>新京極</strong>（有屋頂，從三條北口往南走回四條通）：Village Vanguard（2F，同棟 B1 DAISO）、扭蛋、遊戲中心 → 南口一帶：Sanrio Gallery、Cocokara</li>
         <li>④ <strong>四條通往西</strong>：大丸京都店 → 四条烏丸 SUINA 室町 4F 寶可夢中心 → 地鐵四条駅</li>
-        <li>走 B（先到四条）就把順序反過來：④ → ③ → ② → ①，最後從河原町搭計程車，或阪急河原町 → 烏丸（1 站）接地鐵四条駅</li>
-        <li>🍽 <strong>20:00 後還開的</strong>：京都勝牛 23:00、ここやねん 23:30、大眾鮨 23:00、珍遊 23:00、かつだ 22:00、海老天丼 徳 22:00；Smart Coffee、Inoda、Hanon、おめん 已關</li>
-        <li>全部走完約 2 小時，體力不夠挑 2-3 區 ＋ 一餐就好</li>
       </ul>
       ${btn("🚃 近鉄 小倉站", "Kintetsu Ogura Station Uji", "transit")}
       ${btn("📍 河原町", "35.00366275389363, 135.76729476517036", "transit")}
@@ -80,9 +77,6 @@ function getDay2() {
 
       <div class="subheader">8️⃣ 回 22 PIECES</div>
       <ul>
-        <li>河原町逛完：走到 <strong>四条駅</strong> 搭地鐵烏丸線 → 京都站（2 站約 5 分）→ 走回飯店；累了就從四條河原町搭計程車（約 15 分，4 人分攤跟地鐵差不多）</li>
-        <li>今天沒去河原町：JR 小倉 → 京都站（快速 21 分、普通 26 分，¥310）直接回</li>
-        <li>🍽 晚餐若還沒吃：京都站 Porta 11F かつくら、京都拉麵小路（22:00 關）</li>
         <li>唐吉訶德（AVANTI）開到 24:00，宵夜、明天山上要用的飲料零食可以順便買</li>
       </ul>
       ${btn("🏠 22 PIECES", "22 PIECES Kyoto", "transit")}
