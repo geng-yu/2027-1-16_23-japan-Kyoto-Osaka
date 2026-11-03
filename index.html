@@ -435,6 +435,16 @@ const DATA_SOURCE = {
     {"店名": "伊藤久右衛門 宇治本店", "時間": "10:00-18:00", "備註": "抹茶聖代，伴手禮"},
     {"店名": "通圓 (宇治橋旁)", "時間": "09:30-17:30", "備註": "850年老茶店，抹茶冰"}
   ],
+  "京都飯店-吃": [
+    {"店名": "111", "時間": "10:00-17:00", "備註": "抹茶果凍、抹茶蕎麥麵，會排隊"},
+    {"店名": "伊藤久右衛門 宇治本店", "時間": "10:00-18:00", "備註": "抹茶聖代，伴手禮"},
+    {"店名": "通圓 (宇治橋旁)", "時間": "09:30-17:30", "備註": "850年老茶店，抹茶冰"}
+  ],
+  "京都飯店-逛": [
+    {"店名": "222", "時間": "10:00-17:00", "備註": "抹茶果凍、抹茶蕎麥麵，會排隊"},
+    {"店名": "伊藤久右衛門 宇治本店", "時間": "10:00-18:00", "備註": "抹茶聖代，伴手禮"},
+    {"店名": "通圓 (宇治橋旁)", "時間": "09:30-17:30", "備註": "850年老茶店，抹茶冰"}
+  ],
   "琵琶湖山谷": [
     {"店名": "Terrace Cafe Biwako Terrace", "時間": "09:00-17:00", "備註": "山頂站旁主餐廳，咖哩、漢堡排"},
     {"店名": "Cafe Stand at North Terrace", "時間": "10:00-16:00", "備註": "北Terrace外帶式，琵琶湖咖哩¥1,300"},
@@ -661,7 +671,6 @@ const TRIP_DAYS = [
       <div class="subheader">1️⃣ 京都站 → 宇治</div>
       <ul>
         <li><strong>09:15</strong> 京都站 JR 奈良線 → <strong>宇治</strong>（約 20-25 分，¥240，IC 卡直接刷）</li>
-        <li>下午要在館內待 3-4 小時，<strong>上午輕鬆逛、午餐吃飽</strong>，早餐先在飯店吃好</li>
       </ul>
       ${btn("🚃 JR 宇治站", "JR Uji Station", "transit")}
       <hr>
@@ -669,8 +678,7 @@ const TRIP_DAYS = [
       <div class="subheader">2️⃣ 平等院鳳凰堂</div>
       <ul>
         <li><strong>10:00</strong> 從 JR 宇治站走約 10 分，10 円硬幣上的那棟，冬天人少</li>
-        <li>鳳凰堂內部要另外買時段票（現場排，約 20 分一梯）；時間不夠就只看外觀＋鳳翔館</li>
-        <li>開放時間、票價以官網為準</li>
+        <li>鳳凰堂內部要另外買時段票</li>
       </ul>
       ${btn("📍 平等院", "Byodoin Temple", "walking")}
       <hr>
@@ -678,7 +686,7 @@ const TRIP_DAYS = [
       <div class="subheader">3️⃣ 🍽 中村藤吉 平等院店（午餐）</div>
       <ul>
         <li><strong>11:30</strong> 抹茶蕎麥麵、抹茶果凍、抹茶聖代</li>
-        <li>週日會排隊，先到店登記候位再去逛，吃飽才進館</li>
+        <li>先到店登記候位再去逛</li>
       </ul>
       ${btn("📍 中村藤吉 平等院店", "34.891509646318, 135.80624121683988", "walking")}
       ${showFoodTable("宇治")}
@@ -686,9 +694,8 @@ const TRIP_DAYS = [
 
       <div class="subheader">4️⃣ 宇治橋 → ○ 宇治上神社</div>
       <ul>
-        <li><strong>13:00</strong> 從平等院走表參道 → <strong>宇治橋</strong>（紫式部像）→ 過橋走 10 分 → <strong>宇治上神社</strong>（世界遺產）</li>
-        <li>小孩累了宇治上神社直接跳過，回程在 JR 宇治站前商店街買抹茶伴手禮</li>
-        <li>想買平價抹茶粉：山政小山園、丸久小山園本社 <strong>週日休</strong>，今天去不了；改逛商店街茶舖，或回京都後在 AEON 1F KOHYO 超市找</li>
+        <li><strong>13:00</strong> 從平等院走表參道 → <strong>宇治橋</strong>（紫式部像）→ 過橋走 10 分 → <strong>宇治上神社</strong></li>
+        <li>小孩累了宇治上神社跳過，回程在 JR 宇治站前商店街買抹茶伴手禮</li>
       </ul>
       ${btn("📍 宇治上神社", "Ujigami Shrine", "walking")}
       <hr>
@@ -696,8 +703,7 @@ const TRIP_DAYS = [
       <div class="subheader">5️⃣ 宇治 → JR 小倉 → 任天堂博物館</div>
       <ul>
         <li><strong>14:20</strong> JR 宇治站 → <strong>JR 小倉</strong>（奈良線往奈良方向，1 站約 4 分）→ 北出口走約 8 分</li>
-        <li>懶得走路：宇治站前搭京阪巴士 64 系統直達博物館（約 7 分，班次先查）</li>
-        <li><strong>15:10</strong> 到門口，<strong>15:30 時段</strong>入館（有時段限制，別遲到）；入館前可免費寄物，先上廁所</li>
+        <li><strong>15:10</strong> 到門口，<strong>15:30 時段</strong>入館（勿遲到）；入館前可免費寄物，先上廁所</li>
       </ul>
       ${btn("🚃 JR 小倉站", "JR Ogura Station Uji", "transit")}
       ${btn("📍 任天堂博物館", "Nintendo Museum", "walking")}
@@ -705,25 +711,22 @@ const TRIP_DAYS = [
 
       <div class="subheader">6️⃣ 任天堂博物館</div>
       <ul>
-        <li><strong>15:30</strong> 入館，官方目安約 3 小時，實際 3-4hr；<strong>20:00 閉館</strong>，沒有退場時間限制</li>
+        <li><strong>15:30</strong> 入館；<strong>20:00 閉館</strong>，沒有退場時間限制</li>
         <li><strong>入館證</strong>：入口核對證件，姓名要跟護照一致</li>
-        <li><strong>體驗區</strong>：每人 10 枚硬幣，大型控制器、花札等每項扣幣，先看想玩什麼再花</li>
-        <li><strong>花札工房</strong>：另付費、約 1 小時，進館先看還有沒有場次，晚進場可能已額滿，不用勉強</li>
-        <li><strong>晚餐二選一</strong>：館內 <strong>HATENA BURGER</strong>（18:00 前後吃，先問最後點餐時間），或出館後到河原町吃（下面有清單）</li>
+        <li><strong>體驗區</strong>：每人 10 枚硬幣，大型控制器、花札等每項扣幣</li>
+        <li><strong>花札工房</strong>：另付費、約 1 小時，進館先看還有沒有場次</li>
+        <li><strong>晚餐二選一</strong>：館內 <strong>HATENA BURGER</strong>（18:00 前後吃），或出館後到河原町吃</li>
         <li><strong>紀念品</strong>：館內限定，最後再逛</li>
-        <li>營業時間近年調整過（18:00 → 19:00 → 20:00），出發前再看一次官網</li>
       </ul>
       <hr>
 
-      <div class="subheader">7️⃣ 河原町（逛不完直接跳過）</div>
+      <div class="subheader">7️⃣ 河原町</div>
       <ul>
-        <li><strong>怎麼去 A</strong>：近鉄小倉（館東口走 5 分）→ 近鉄京都線 → 丹波橋 → 京阪 → <strong>祇園四条</strong>，約 40-45 分，過四條大橋就是河原町</li>
-        <li><strong>怎麼去 B</strong>：JR 小倉 → 京都站（快速 21 分）→ 地鐵烏丸線 → <strong>四条</strong>，約 50 分；近鉄也有直通烏丸線的車（行先國際會館），班次和票價用 Google 對一下</li>
-        <li><strong>⏰ 到的時候大約 20:00-20:30</strong>：Nintendo KYOTO、寶可夢中心、Sanrio Gallery、京都BAL（無印良品）<strong>20:00 關</strong>，趕不上就留 D5</li>
+        <li><strong>20:00 關</strong>：Nintendo KYOTO、寶可夢中心、Sanrio Gallery、京都BAL（無印良品）</li>
         <li><strong>21:00 關</strong>：Kiddy Land、ミーナ京都（UNIQLO／GU／Loft）、扭蛋百貨、河原町ガーデン；唐吉訶德約 01:00、松本清 23:00、Cocokara 22:45</li>
       </ul>
       <ul>
-        <li><strong>走法（走 A 從東邊開始，順時針繞一圈）</strong></li>
+        <li><strong>走法</strong></li>
         <li>① <strong>四條河原町交叉口</strong>：京都河原町ガーデン（B1 扭蛋百貨、7F 北極星）→ 高島屋 7F Nintendo KYOTO、B1 食品館</li>
         <li>② <strong>河原町通往北</strong>：Kiddy Land → 唐吉訶德 → ROUND1（給小孩放電）→ 三條口：ミーナ京都（UNIQLO B1-3F、GU 7F、Loft）、京都BAL（無印良品）</li>
         <li>③ <strong>新京極</strong>（有屋頂，從三條北口往南走回四條通）：Village Vanguard（2F，同棟 B1 DAISO）、扭蛋、遊戲中心 → 南口一帶：Sanrio Gallery、Cocokara</li>
