@@ -8,8 +8,8 @@ function getDay4() {
       <div class="subheader">1️⃣ 天橋立</div>
       <ul>
         <li><strong>08:00</strong> 出發（京都縱貫道約 2hr）</li>
-        <li>道の駅 京丹波 味夢の里（休息站，廁所、丹波栗、黑豆點心，10 分）</li>
-        <li>大雪時縱貫道可能雪鏈管制／封閉，出發前看 NEXCO 西日本，封閉就當天對調成雪日</li>
+        <li>道の駅 京丹波 味夢の里（休息站，廁所、丹波栗、黑豆點心）</li>
+        <li>大雪時縱貫道可能管制／封閉</li>
       </ul>
       <div class="cols">
         <div class="col">${codeBlock("中途休息站MapCode：344 245 245*10")}</div>
@@ -23,7 +23,7 @@ function getDay4() {
 
       <div class="subheader">2️⃣ 天橋立 View Land</div>
       <ul>
-        <li>搭單軌或吊椅上山，<strong>南側「股間望景」</strong>，山頂有小型遊樂設施，1hr</li>
+        <li>搭單軌或吊椅上山，<strong>南側「股間望景」</strong>，山頂有小型遊樂設施</li>
       </ul>
       ${btn("📍 天橋立 View Land", "Amanohashidate Chairlift and Monorail", "walking")}
       ${showFoodTable("天橋立")}
@@ -32,9 +32,9 @@ function getDay4() {
       <div class="subheader">3️⃣ 智恩寺 → 沙洲騎腳踏車</div>
       <ul>
         <li><strong>智恩寺</strong>（文殊菩薩，門前吃智慧之餅）</li>
-        <li><strong>廻旋橋</strong>：智恩寺旁的紅色旋轉橋，有船經過整座轉 90 度</li>
-        <li>智恩寺旁租腳踏車，<strong>穿越沙洲單程 20 分</strong>，可在對岸（傘松側）還車</li>
-        <li>不騎的話走路單程約 45 分</li>
+        <li><strong>廻旋橋</strong>：智恩寺旁的紅色旋轉橋，有船經過整座轉90度</li>
+        <li>智恩寺旁租腳踏車，<strong>穿越沙洲單程20分</strong>，可對岸(傘松側)還車</li>
+        <li>不騎的話走路單程約45分</li>
       </ul>
       ${btn("📍 智恩寺", "Chionji Temple Amanohashidate", "walking")}
       ${showFoodTable("智恩寺沙洲")}
@@ -54,10 +54,10 @@ function getDay4() {
       <div class="subheader">5️⃣ 伊根舟屋</div>
       <ul>
         <li><strong>13:00</strong> 出發 → 伊根約 30 分</li>
-        <li><strong>伊根灣遊覽船</strong>：（25 分，船上餵海鷗，冬天約每小時一班）
+        <li><strong>伊根灣遊覽船</strong>：（冬天約每小時一班）
           <ul><li>或 <strong>海上計程車</strong>漁師小船開進舟屋群底下，約 ¥1,000/人，現場找</li></ul>
         </li>
-        <li><strong>舟屋街散步</strong> 30 分 → 向井酒造（伊根滿開紅色米酒）→ INE CAFE（海景咖啡）</li>
+        <li><strong>舟屋街散步</strong> → 向井酒造（伊根滿開紅色米酒）→ INE CAFE（海景咖啡）</li>
       </ul>
       ${codeBlock("MapCode：652 604 655*44")}
       <div class="cols">
@@ -72,7 +72,7 @@ function getDay4() {
       <div class="subheader">6️⃣ 舞鶴（備二選一）</div>
       <ul>
         <li><strong>15:00</strong> 伊根出發</li>
-        <li>走舞鶴若狹道回京都會經過舞鶴，多約 40 分，<strong>16:00-16:40</strong> 停一個就好：
+        <li>走舞鶴若狹道會經過舞鶴，多約40分，<strong>16:00-16:40</strong> 停一個就好：
           <ul>
             <li><strong>道の駅 舞鶴港</strong>：海鮮市場(PM 5點前)，松葉蟹、牡蠣現烤現吃</li>
             <li><strong>舞鶴紅磚公園</strong>：明治海軍紅磚倉庫群</li>
@@ -89,9 +89,9 @@ function getDay4() {
 
       <div class="subheader">7️⃣ 回京都 → 還車</div>
       <ul>
-        <li>加油 → <strong>10pm 前</strong>還車（滿油、拿 ETC 明細），明早不用趕</li>
+        <li>加油 → <strong>10pm 前</strong>還車（滿油、拿 ETC 明細）</li>
         <li>🍽 晚餐：京都站周邊</li>
-        <li>22:00前趕不到租車店→ 車停飯店附近投幣停車場，明早07:45還</li>
+        <li>22:00前趕不到租車店→ 明早07:45還</li>
       </ul>
       ${codeBlock("22 PIECES MapCode：7 526 455*55")}
       ${btn("🚗 22 PIECES", "22 PIECES Kyoto", "driving")}
