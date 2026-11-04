@@ -7,14 +7,14 @@ function getDay2() {
     html: `
       <div class="subheader">1️⃣ 京都站 → 宇治</div>
       <ul>
-        <li><strong>09:15</strong> 京都站 JR 奈良線 → <strong>宇治</strong>（約 20-25 分，¥240，IC 卡直接刷）</li>
+        <li><strong>09:15</strong> 京都站 JR 奈良線 → <strong>宇治</strong>（20-25 分）</li>
       </ul>
       ${btn("🚃 JR 宇治站", "JR Uji Station", "transit")}
       <hr>
 
       <div class="subheader">2️⃣ 平等院鳳凰堂</div>
       <ul>
-        <li><strong>10:00</strong> 從 JR 宇治站走約 10 分，10 円硬幣上的那棟，冬天人少</li>
+        <li><strong>10:00</strong> 從 JR 宇治站走約 10 分</li>
         <li>鳳凰堂內部要另外買時段票</li>
       </ul>
       ${btn("📍 平等院", "Byodoin Temple", "walking")}
@@ -29,10 +29,9 @@ function getDay2() {
       ${showFoodTable("宇治")}
       <hr>
 
-      <div class="subheader">4️⃣ 宇治橋 → 宇治上神社</div>
+      <div class="subheader">4️⃣ 宇治上神社</div>
       <ul>
-        <li><strong>13:00</strong> 從平等院走表參道 → <strong>宇治橋</strong>（紫式部像）→ 過橋走 10 分 → <strong>宇治上神社</strong></li>
-        <li>小孩累了宇治上神社跳過，回程在 JR 宇治站前商店街買抹茶伴手禮</li>
+        <li>回程在 JR 宇治站前商店街買抹茶伴手禮</li>
       </ul>
       ${btn("📍 宇治上神社", "Ujigami Shrine", "walking")}
       <hr>
@@ -63,7 +62,6 @@ function getDay2() {
         <li><strong>21:00 關</strong>：Kiddy Land、ミーナ京都（UNIQLO／GU／Loft）、扭蛋百貨、河原町ガーデン</li>
       </ul>
       <ul>
-        <li><strong>走法</strong></li>
         <li>① <strong>四條河原町交叉口</strong>：京都河原町ガーデン（B1 扭蛋百貨、7F 北極星）→ 高島屋 7F Nintendo KYOTO、B1 食品館</li>
         <li>② <strong>河原町通往北</strong>：Kiddy Land → 唐吉訶德 → ROUND1 → 三條口：ミーナ京都（UNIQLO B1-3F、GU 7F、Loft）、京都BAL（無印良品）</li>
         <li>③ <strong>新京極</strong>（有屋頂，從三條北口往南走回四條通）：Village Vanguard（2F，同棟 B1 DAISO）、扭蛋、遊戲中心 → 南口一帶：Sanrio Gallery、Cocokara</li>
