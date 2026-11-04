@@ -12,17 +12,17 @@ function getDay1() {
 
       <div class="subheader">1️⃣ 關空 → Haruka</div>
       <ul>
-        <li><strong>14:45</strong> 落地 → 入關約 1hr</li>
-        <li><strong>15:45</strong> JR 關西機場站 搭 <strong>Haruka</strong>（直達京都約 75 分）</li>
+        <li><strong>14:45</strong> 落地（Haruka 劃位）</li>
+        <li>搭 <strong>Haruka</strong>（直達京都約75分）</li>
       </ul>
       ${btn("🚶 JR 關西機場站 (Haruka 月台)", "Kansai-Airport Station JR", "walking")}
       <details class="expander">
         <summary>💡 落地要做的事</summary>
         <div class="expander-body">
           <ul>
-            <li> <strong>Haruka 劃位</strong> 或用手機 Suica</li>
-            <li>買 <strong>ICOCA(兒童)</strong> 或用手機 Suica</li>
-            <li>便利商店買水</li>
+            <li> <strong>Haruka 劃位</strong></li>
+            <li>買 <strong>ICOCA(兒童)</strong></li>
+            <li>便利商店買食物</li>
           </ul>
         </div>
       </details>
@@ -30,7 +30,7 @@ function getDay1() {
 
       <div class="subheader">2️⃣ 京都站 → 22 PIECES</div>
       <ul>
-        <li><strong>17:00</strong> 抵京都站 → 走路到飯店</li>
+        <li>走路到飯店</li>
       </ul>
       ${btn("🏠 22 PIECES", "22 PIECES Kyoto", "walking")}
       <hr>
