@@ -7,16 +7,16 @@ function getDay3() {
     html: `
       <div class="subheader">1️⃣ 取車</div>
       <ul>
-        <li><strong>08:00</strong> 京都站周邊租車店取車（48hr，雪胎＋ETC）</li>
+        <li><strong>08:00</strong> 取車（48hr，雪胎＋ETC）</li>
         <li>預約號碼: 26093001336</li>
-        <li>取車時確認：雪胎、ETC 卡插好、油箱滿、還車時間 D5 07:45</li>
+        <li>取車時確認：雪胎、ETC、油箱滿、還車時間</li>
       </ul>
       ${btn("🚶 NISSAN Rent A Car Kyoto", "34.984459129730546, 135.7547459938482", "walking")}
       <hr>
 
       <div class="subheader">2️⃣ 琵琶湖山谷 (びわ湖バレイ)</div>
       <ul>
-        <li><strong>08:50</strong> 到山麓站停車場，<strong>09:30</strong> 冬季第一班纜車上山（09:45 到山頂）</li>
+        <li><strong>08:50</strong> 到山麓站停車場，<strong>09:30</strong> 第一班纜車</li>
         <li><strong>09:45-10:20</strong> ★琵琶湖 Terrace 先拍</li>
         <li><strong>10:30-12:00</strong> ★雪鞋健行</li>
         <li><strong>12:00-12:45</strong> ★Snow Land 雪橇（山頂站正前方，雪橇租 ¥500/60 分）</li>
@@ -32,8 +32,7 @@ function getDay3() {
       <div class="subheader">3️⃣ 白鬚神社 湖中鳥居</div>
       <ul>
         <li><strong>13:00</strong> 到（往北約25分）</li>
-        <li>下午順光，站<strong>社務所前展望台</strong>拍鳥居，40 分</li>
-        <li>⚠️ 國道 161 車多，<strong>不要為了拍照橫越馬路</strong></li>
+        <li>站<strong>社務所前展望台</strong>拍鳥居，40 分</li>
         <li><strong>13:45</strong> 出發</li>
       </ul>
       ${codeBlock("MapCode：263 376 499*57")}
@@ -43,14 +42,14 @@ function getDay3() {
 
       <div class="subheader">4️⃣ 浮御堂(備)</div>
       <ul>
-        <li><strong>浮御堂</strong>（回程順路）：湖上佛堂，20分，14:15-14:35</li>
+        <li><strong>浮御堂</strong>（回程順路）：湖上佛堂（20分）</li>
         <li><strong>▲ 琵琶湖兒童之國公園</strong>（往北10分）</li>
-        <li><strong>▲ 水杉林蔭大道</strong>（再往北40分）<strong>只有放棄貴船才去</strong></li>
+        <li><strong>▲ 水杉林蔭大道</strong>（再往北40分）<strong>放棄貴船才去</strong></li>
       </ul>
       ${codeBlock("浮御堂MapCode：616 065 775*62")}
       <div class="cols">
         <div class="col">${btn("🚗 浮御堂🅿️", "35.110234089508126, 135.92081966978157", "driving")}</div>
-        <div class="col">${btn("🚗 琵琶湖兒童之國公園", "Biwako Kodomo no Kuni", "driving")}</div>
+        <div class="col">${btn("🚗 兒童之國公園", "Biwako Kodomo no Kuni", "driving")}</div>
         <div class="col">${btn("🚗 水杉大道", "Metasequoia Namiki Makino", "driving")}</div>
       </div>
       ${showFoodTable("浮御堂")}
@@ -59,7 +58,7 @@ function getDay3() {
 
       <div class="subheader">5️⃣ 鞍馬大天狗(備)</div>
       <ul>
-        <li>大天狗合照(5分)→ 多聞堂牛若餅(車上吃)→ 仁王門(只看門不進去）</li>
+        <li>大天狗合照(5分)→ 多聞堂牛若餅(車上吃)→ 仁王門(不進去）</li>
       </ul>
       ${codeBlock("MapCode：479 108 091*04")}
       <div class="cols">
@@ -70,8 +69,8 @@ function getDay3() {
 
       <div class="subheader">6️⃣ 貴船神社（黃昏燈籠）</div>
       <ul>
-        <li>堅田 → 途中越（國道 367）經大原 → <strong>15:45</strong> 貴船（約 1hr10；大雪封路改湖西道路→京都市區→貴船，多 15 分）</li>
-        <li>參道燈籠<strong>每天傍晚都點</strong>，冬天約 16:30 亮、日落 17:10、<strong>18:00 閉門</strong></li>
+        <li>堅田 → 途中越（國道 367）經大原 → 貴船（約 1hr10；大雪封路改湖西道路→京都市區→貴船，多 15 分）</li>
+        <li>參道燈籠，冬天約16:30亮、<strong>18:00 閉門</strong></li>
         <li>紅燈籠石階→ 水占卜(紙放水裡才浮字)→ 結社</li>
         <li>停車：本宮 10 台、奥宮 15 台</li>
       </ul>
@@ -109,9 +108,9 @@ function getDay3() {
       <div class="alert alert-info">
         <p>💡 提醒：明天舟屋日</p>
         <ul>
-          <li>明天 <strong>15:00 一定要從伊根出發</strong>，<strong>22:00 前還車</strong>（滿油）</li>
+          <li><strong>22:00 前還車</strong>（滿油）</li>
           <li>看明天天氣、<strong>NEXCO 西日本</strong> 縱貫道路況（大雪會雪鏈管制或封閉）</li>
-          <li>油量夠不夠（明天來回約 260 km，回程順便加滿）</li>
+          <li>油量夠不夠（明天來回約 260 km）</li>
         </ul>
       </div>
       <hr>
