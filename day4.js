@@ -113,10 +113,9 @@ function getDay4() {
       ${showFoodTable("京都飯店-逛")}
 
       <div class="alert alert-info">
-        <p>💡 提醒：明天金閣寺 → teamLab</p>
+        <p>💡 提醒：teamLab</p>
         <ul>
           <li>確認 <strong>teamLab 11:00 場</strong> 票在手機裡</li>
-          <li>查 <strong>地鐵九條 → 北大路</strong> 首班時間，北大路巴士總站 205 乘車處</li>
           <li>車已還的話明早不用趕；沒還的話 07:45 前還，油要滿</li>
         </ul>
       </div>
