@@ -10,22 +10,14 @@ function getDay1() {
         <div>11:15 TPE 起飛 → 14:45 KIX 抵達</div>
       </div>
 
-      <div class="subheader">1️⃣ 關空 → Haruka</div>
+      <div class="subheader">1️⃣ 關空 → Haruka(75分)→ 京都</div>
       <ul>
-        <li><strong>14:45</strong> 落地（Haruka 劃位）</li>
-        <li>搭 <strong>Haruka</strong>（直達京都約75分）</li>
+        <li><strong>14:45</strong> 落地</li>
+        <li><a href="https://guest-ui.west-qr.com/#/" target="_blank" rel="noopener noreferrer">WEST QR 劃位</a></li>
+        <li>買ICOCA(兒童)、便利商店買食物</li>
       </ul>
       ${btn("🚶 JR 關西機場站 (Haruka 月台)", "Kansai-Airport Station JR", "walking")}
-      <details class="expander">
-        <summary>💡 落地要做的事</summary>
-        <div class="expander-body">
-          <ul>
-            <li> <strong>Haruka 劃位</strong></li>
-            <li>買 <strong>ICOCA(兒童)</strong></li>
-            <li>便利商店買食物</li>
-          </ul>
-        </div>
-      </details>
+      
       <hr>
 
       <div class="subheader">2️⃣ 京都站 → 22 PIECES</div>
