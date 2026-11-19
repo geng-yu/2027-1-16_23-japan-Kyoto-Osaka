@@ -7,8 +7,9 @@ function getDay8() {
     html: `
       <div class="subheader">1️⃣ 關空利木津巴士</div>
       <ul>
-        <li><strong>10:00</strong> 退房，行李最後檢查：護照、免稅品放拿得到的地方</li>
-        <li>日本環球影城 <strong>乘車處 1</strong> 上車 → 約 70 分 → 關空</li>
+        <li><strong>10:00</strong> 退房</li>
+        <li><strong>10:50</strong> 班次</li>
+        <li>日本環球影城 <strong>乘車處 1</strong> 上車 → 約 70 分 → 關空1航</li>
       </ul>
       ${btn("🚶 導航：利木津巴士 乘車處 1", "34.66914931884008, 135.4327468195929", "walking")}
 
