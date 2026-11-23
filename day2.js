@@ -46,26 +46,34 @@ function getDay2() {
       <div class="subheader">6️⃣ 任天堂博物館</div>
       <ul>
         <li><strong>15:30</strong> 入館；<strong>20:00 閉館</strong></li>
-        <li><strong>入館證</strong>：入口核對證件，姓名要跟護照一致</li>
+        <li><strong>入館證</strong>：入口核對證件(護照)</li>
         <li><strong>體驗區</strong>：每人 10 枚硬幣，大型控制器、花札等每項扣幣</li>
-        <li><strong>晚餐 河原町/京都車站 吃</li>
+        <li>晚餐 河原町/京都車站 吃</li>
       </ul>
       ${btn("📍 任天堂博物館", "Nintendo Museum", "walking")}
       <hr>
 
       <div class="subheader">7️⃣ 河原町</div>
       <ul>
-        <li><strong>20:00 關</strong>：Nintendo KYOTO、寶可夢中心、Sanrio Gallery、京都BAL</li>
-        <li><strong>21:00 關</strong>：Kiddy Land、ミーナ京都（UNIQLO／GU／Loft）、扭蛋百貨、河原町ガーデン</li>
+        <li><strong>20:00 關（優先逛）</strong>：任天堂、高島屋B1抹茶、無印良品、寶可夢中心</li>
+        <li><strong>21:00 關（晚點逛）</strong>：UNIQLO 旗艦店、GU、大創、大型扭蛋</li>
       </ul>
       <ul>
-        <li>① <strong>四條河原町交叉口</strong>：京都河原町ガーデン（B1 扭蛋百貨、7F 北極星）→ 高島屋 7F Nintendo KYOTO、B1 食品館</li>
-        <li>② <strong>河原町通往北</strong>：Kiddy Land → 唐吉訶德 → ROUND1 → 三條口：ミーナ京都（UNIQLO B1-3F、GU 7F、Loft）、京都BAL（無印良品）</li>
-        <li>③ <strong>新京極</strong>（有屋頂，從三條北口往南走回四條通）：Village Vanguard（2F，同棟 B1 DAISO）、扭蛋、遊戲中心 → 南口一帶：Sanrio Gallery、Cocokara</li>
-        <li>④ <strong>四條通往西</strong>：大丸京都店 → 四条烏丸 SUINA 室町 4F 寶可夢中心 → 地鐵四条駅</li>
+        <li>① <strong>四條河原町交叉口</strong>：高島屋（7F <strong>任天堂</strong>、B1 <strong>抹茶</strong>：丸久／一保堂）→ 河原町ガーデン B1 <strong>扭蛋百貨</strong></li>
+        <li>② <strong>河原町通往北</strong>：京都BAL 5F <strong>無印良品</strong> → ミーナ京都（B1-3F <strong>UNIQLO 全球旗艦店</strong>、7F <strong>GU</strong>）</li>
+        <li>③ <strong>新京極</strong>：ダイアモンドビル B1 <strong>大創 DAISO</strong></li>
+        <li>④ <strong>四條通往西</strong>：SUINA 室町 2F <strong>寶可夢中心</strong> → 地鐵四条駅回京都站</li>
       </ul>
-      ${btn("🚃 近鉄 小倉站", "Kintetsu Ogura Station Uji", "transit")}
-      ${btn("📍 河原町", "35.00366275389363, 135.76729476517036", "transit")}
+
+      <div class="cols">
+        <div class="col">${btn("🚃 近鉄 小倉站", "Kintetsu Ogura Station Uji", "walking")}</div>
+        <div class="col">${btn("① 河原町", "35.00366275389363, 135.76729476517036", "transit")}</div>
+      </div>
+      <div class="cols">
+        <div class="col">${btn("② UQ/無印", "Mina Kyoto", "walking")}</div>
+        <div class="col">${btn("③ 新京極", "35.005214, 135.7674", "walking")}</div>
+        <div class="col">${btn("④ 寶可夢", "Pokemon Center Kyoto", "walking")}</div>
+      </div>
       ${showFoodTable("河原町-吃")}
       ${showFoodTable("河原町-逛")}
       <hr>
