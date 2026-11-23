@@ -31,7 +31,6 @@ function getDay2() {
 
       <div class="subheader">4️⃣ 宇治上神社</div>
       <ul>
-        <li>回程在 JR 宇治站前商店街買抹茶伴手禮</li>
       </ul>
       ${btn("📍 宇治上神社", "Ujigami Shrine", "walking")}
       <hr>
@@ -46,12 +45,10 @@ function getDay2() {
 
       <div class="subheader">6️⃣ 任天堂博物館</div>
       <ul>
-        <li><strong>15:30</strong> 入館；<strong>20:00 閉館</strong>，沒有退場時間限制</li>
+        <li><strong>15:30</strong> 入館；<strong>20:00 閉館</strong></li>
         <li><strong>入館證</strong>：入口核對證件，姓名要跟護照一致</li>
         <li><strong>體驗區</strong>：每人 10 枚硬幣，大型控制器、花札等每項扣幣</li>
-        <li><strong>花札工房</strong>：另付費、約 1 小時，進館先看還有沒有場次</li>
-        <li><strong>晚餐二選一</strong>：館內 <strong>HATENA BURGER</strong>（18:00 前後吃），或出館後到河原町吃</li>
-        <li><strong>紀念品</strong>：館內限定，最後再逛</li>
+        <li><strong>晚餐 河原町/京都車站 吃</li>
       </ul>
       ${btn("📍 任天堂博物館", "Nintendo Museum", "walking")}
       <hr>
