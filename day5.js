@@ -29,7 +29,7 @@ function getDay5() {
         <li><strong>11:00</strong> 場，可裝官方App看地圖</li>
       </ul>
       ${btn("🚶 導航：teamLab Biovortex Kyoto", "teamLab Biovortex Kyoto", "walking")}
-      ${showFoodTable("teamLab周邊")}
+      ${showFoodTable("teamLab")}
       <hr>
 
       <div class="subheader">4️⃣ 錦市場</div>
