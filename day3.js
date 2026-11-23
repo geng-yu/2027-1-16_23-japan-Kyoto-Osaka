@@ -7,21 +7,19 @@ function getDay3() {
     html: `
       <div class="subheader">1️⃣ 取車</div>
       <ul>
-        <li><strong>08:00</strong> 取車（48hr，雪胎＋ETC）</li>
+        <li><strong>08:00</strong> 取車(48hr，雪胎、四驅、ETC)</li>
         <li>預約號碼: 26093001336</li>
-        <li>取車時確認：雪胎、ETC、油箱滿、還車時間</li>
+        <li>早餐租車旁LAWSON、多買一點當中餐</li>
       </ul>
       ${btn("🚶 NISSAN Rent A Car Kyoto", "34.984459129730546, 135.7547459938482", "walking")}
       <hr>
 
       <div class="subheader">2️⃣ 琵琶湖山谷 (びわ湖バレイ)</div>
       <ul>
-        <li><strong>08:50</strong> 到山麓站停車場，<strong>09:30</strong> 第一班纜車</li>
-        <li><strong>09:45-10:20</strong> ★琵琶湖 Terrace 先拍</li>
-        <li><strong>10:30-12:00</strong> ★雪鞋健行</li>
-        <li><strong>12:00-12:45</strong> ★Snow Land 雪橇（山頂站正前方，雪橇租 ¥500/60 分）</li>
-        <li>○ Café 360 要再搭ホーライ吊椅（10:00-15:30）</li>
-        <li>🍽 午餐：早上超市買飯捲，12:45 下山前在山頂吃，或車上吃</li>
+        <li><strong>09:30</strong> 第一班纜車</li>
+        <li>琵琶湖觀景台 先拍</li>
+        <li><strong>10:30</strong> 雪鞋健行(1.5H)</li>
+        <li>天氣好先搭吊椅到Cafe 360 拍完再下來玩雪</li>
         <li><strong>13:00</strong> 下山</li>
       </ul>
       ${codeBlock("MapCode：263 094 843*44")}
@@ -31,9 +29,7 @@ function getDay3() {
 
       <div class="subheader">3️⃣ 白鬚神社 湖中鳥居</div>
       <ul>
-        <li><strong>13:00</strong> 到（往北約25分）</li>
-        <li>站<strong>社務所前展望台</strong>拍鳥居，40 分</li>
-        <li><strong>13:45</strong> 出發</li>
+        <li>往北約25分</li>
       </ul>
       ${codeBlock("MapCode：263 376 499*57")}
       ${btn("⛩️ 白鬚神社", "35.274213263032365, 136.01084250538855", "driving")}
