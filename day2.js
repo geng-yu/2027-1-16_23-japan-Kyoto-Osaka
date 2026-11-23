@@ -67,12 +67,12 @@ function getDay2() {
 
       <div class="cols">
         <div class="col">${btn("🚃 近鉄 小倉站", "Kintetsu Ogura Station Uji", "walking")}</div>
-        <div class="col">${btn("① 河原町", "35.00366275389363, 135.76729476517036", "transit")}</div>
+        <div class="col">${btn("① 高島屋", "35.003651800889465, 135.76908716520896", "transit")}</div>
       </div>
       <div class="cols">
         <div class="col">${btn("② UQ/無印", "Mina Kyoto", "walking")}</div>
-        <div class="col">${btn("③ 新京極", "35.005214, 135.7674", "walking")}</div>
-        <div class="col">${btn("④ 寶可夢", "Pokemon Center Kyoto", "walking")}</div>
+        <div class="col">${btn("③ 新京極", "35.005196585760714, 135.76723684749612", "walking")}</div>
+        <div class="col">${btn("④ 寶可夢", "35.003530944564844, 135.75836512425542", "walking")}</div>
       </div>
       ${showFoodTable("河原町-吃")}
       ${showFoodTable("河原町-逛")}
