@@ -1,6 +1,6 @@
 function getGmapLink(query, mode = "transit") {
   const baseUrl = "https://www.google.com/maps/dir/?api=1";
-  return `${baseUrl}&destination=${query}&travelmode=${mode}`;
+  return `${baseUrl}&destination=${encodeURIComponent(query)}&travelmode=${mode}`;
 }
 
 // 產生 UI 元件輔助函式
