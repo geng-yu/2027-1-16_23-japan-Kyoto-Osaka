@@ -23,41 +23,36 @@ function getDay4() {
 
       <div class="subheader">2️⃣ 天橋立 View Land</div>
       <ul>
-        <li>搭單軌或吊椅上山，<strong>南側「股間望景」</strong>，山頂有小型遊樂設施</li>
+        <li>上山單軌電車、下山個人吊椅(限國小、不可抱)</li>
       </ul>
       ${btn("📍 天橋立 View Land", "Amanohashidate Chairlift and Monorail", "walking")}
       ${showFoodTable("天橋立")}
       <hr>
 
-      <div class="subheader">3️⃣ 智恩寺 → 沙洲騎腳踏車</div>
+      <div class="subheader">3️⃣ 智恩寺</div>
       <ul>
-        <li><strong>智恩寺</strong>（文殊菩薩，門前吃智慧之餅）</li>
-        <li><strong>廻旋橋</strong>：智恩寺旁的紅色旋轉橋，有船經過整座轉90度</li>
-        <li>智恩寺旁租腳踏車，<strong>穿越沙洲單程20分</strong>，可對岸(傘松側)還車</li>
-        <li>不騎的話走路單程約45分</li>
+        <li><strong>智恩寺</strong>：文殊菩薩，門前吃智慧之餅</li>
+        <li><strong>廻旋橋</strong>：有船經過整座轉90度</li>
       </ul>
       ${btn("📍 智恩寺", "Chionji Temple Amanohashidate", "walking")}
-      ${showFoodTable("智恩寺沙洲")}
+      ${showFoodTable("智恩寺")}
       <hr>
 
-      <div class="subheader">4️⃣ 傘松公園 → 元伊勢籠神社(備)</div>
+      <div class="subheader">4️⃣ 傘松公園(備)</div>
       <ul>
-        <li>沙洲對岸（府中）搭纜車上山，<strong>北側「股間望景」</strong>，30分</li>
-        <li><strong>かわらけ投げ</strong>：山頂把小陶盤丟過石環，¥300</li>
-        <li>元伊勢籠神社：纜車站旁，10分 → 真名井神社（籠神社走10分）</li>
-        <li>⚠️ 車還停在 View Land 側：騎腳踏車回去取車，或安排一人回去開車到府中接</li>
+        <li><strong>丟瓦片</strong>：把小陶盤丟過石環，¥300</li>
+        <li>元伊勢籠神社：纜車站旁(走10分)</li>
       </ul>
-      ${btn("📍 傘松公園 纜車站", "Kasamatsu Park Cable Car", "walking")}
+      ${btn("📍 傘松公園 纜車站🅿️", "35.582789218695844, 135.19508260507516", "driving")}
       ${showFoodTable("傘松籠神社")}
       <hr>
 
       <div class="subheader">5️⃣ 伊根舟屋</div>
       <ul>
-        <li><strong>13:00</strong> 出發 → 伊根約 30 分</li>
         <li><strong>伊根灣遊覽船</strong>：（冬天約每小時一班）
-          <ul><li>或 <strong>海上計程車</strong>漁師小船開進舟屋群底下，約 ¥1,000/人，現場找</li></ul>
+          <ul><li>或 <strong>海上計程車</strong>小船開進舟屋群底下，約 ¥1,000/人</li></ul>
         </li>
-        <li><strong>舟屋街散步</strong> → 向井酒造（伊根滿開紅色米酒）→ INE CAFE（海景咖啡）</li>
+        <li><strong>舟屋街散步</strong> → 向井酒造(伊根滿開紅色米酒)→ INE CAFE(海景咖啡)</li>
       </ul>
       ${codeBlock("MapCode：652 604 655*44")}
       <div class="cols">
@@ -115,7 +110,7 @@ function getDay4() {
       <div class="alert alert-info">
         <p>💡 提醒：</p>
         <ul>
-          <li>確認 <strong>teamLab 10:30 場</strong> 票在手機裡</li>
+          <li>確認 <strong>teamLab 11:00 場</strong> 票在手機裡</li>
           <li>車已還的話明早不用趕；沒還的話 07:45 前還，油要滿</li>
         </ul>
       </div>
