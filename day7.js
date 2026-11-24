@@ -34,7 +34,7 @@ function getDay7() {
       <div class="subheader">4️⃣ 水世界</div>
       <ul>
         <li><strong>場次當月公佈</strong></li>
-        <li><a href="https://www.usj.co.jp/web/zh/tw/park-guide/schedule/park-hour2">官網</a></li>
+        <li><a href="https://www.usj.co.jp/web/zh/tw/park-guide/schedule/park-hour2" target="_blank" rel="noopener noreferrer">官網</a></li>
         <li><strong>提早半小時到</strong></li>
       </ul>
       <hr>
