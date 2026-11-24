@@ -54,13 +54,18 @@ function getDay4() {
         </li>
         <li><strong>舟屋街散步</strong> → 向井酒造(伊根滿開紅色米酒)→ INE CAFE(海景咖啡)</li>
       </ul>
-      ${codeBlock("MapCode：652 604 655*44")}
+      ${codeBlock("MapCode：652 603 078*43")}
       <div class="cols">
-        <div class="col">${btn("舟屋🅿️1", "35.67584540607587, 135.28772869192494", "driving")}</div>
-        <div class="col">${btn("舟屋🅿️2", "35.67500125343802, 135.28802197600007", "driving")}</div>
-        <div class="col">${btn("舟屋🅿️3", "35.674810315711255, 135.29151710239807", "driving")}</div>
+        <div class="col">${btn("搭船🅿️1", "35.670577649981574, 135.27761043131204", "driving")}</div>
+        <div class="col">${btn("搭船🅿️2", "35.669425804835605, 135.2803998478498", "driving")}</div>
+        <div class="col">${btn("搭船🅿️3", "35.671424633028344, 135.27696592321547", "driving")}</div>
       </div>
       ${btn("📍 導航：伊根灣遊覽船乘船處", "35.670593163544304, 135.2773862355867", "walking")}
+      <div class="cols">
+        <div class="col">${btn("散步🅿️1", "35.67588609020973, 135.2876171094408", "driving")}</div>
+        <div class="col">${btn("散步🅿️2", "35.675009163323544, 135.28801877920432", "driving")}</div>
+        <div class="col">${btn("散步🅿️3", "35.67480632258699, 135.2915108528081", "driving")}</div>
+      </div>
       ${showFoodTable("伊根")}
       <hr>
 
