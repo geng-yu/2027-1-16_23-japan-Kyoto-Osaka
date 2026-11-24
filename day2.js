@@ -8,8 +8,8 @@ function getDay2() {
       <div class="subheader">1️⃣ 京都站 → 宇治</div>
       <ul>
         <li>京都站 JR 奈良線 → 宇治</li>
-        <li><strong>9:04(17分)、9:15(22分)、9:27(22分)</strong>/li>
-        <li><strong>9:34(17分)、9:45(22分)、9:57(22分)</strong>/li>
+        <li><strong>9:04(17分)、9:15(22分)、9:27(22分)</strong></li>
+        <li><strong>9:34(17分)、9:45(22分)、9:57(22分)</strong></li>
       </ul>
       ${btn("🚃 JR 宇治站", "JR Uji Station", "transit")}
       <hr>
