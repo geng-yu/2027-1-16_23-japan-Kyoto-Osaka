@@ -60,7 +60,7 @@ function getDay4() {
         <div class="col">${btn("舟屋🅿️2", "35.67500125343802, 135.28802197600007", "driving")}</div>
         <div class="col">${btn("舟屋🅿️3", "35.674810315711255, 135.29151710239807", "driving")}</div>
       </div>
-      ${btn("📍 導航：伊根灣遊覽船乘船處", "Ine Bay Tour Boat", "walking")}
+      ${btn("📍 導航：伊根灣遊覽船乘船處", "35.670593163544304, 135.2773862355867", "walking")}
       ${showFoodTable("伊根")}
       <hr>
 
