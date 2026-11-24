@@ -44,8 +44,8 @@ function getDay2() {
 
       <div class="subheader">6️⃣ 宇治 → JR 小倉 → 任天堂博物館</div>
       <ul>
-        <li><strong>14:20</strong> JR 宇治站 → <strong>JR 小倉</strong>（奈良線往奈良方向，1 站約 4 分）→ 北出口走約 8 分</li>
-        <li><strong>15:10</strong> 到門口，<strong>15:30 時段</strong>入館（勿遲到）；入館前可免費寄物，先上廁所</li>
+        <li><strong>14:56(最晚)</strong> JR宇治站 → <strong>JR小倉</strong>（往奈良方向）→ 北出口走10分</li>
+        <li><strong>15:30 時段</strong>入館；入館前可免費寄物，先上廁所</li>
       </ul>
       ${btn("🚃 JR 小倉站", "JR Ogura Station Uji", "transit")}
       <hr>
@@ -53,8 +53,8 @@ function getDay2() {
       <div class="subheader">7️⃣ 任天堂博物館</div>
       <ul>
         <li><strong>15:30</strong> 入館；<strong>20:00 閉館</strong></li>
-        <li><strong>入館證</strong>：入口核對證件(護照)</li>
-        <li><strong>體驗區</strong>：每人 10 枚硬幣，大型控制器、花札等每項扣幣</li>
+        <li><strong>入館證</strong>：核對證件(護照)</li>
+        <li><strong>體驗區</strong>：每人10枚硬幣</li>
         <li>晚餐 河原町/京都車站 吃</li>
       </ul>
       ${btn("📍 任天堂博物館", "Nintendo Museum", "walking")}
