@@ -5,15 +5,8 @@ function getDay5() {
     fullTitle: "Day 5(三): teamLab & 鬧區",
     caption: "1/20 (三)｜teamLab → 鬧區",
     html: `
-      <div class="subheader">1️⃣ 還車</div>
-      <ul>
-        <li><strong>07:45</strong> 還車（加滿油）</li>
-      </ul>
-      ${btn("⛽ 加油站(24H)", "34.97324984490103, 135.74648147860697", "driving")}
-      ${btn("🚶 NISSAN Rent A Car Kyoto", "34.984459129730546, 135.7547459938482", "driving")}
-      <hr>
 
-      <div class="subheader">2️⃣ 早餐</div>
+      <div class="subheader">1️⃣ 早餐</div>
       <ul>
         <li><strong>09:00</strong> 車站吃</li>
       </ul>
@@ -24,7 +17,7 @@ function getDay5() {
       </div>
       <hr>
 
-      <div class="subheader">3️⃣ teamLab Biovortex Kyoto</div>
+      <div class="subheader">2️⃣ teamLab Biovortex Kyoto</div>
       <ul>
         <li><strong>11:00</strong> 場，可裝官方App看地圖</li>
       </ul>
@@ -32,7 +25,7 @@ function getDay5() {
       ${showFoodTable("teamLab")}
       <hr>
 
-      <div class="subheader">4️⃣ 錦市場</div>
+      <div class="subheader">3️⃣ 錦市場</div>
       <ul>
         <li>走回 <strong>京都站</strong></li>
         <li>玉子燒、豆乳甜甜圈、烤麻糬、章魚蛋</li>
@@ -42,14 +35,14 @@ function getDay5() {
       ${showFoodTable("錦市場")}
       <hr>
 
-      <div class="subheader">5️⃣ UQ旗艦店</div>
+      <div class="subheader">4️⃣ UQ旗艦店</div>
       <ul>
       </ul>
       ${btn("📍 UQ旗艦店", "Mina Kyoto", "walking")}
       ${showFoodTable("新京極寺町")}
       <hr>
 
-      <div class="subheader">6️⃣ Nintendo KYOTO ＋ 寶可夢中心</div>
+      <div class="subheader">5️⃣ Nintendo KYOTO ＋ 寶可夢中心</div>
       <ul>
         <li><strong>Nintendo KYOTO</strong>：京都高島屋 S.C.（T8）<strong>7F</strong></li>
         <li><strong>寶可夢中心京都</strong>：SUINA 室町 <strong>4F</strong></li>
@@ -64,7 +57,7 @@ function getDay5() {
 
       <hr>
 
-      <div class="subheader">7️⃣ 22 PIECES</div>
+      <div class="subheader">6️⃣ 22 PIECES</div>
       <ul>
         <li>四條站 → 烏丸線 → 京都站</li>
       </ul>
