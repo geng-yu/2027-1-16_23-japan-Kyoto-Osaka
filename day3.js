@@ -105,8 +105,7 @@ function getDay3() {
         <p>💡 提醒：明天舟屋日</p>
         <ul>
           <li><strong>22:00 前還車</strong>（滿油）</li>
-          <li>看明天天氣、<strong>NEXCO 西日本</strong> 縱貫道路況（大雪會雪鏈管制或封閉）</li>
-          <li>油量夠不夠（明天來回約 260 km）</li>
+          <li>油量夠不夠、買蝦味仙</li>
         </ul>
       </div>
       <hr>
