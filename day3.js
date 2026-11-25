@@ -38,14 +38,12 @@ function getDay3() {
 
       <div class="subheader">4️⃣ 浮御堂(備)</div>
       <ul>
-        <li><strong>浮御堂</strong>（回程順路）：湖上佛堂(20分)</li>
-        <li><strong>▲ 琵琶湖兒童之國公園</strong>(往北10分)</li>
-        <li><strong>▲ 水杉林蔭大道</strong>(往北40分)<strong>放棄貴船才去</strong></li>
+        <li><strong>浮御堂</strong>：湖上佛堂(20分，回程順路)</li>
+        <li><strong>▲ 水杉林蔭大道</strong>(往北40分，放棄貴船才去)</li>
       </ul>
       ${codeBlock("浮御堂MapCode：616 065 775*62")}
       <div class="cols">
         <div class="col">${btn("🚗 浮御堂🅿️", "35.110234089508126, 135.92081966978157", "driving")}</div>
-        <div class="col">${btn("🚗 兒童之國公園", "Biwako Kodomo no Kuni", "driving")}</div>
         <div class="col">${btn("🚗 水杉大道", "Metasequoia Namiki Makino", "driving")}</div>
       </div>
       ${showFoodTable("浮御堂")}
