@@ -14,19 +14,25 @@ function getDay2() {
       ${btn("🚃 JR 宇治站", "JR Uji Station", "transit")}
       <hr>
 
-      <div class="subheader">2️⃣ 平等院鳳凰堂</div>
+      <div class="subheader">2️⃣ 中村藤吉 本店</div>
+      <ul>
+      <li>人太多去 平等院店</li>
+      </ul>
+      ${btn("📍 中村藤吉 本店", "34.88950441061812, 135.80175749116992", "walking")}
+      <hr>
+      
+      <div class="subheader">3️⃣ 中村藤吉 平等院店</div>
+      <ul>
+        <li>吃甜點</li>
+      </ul>
+      ${btn("📍 中村藤吉 平等院店", "34.891509646318, 135.80624121683988", "walking")}
+      <hr>
+
+      <div class="subheader">3️⃣ 平等院</div>
       <ul>
         <li>鳳凰堂內部要另外買時段票</li>
       </ul>
       ${btn("📍 平等院", "Byodoin Temple", "walking")}
-      <hr>
-
-      <div class="subheader">3️⃣ 中村藤吉 平等院店</div>
-      <ul>
-        <li>先到店登記候位再去逛</li>
-      </ul>
-      ${btn("📍 中村藤吉 平等院店", "34.891509646318, 135.80624121683988", "walking")}
-      ${showFoodTable("宇治")}
       <hr>
 
       <div class="subheader">4️⃣ 宇治上神社</div>
@@ -35,35 +41,43 @@ function getDay2() {
       ${btn("📍 宇治上神社", "Ujigami Shrine", "walking")}
       <hr>
 
-      <div class="subheader">5️⃣ 中村藤吉 本店</div>
+      <div class="subheader">5️⃣ 午餐</div>
       <ul>
-      <li>拌手禮</li>
+      <li></li>
+      </ul>
+      ${showFoodTable("宇治")}
+      <hr>
+
+      <div class="subheader">6️⃣ 中村藤吉 本店</div>
+      <ul>
+      <li>買伴手禮</li>
       </ul>
       ${btn("📍 中村藤吉 本店", "34.88950441061812, 135.80175749116992", "walking")}
       <hr>
 
-      <div class="subheader">6️⃣ 宇治 → JR 小倉 → 任天堂博物館</div>
+      <div class="subheader">7️⃣ 宇治 → JR 小倉 → 任天堂博物館</div>
       <ul>
-        <li><strong>14:56(最晚)</strong> JR宇治站 → <strong>JR小倉</strong>（往奈良方向）→ 北出口走10分</li>
-        <li><strong>15:30 時段</strong>入館；入館前可免費寄物，先上廁所</li>
+        <li><strong>14:30集合(班次26分/37分/52分/56分)</strong></li>
+        <li>JR宇治站 → <strong>JR小倉</strong>(往奈良)</li>
+        <li>計程車約250$</li>
       </ul>
       ${btn("🚃 JR 小倉站", "JR Ogura Station Uji", "transit")}
       <hr>
 
-      <div class="subheader">7️⃣ 任天堂博物館</div>
+      <div class="subheader">8️⃣ 任天堂博物館</div>
       <ul>
+        <li>入館前可免費寄物，先上廁所</li>
         <li><strong>15:30</strong> 入館；<strong>20:00 閉館</strong></li>
-        <li><strong>入館證</strong>：核對證件(護照)</li>
-        <li><strong>體驗區</strong>：每人10枚硬幣</li>
+        <li>入館核對護照；體驗區每人10枚硬幣</li>
         <li>晚餐 河原町/京都車站 吃</li>
       </ul>
       ${btn("📍 任天堂博物館", "Nintendo Museum", "walking")}
       <hr>
 
-      <div class="subheader">8️⃣ 河原町</div>
+      <div class="subheader">9️⃣ 河原町</div>
       <ul>
-        <li><strong>20:00 關（優先逛）</strong>：任天堂、高島屋B1抹茶、無印良品、寶可夢中心</li>
-        <li><strong>21:00 關（晚點逛）</strong>：UNIQLO 旗艦店、GU、大創、大型扭蛋</li>
+        <li><strong>20:00關</strong>：任天堂、高島屋B1抹茶、無印良品、寶可夢中心</li>
+        <li><strong>21:00關</strong>：UNIQLO 旗艦店、GU、大創、大型扭蛋</li>
       </ul>
       <ul>
         <li>① <strong>四條河原町交叉口</strong>：高島屋（7F <strong>任天堂</strong>、B1 <strong>抹茶</strong>：丸久／一保堂）→ 河原町ガーデン B1 <strong>扭蛋百貨</strong></li>
@@ -85,9 +99,9 @@ function getDay2() {
       ${showFoodTable("河原町-逛")}
       <hr>
 
-      <div class="subheader">9️⃣ 回 22 PIECES</div>
+      <div class="subheader">🔟 回 22 PIECES</div>
       <ul>
-        <li>唐吉訶德（AVANTI）開到 24:00，宵夜、明天山上要用的飲料零食可以順便買</li>
+        <li>唐吉訶德24H，宵夜、明天飲料零食順便買</li>
       </ul>
       ${btn("🏠 22 PIECES", "22 PIECES Kyoto", "transit")}
       ${showFoodTable("京都飯店-吃")}
