@@ -18,7 +18,6 @@ function getDay3() {
       <ul>
         <li><strong>09:30</strong> 第一班纜車</li>
         <li>琵琶湖觀景台 先拍</li>
-        <li><strong>10:30</strong> 雪鞋健行(1.5H)</li>
         <li>天氣好先搭吊椅到Cafe 360 拍完再下來玩雪</li>
         <li><strong>13:00</strong> 下山</li>
       </ul>
