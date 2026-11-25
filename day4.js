@@ -7,9 +7,8 @@ function getDay4() {
     html: `
       <div class="subheader">1️⃣ 天橋立</div>
       <ul>
-        <li><strong>08:00</strong> 出發（京都縱貫道約 2hr）</li>
+        <li><strong>08:00</strong> 出發（約 2hr）</li>
         <li>道の駅 京丹波 味夢の里（休息站，廁所、丹波栗、黑豆點心）</li>
-        <li>大雪時縱貫道可能管制／封閉</li>
       </ul>
       <div class="cols">
         <div class="col">${codeBlock("中途休息站MapCode：344 245 245*10")}</div>
@@ -40,7 +39,7 @@ function getDay4() {
 
       <div class="subheader">4️⃣ 傘松公園(備)</div>
       <ul>
-        <li><strong>丟瓦片</strong>：把小陶盤丟過石環，¥300</li>
+        <li><strong>丟瓦片</strong>：把陶盤丟過石環(¥300)</li>
         <li>元伊勢籠神社：纜車站旁(走10分)</li>
       </ul>
       ${btn("📍 傘松公園 纜車站🅿️", "35.582789218695844, 135.19508260507516", "driving")}
@@ -49,7 +48,7 @@ function getDay4() {
 
       <div class="subheader">5️⃣ 伊根舟屋</div>
       <ul>
-        <li><strong>伊根灣遊覽船</strong>：（冬天約每小時一班）
+        <li><strong>伊根灣遊覽船(餵食時手與海平行)</strong>
           <ul><li>或 <strong>海上計程車</strong>小船開進舟屋群底下，約 ¥1,000/人</li></ul>
         </li>
         <li><strong>舟屋街散步</strong> → 向井酒造(伊根滿開紅色米酒)→ INE CAFE(海景咖啡)</li>
@@ -89,7 +88,7 @@ function getDay4() {
 
       <div class="subheader">7️⃣ 回京都 → 還車</div>
       <ul>
-        <li>加油 → <strong>10pm 前</strong>還車（滿油、拿 ETC 明細）</li>
+        <li>加油 → <strong>10pm 前</strong>還車（滿油）</li>
         <li>🍽 晚餐：京都站周邊</li>
         <li>22:00前趕不到租車店→ 明早07:45還</li>
       </ul>
