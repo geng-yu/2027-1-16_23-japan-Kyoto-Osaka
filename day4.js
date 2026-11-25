@@ -23,7 +23,7 @@ function getDay4() {
 
       <div class="subheader">2️⃣ 天橋立 View Land</div>
       <ul>
-        <li>上山單軌電車、下山個人吊椅(限國小、不可抱)</li>
+        <li>上山單軌電車、下山個人吊椅(國小可獨座)</li>
       </ul>
       ${btn("📍 天橋立 View Land", "Amanohashidate Chairlift and Monorail", "walking")}
       ${showFoodTable("天橋立")}
