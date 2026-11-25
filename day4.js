@@ -39,7 +39,7 @@ function getDay4() {
 
       <div class="subheader">4️⃣ 傘松公園(備)</div>
       <ul>
-        <li><strong>丟瓦片</strong>：把陶盤丟過石環(¥300)</li>
+        <li><strong>丟瓦片</strong>：把陶盤丟過石環(¥300/個)</li>
         <li>元伊勢籠神社：纜車站旁(走10分)</li>
       </ul>
       ${btn("📍 傘松公園 纜車站🅿️", "35.582789218695844, 135.19508260507516", "driving")}
@@ -48,7 +48,7 @@ function getDay4() {
 
       <div class="subheader">5️⃣ 伊根舟屋</div>
       <ul>
-        <li><strong>伊根灣遊覽船(餵食時手與海平行)</strong>
+        <li><strong>伊根灣遊覽船</strong>(餵食時手臂與海平行)
           <ul><li>或 <strong>海上計程車</strong>小船開進舟屋群底下，約 ¥1,000/人</li></ul>
         </li>
         <li><strong>舟屋街散步</strong> → 向井酒造(伊根滿開紅色米酒)→ INE CAFE(海景咖啡)</li>
@@ -71,7 +71,7 @@ function getDay4() {
       <div class="subheader">6️⃣ 舞鶴（備二選一）</div>
       <ul>
         <li><strong>15:00</strong> 伊根出發</li>
-        <li>走舞鶴若狹道會經過舞鶴，多約40分，<strong>16:00-16:40</strong> 停一個就好：
+        <li>走舞鶴若狹道會經過舞鶴(多40分，停一個就好)
           <ul>
             <li><strong>道の駅 舞鶴港</strong>：海鮮市場(PM 5點前)，松葉蟹、牡蠣現烤現吃</li>
             <li><strong>舞鶴紅磚公園</strong>：明治海軍紅磚倉庫群</li>
@@ -88,9 +88,9 @@ function getDay4() {
 
       <div class="subheader">7️⃣ 回京都 → 還車</div>
       <ul>
-        <li>加油 → <strong>10pm 前</strong>還車（滿油）</li>
+        <li>加滿油 → <strong>10pm 前</strong>還車</li>
         <li>🍽 晚餐：京都站周邊</li>
-        <li>22:00前趕不到租車店→ 明早07:45還</li>
+        <li><strong>22:00<strong>前趕不到租車店→ 明早<strong>07:45<strong>還</li>
       </ul>
       ${codeBlock("22 PIECES MapCode：7 526 455*55")}
       ${btn("🚗 22 PIECES", "22 PIECES Kyoto", "driving")}
