@@ -38,9 +38,9 @@ function getDay3() {
 
       <div class="subheader">4️⃣ 浮御堂(備)</div>
       <ul>
-        <li><strong>浮御堂</strong>（回程順路）：湖上佛堂（20分）</li>
-        <li><strong>▲ 琵琶湖兒童之國公園</strong>（往北10分）</li>
-        <li><strong>▲ 水杉林蔭大道</strong>（再往北40分）<strong>放棄貴船才去</strong></li>
+        <li><strong>浮御堂</strong>（回程順路）：湖上佛堂(20分)</li>
+        <li><strong>▲ 琵琶湖兒童之國公園</strong>(往北10分)</li>
+        <li><strong>▲ 水杉林蔭大道</strong>(往北40分)<strong>放棄貴船才去</strong></li>
       </ul>
       ${codeBlock("浮御堂MapCode：616 065 775*62")}
       <div class="cols">
@@ -54,7 +54,7 @@ function getDay3() {
 
       <div class="subheader">5️⃣ 鞍馬大天狗(備)</div>
       <ul>
-        <li>大天狗合照(5分)→ 多聞堂牛若餅(車上吃)→ 仁王門(不進去）</li>
+        <li>大天狗合照→ 多聞堂牛若餅(車上吃)→ 仁王門(不進去）</li>
       </ul>
       ${codeBlock("MapCode：479 108 091*04")}
       <div class="cols">
@@ -65,7 +65,6 @@ function getDay3() {
 
       <div class="subheader">6️⃣ 貴船神社（黃昏燈籠）</div>
       <ul>
-        <li>堅田 → 途中越（國道 367）經大原 → 貴船（約 1hr10；大雪封路改湖西道路→京都市區→貴船，多 15 分）</li>
         <li>參道燈籠，冬天約16:30亮、<strong>18:00 閉門</strong></li>
         <li>紅燈籠石階→ 水占卜(紙放水裡才浮字)→ 結社</li>
         <li>停車：本宮 10 台、奥宮 15 台</li>
@@ -82,7 +81,7 @@ function getDay3() {
 
       <div class="subheader">7️⃣ 貴船神社-奧宮(備)</div>
       <ul>
-        <li>貴船最有「神域感」的地方</li>
+        <li>貴船最有神域感的地方</li>
       </ul>
       ${btn("⛩️ 貴船神社(奧宮🅿️)", "35.128346903080796, 135.76514244871177", "driving")}
       <hr>
