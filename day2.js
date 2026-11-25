@@ -43,7 +43,7 @@ function getDay2() {
 
       <div class="subheader">5️⃣ 午餐</div>
       <ul>
-      <li></li>
+      <li>附近吃</li>
       </ul>
       ${showFoodTable("宇治")}
       <hr>
@@ -57,8 +57,8 @@ function getDay2() {
 
       <div class="subheader">7️⃣ 宇治 → JR 小倉 → 任天堂博物館</div>
       <ul>
-        <li><strong>14:30集合(班次26分/37分/52分/56分)</strong></li>
-        <li>JR宇治站 → <strong>JR小倉</strong>(往奈良)</li>
+        <li><strong>14:30集合</strong> (班次 26分/37分/52分/56分)</li>
+        <li>JR宇治站(往奈良) → <strong>JR小倉</strong></li>
         <li>計程車約250$</li>
       </ul>
       ${btn("🚃 JR 小倉站", "JR Ogura Station Uji", "transit")}
@@ -80,10 +80,10 @@ function getDay2() {
         <li><strong>21:00關</strong>：UNIQLO 旗艦店、GU、大創、大型扭蛋</li>
       </ul>
       <ul>
-        <li>① <strong>四條河原町交叉口</strong>：高島屋（7F <strong>任天堂</strong>、B1 <strong>抹茶</strong>：丸久／一保堂）→ 河原町ガーデン B1 <strong>扭蛋百貨</strong></li>
-        <li>② <strong>河原町通往北</strong>：京都BAL 5F <strong>無印良品</strong> → ミーナ京都（B1-3F <strong>UNIQLO 全球旗艦店</strong>、7F <strong>GU</strong>）</li>
-        <li>③ <strong>新京極</strong>：ダイアモンドビル B1 <strong>大創 DAISO</strong></li>
-        <li>④ <strong>四條通往西</strong>：SUINA 室町 2F <strong>寶可夢中心</strong> → 地鐵四条駅回京都站</li>
+        <li>① <strong>四條河原町交叉口</strong>：高島屋（7F:任天堂、B1:抹茶粉;丸久／一保堂）→ 河原町ガーデン B1 <strong>扭蛋百貨</strong></li>
+        <li>② <strong>河原町通往北</strong>：京都BAL 5F:無印良品 → ミーナ京都（B1-3F:UNIQLO 全球旗艦店、7F:GU）</li>
+        <li>③ <strong>新京極</strong>：ダイアモンドビル B1:大創 DAISO</li>
+        <li>④ <strong>四條通往西</strong>：SUINA 室町 2F:寶可夢中心 → 地鐵四条駅回京都站</li>
       </ul>
 
       <div class="cols">
