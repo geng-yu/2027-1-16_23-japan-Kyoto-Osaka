@@ -83,7 +83,7 @@ function getDay2() {
       </ul>
 
       <div class="cols">
-        <div class="col">${btn("🚃 近鉄 小倉站", "Kintetsu Ogura Station Uji", "walking")}</div>
+        <div class="col">${btn("🚃 近鉄 小倉站", "34.893405954313955, 135.78212671519515", "walking")}</div>
         <div class="col">${btn("① 高島屋", "35.003651800889465, 135.76908716520896", "transit")}</div>
       </div>
       <div class="cols">
