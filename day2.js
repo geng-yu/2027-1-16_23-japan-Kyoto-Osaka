@@ -18,14 +18,10 @@ function getDay2() {
       <ul>
       <li>人太多去 平等院店</li>
       </ul>
-      ${btn("📍 中村藤吉 本店", "34.88950441061812, 135.80175749116992", "walking")}
-      <hr>
-      
-      <div class="subheader">3️⃣ 中村藤吉 平等院店</div>
-      <ul>
-        <li>吃甜點</li>
-      </ul>
-      ${btn("📍 中村藤吉 平等院店", "34.891509646318, 135.80624121683988", "walking")}
+      <div class="cols">
+        <div class="col">${btn("📍 中村藤吉 本店", "34.88950441061812, 135.80175749116992", "walking")}</div>
+        <div class="col">${btn("📍 平等院店", "34.891509646318, 135.80624121683988", "walking")}</div>
+      </div>
       <hr>
 
       <div class="subheader">3️⃣ 平等院</div>
@@ -80,7 +76,7 @@ function getDay2() {
         <li><strong>21:00關</strong>：UNIQLO 旗艦店、GU、大創、大型扭蛋</li>
       </ul>
       <ul>
-        <li>① <strong>四條河原町交叉口</strong>：高島屋（7F:任天堂、B1:抹茶粉;丸久／一保堂）→ 河原町ガーデン B1 <strong>扭蛋百貨</strong></li>
+        <li>① <strong>四條河原町交叉口</strong>：高島屋（7F:任天堂、B1:抹茶粉;丸久／一保堂）→ 河原町ガーデン B1:扭蛋百貨</li>
         <li>② <strong>河原町通往北</strong>：京都BAL 5F:無印良品 → ミーナ京都（B1-3F:UNIQLO 全球旗艦店、7F:GU）</li>
         <li>③ <strong>新京極</strong>：ダイアモンドビル B1:大創 DAISO</li>
         <li>④ <strong>四條通往西</strong>：SUINA 室町 2F:寶可夢中心 → 地鐵四条駅回京都站</li>
