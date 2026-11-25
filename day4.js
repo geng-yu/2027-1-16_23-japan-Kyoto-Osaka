@@ -31,7 +31,7 @@ function getDay4() {
       <div class="subheader">3️⃣ 智恩寺</div>
       <ul>
         <li><strong>智恩寺</strong>：文殊菩薩，門前吃智慧之餅</li>
-        <li><strong>廻旋橋</strong>：有船經過整座轉90度</li>
+        <li><strong>廻旋橋</strong>：船經過橋轉90度</li>
       </ul>
       ${btn("📍 智恩寺", "Chionji Temple Amanohashidate", "walking")}
       ${showFoodTable("智恩寺")}
