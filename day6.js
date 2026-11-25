@@ -31,6 +31,12 @@ function getDay6() {
       ${btn("大丸京都店", "35.00377711981995, 135.7617190264002", "walking")}
       <hr>
 
+      <div class="subheader">3️⃣ 三宅一生 </div>
+      <ul>
+      </ul>
+      ${btn("ISSEY MIYAKE KYOTO", "35.00798544803317, 135.76398716632036", "walking")}
+      <hr>
+
       <div class="subheader">2️⃣ 高島屋 </div>
       <ul>
         <li><strong>高島屋</strong>：7F:任天堂、B1:抹茶粉(丸久／一保堂)</li>
