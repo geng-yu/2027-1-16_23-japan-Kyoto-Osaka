@@ -2,51 +2,90 @@ function getDay6() {
   return {
     key: "Day6\n1/21 四",
     date: "2027-01-21",
-    fullTitle: "Day 6(四): 移動 & 大阪",
-    caption: "1/21 (四)｜退房 → 環球城 → 大阪半天",
+    fullTitle: "Day 6(四): 河源町 & 大阪",
+    caption: "1/21 (四)｜京都 → 環球影城 ",
     html: `
-      <div class="subheader">1️⃣ 退房 → 京阪環球影城塔樓</div>
+      <div class="subheader">1️⃣ 退房 + 吃早餐</div>
       <ul>
-        <li><strong>10:00</strong> 退房 → 走到京都站</li>
-        <li><strong>JR 新快速</strong> → 大阪（約 30 分）→ 環狀線 → <strong>西九条</strong> 轉 <strong>夢咲線</strong> → <strong>11:30</strong> 環球城</li>
-        <li>⚠️ 西九条換車：下車走到 1 號月台（夢咲線），3-5 分</li>
-        <li>帶行李用電梯，京都站中央口 → JR 剪票口有電梯</li>
-        <li>環球城站出來就是飯店，先寄行李（15:00 後入住）</li>
+        <li><strong>09:30</strong> 退房 → 京都站吃早餐</li>
+        <li>不要吃太飽，11點HARBS午餐(大丸)</li>
       </ul>
+      <div class="cols">
+        <div class="col">${btn("麥當勞", "34.98454586015907, 135.76008179227625", "walking")}</div>
+        <div class="col">${btn("星乃咖啡", "34.98455235184084, 135.75965338209778", "walking")}</div>
+        <div class="col">${btn("CAFFÈ VELOCE", "34.98461196987081, 135.76023978598135", "walking")}</div>
+      </div>
+      <hr>
+
+      <div class="subheader">2️⃣ 寶可夢中心 </div>
+      <ul>
+        <li>SUINA室町 2F</li>
+      </ul>
+      ${btn("SUINA室町", "35.003523277790606, 135.75844735896658", "walking")}
+      <hr>
+      
+      <div class="subheader">3️⃣ HARBS午餐(大丸3F) </div>
+      <ul>
+        <li>義大利麵、水果千層</li>
+      </ul>
+      ${btn("大丸京都店", "35.00377711981995, 135.7617190264002", "walking")}
+      <hr>
+
+      <div class="subheader">2️⃣ 高島屋 </div>
+      <ul>
+        <li><strong>高島屋</strong>：7F:任天堂、B1:抹茶粉(丸久／一保堂)</li>
+        <li><strong>京都河原町花園</strong>：B1 扭蛋百貨</li>
+      </ul>
+      <div class="cols">
+        <div class="col">${btn("高島屋", "35.003651800889465, 135.76908716520896", "transit")}</div>
+        <div class="col">${btn("河原町花園", "35.003596192017824, 135.7695664437894", "transit")}</div>
+      </div>
+      <hr>
+
+      <div class="subheader">1️⃣ 京都 → 環球城飯店</div>
+      <ul>
+        <li><strong>京都 → 大阪</strong>：JR 新快速（約29分）</li>
+        <li><strong>大阪 → 西九条</strong>：轉環狀線 <strong>1 號月台</strong>（約 5 分；直通櫻島免換車）</li>
+        <li><strong>西九条 → USJ</strong>：4 號下車 → <strong>對面 3 號月台</strong>夢咲線（約 5 分，出站即飯店）</li>
+      </ul>
+
+      <details class="expander">
+        <summary>🚆 京都 → 大阪 時刻表（15:00～17:00）</summary>
+        <div class="expander-body">
+          <div class="caption" style="margin-bottom:6px;">
+            🔗 <a href="這裡貼上官網時刻表網址" target="_blank" rel="noopener noreferrer">JR 西日本官網時刻表</a>
+          </div>
+          <table class="food-table">
+            <thead>
+              <tr>
+                <th style="width:22%;">時間</th>
+                <th style="width:28%;">車種</th>
+                <th style="width:18%;">月台</th>
+                <th style="width:32%;">座位</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>14:00</td><td>新快速</td><td>5號</td><td>免（刷卡）</td></tr>
+              <tr><td>14:15</td><td>新快速</td><td>5號</td><td>免（刷卡）</td></tr>
+              <tr><td>14:30</td><td>新快速</td><td>5號</td><td>免（刷卡）</td></tr>
+              <tr><td>14:45</td><td>新快速</td><td>5號</td><td>免（刷卡）</td></tr>
+              <tr><td>15:00</td><td>新快速</td><td>5號</td><td>免（刷卡）</td></tr>
+              <tr><td>15:15</td><td>新快速</td><td>5號</td><td>免（刷卡）</td></tr>
+              <tr><td>15:30</td><td>新快速</td><td>5號</td><td>免（刷卡）</td></tr>
+              <tr><td>15:45</td><td>新快速</td><td>5號</td><td>免（刷卡）</td></tr>
+              <tr><td>16:00</td><td>新快速</td><td>5號</td><td>免（刷卡）</td></tr>
+              <tr><td>16:15</td><td>新快速</td><td>5號</td><td>免（刷卡）</td></tr>
+              <tr><td>16:30</td><td>新快速</td><td>5號</td><td>免（刷卡）</td></tr>
+              <tr><td>16:45</td><td>新快速</td><td>5號</td><td>免（刷卡）</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+
       ${btn("🏨 導航：京阪環球影城塔樓", "Hotel Keihan Universal Tower", "transit")}
       <hr>
 
-      <div class="subheader">2️⃣ 二選一｜A 梅田採買</div>
-      <ul>
-        <li>環球城 → 西九条 → <strong>大阪站</strong></li>
-        <li><strong>LINKS UMEDA</strong>（Yodobashi 那棟）：1-2F <strong>UNIQLO UMEDA</strong> 、3F <strong>GU</strong>、8F 餐廳街</li>
-        <li><strong>Grand Front 大阪</strong>：北館 2-4F <strong>無印良品</strong> 、南館 5F <strong>mont-bell</strong></li>
-        <li><strong>大丸梅田 13F</strong>：Nintendo OSAKA ＋ 寶可夢中心 DX</li>
-        <li><strong>18:00</strong> 回環球城</li>
-      </ul>
-      <div class="cols">
-        <div class="col">${btn("🛍️ LINKS UQ/GU", "UNIQLO UMEDA LINKS UMEDA", "transit")}</div>
-        <div class="col">${btn("🛍️ GF MUJI/mont-bell", "MUJI Grand Front Osaka", "walking")}</div>
-        <div class="col">${btn("🛍️ 大丸13F", "Daimaru Umeda", "walking")}</div>
-      </div>
-      ${showFoodTable("梅田")}
-      <hr>
-
-      <div class="subheader">2️⃣ 二選一｜B 海遊館（親子）</div>
-      <ul>
-        <li>環球城碼頭搭 <strong>Captain Line</strong> 船 10 分 → 海遊館</li>
-        <li><strong>海遊館</strong>：鯨鯊、太平洋大水槽，2hr</li>
-        <li>○ 天保山摩天輪</li>
-        <li>船回環球城</li>
-      </ul>
-      <div class="cols">
-        <div class="col">${btn("🚶 導航：Captain Line 環球城碼頭", "Captain Line Universal City Port", "transit")}</div>
-        <div class="col">${btn("📍 導航：海遊館", "Osaka Aquarium Kaiyukan", "walking")}</div>
-      </div>
-      ${showFoodTable("海遊館")}
-      <hr>
-
-      <div class="subheader">3️⃣ 京阪環球影城塔樓 → 晚餐</div>
+      <div class="subheader">3️⃣ 京阪環球影城塔樓</div>
       <ul>
         <li><strong>15:00</strong> 後入住</li>
         <li>🍽 晚餐：<strong>Universal Citywalk</strong>（飯店旁，たこ焼きミュージアム、各式餐廳）</li>
