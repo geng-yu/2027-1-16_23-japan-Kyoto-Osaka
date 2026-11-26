@@ -15,8 +15,8 @@ function getDay4() {
         <div class="col">${codeBlock("天橋立MapCode：197 202 313*41")}</div>
       </div>
       <div class="cols">
-        <div class="col">${btn("中途休息站🅿️", "35.155487637910184, 135.4151181669732", "driving")}</div>
-        <div class="col">${btn("天橋立 View Land🅿️", "35.55598937942707, 135.18432345495142", "driving")}</div>
+        <div class="col">${btn("🚗中途休息站🅿️", "35.155487637910184, 135.4151181669732", "driving")}</div>
+        <div class="col">${btn("🚗天橋立 View Land🅿️", "35.55598937942707, 135.18432345495142", "driving")}</div>
       </div>
       <hr>
 
@@ -42,7 +42,7 @@ function getDay4() {
         <li><strong>丟瓦片</strong>：把陶盤丟過石環(¥300/個)</li>
         <li>元伊勢籠神社：纜車站旁(走10分)</li>
       </ul>
-      ${btn("📍 傘松公園 纜車站🅿️", "35.582789218695844, 135.19508260507516", "driving")}
+      ${btn("🚗 傘松公園 纜車站🅿️", "35.582789218695844, 135.19508260507516", "driving")}
       ${showFoodTable("傘松籠神社")}
       <hr>
 
@@ -59,7 +59,7 @@ function getDay4() {
         <div class="col">${btn("搭船🅿️2", "35.669425804835605, 135.2803998478498", "driving")}</div>
         <div class="col">${btn("搭船🅿️3", "35.671424633028344, 135.27696592321547", "driving")}</div>
       </div>
-      ${btn("📍 導航：伊根灣遊覽船乘船處", "35.670593163544304, 135.2773862355867", "walking")}
+      ${btn("📍 伊根灣遊覽船乘船處", "35.670593163544304, 135.2773862355867", "walking")}
       <div class="cols">
         <div class="col">${btn("散步🅿️1", "35.67588609020973, 135.2876171094408", "driving")}</div>
         <div class="col">${btn("散步🅿️2", "35.675009163323544, 135.28801877920432", "driving")}</div>
@@ -93,7 +93,7 @@ function getDay4() {
         <li><strong>22:00<strong>前趕不到租車店→ 明早<strong>07:45<strong>還</li>
       </ul>
       ${codeBlock("22 PIECES MapCode：7 526 455*55")}
-      ${btn("🚗 22 PIECES", "22 PIECES Kyoto", "driving")}
+      ${btn("🏠 22 PIECES", "22 PIECES Kyoto", "driving")}
       <div class="cols">
         <div class="col">${codeBlock("⛽1 MapCode：7 494 357*86")}</div>
         <div class="col">${codeBlock("⛽2 MapCode：7 557 390*10")}</div>
@@ -102,7 +102,7 @@ function getDay4() {
         <div class="col">${btn("⛽1 加油站(24H)", "34.97324984490103, 135.74648147860697", "driving")}</div>
         <div class="col">${btn("⛽2 加油站(24H)", "34.99013004114884, 135.76410123994216", "driving")}</div>
       </div>
-      ${btn("🚶 NISSAN Rent A Car Kyoto", "34.984459129730546, 135.7547459938482", "driving")}
+      ${btn("🚗 NISSAN Rent A Car Kyoto", "34.984459129730546, 135.7547459938482", "driving")}
       <div class="cols">
         <div class="col">${btn("飯店🅿️1", "34.98197527382824, 135.75692279994257", "driving")}</div>
         <div class="col">${btn("飯店🅿️2", "34.98251532812083, 135.75747844958318", "driving")}</div>
