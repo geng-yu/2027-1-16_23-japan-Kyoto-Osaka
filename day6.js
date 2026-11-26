@@ -24,11 +24,15 @@ function getDay6() {
       ${btn("📍 SUINA室町", "35.003523277790606, 135.75844735896658", "walking")}
       <hr>
       
-      <div class="subheader">3️⃣ HARBS午餐 </div>
+      <div class="subheader">3️⃣ 午餐 </div>
       <ul>
-        <li>大丸百貨3F:義大利麵、水果千層</li>
+        <li>大丸HARBS3F:義大利麵(11:00)、水果千層</li>
+        <li>勝田炸豬排</li>
       </ul>
-      ${btn("📍 大丸京都店", "35.00377711981995, 135.7617190264002", "walking")}
+      <div class="cols">
+        <div class="col">${btn("📍 大丸HARBS", "35.00375199630685, 135.76197590667567", "transit")}</div>
+        <div class="col">${btn("📍 勝田炸豬排", "35.0012868094139, 135.75945203006776", "transit")}</div>
+      </div>
       <hr>
 
       <div class="subheader">4️⃣ 三宅一生 </div>
