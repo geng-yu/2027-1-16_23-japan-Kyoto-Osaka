@@ -11,7 +11,7 @@ function getDay7() {
         <li>門票 QR 每人一張，小孩的也要能開</li>
         <li>飲料可以帶（水壺、寶特瓶），<strong>食物不能帶</strong>，早餐吃完再進</li>
       </ul>
-      ${btn("🚶 導航：環球影城 大門", "Universal Studios Japan", "walking")}
+      ${btn("📍 環球影城 大門", "Universal Studios Japan", "walking")}
       <hr>
 
       <div class="subheader">2️⃣ 入園後：App 抽整理券</div>
