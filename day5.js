@@ -2,8 +2,8 @@ function getDay5() {
   return {
     key: "Day5\n1/20 三",
     date: "2027-01-20",
-    fullTitle: "Day 5(三): teamLab & 河原町",
-    caption: "1/20 (三)｜teamLab → 河原町",
+    fullTitle: "Day 5(三): teamLab",
+    caption: "1/20 (三)｜teamLab",
     html: `
 
       <div class="subheader">1️⃣ 早餐</div>
