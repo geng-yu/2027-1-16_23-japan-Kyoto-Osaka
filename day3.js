@@ -88,7 +88,7 @@ function getDay3() {
         <li>🍽 晚餐：京都站周邊</li>
       </ul>
       ${codeBlock("MapCode：7 526 455*55")}
-      ${btn("🚗 22 PIECES", "22 PIECES Kyoto", "driving")}
+      ${btn("🏠 22 PIECES", "22 PIECES Kyoto", "driving")}
       <div class="cols">
         <div class="col">${btn("飯店🅿️1", "34.98197527382824, 135.75692279994257", "driving")}</div>
         <div class="col">${btn("飯店🅿️2", "34.98251532812083, 135.75747844958318", "driving")}</div>
