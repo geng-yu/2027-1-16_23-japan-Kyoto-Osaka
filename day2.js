@@ -70,7 +70,7 @@ function getDay2() {
       ${btn("📍 任天堂博物館", "Nintendo Museum", "walking")}
       <hr>
 
-      <div class="subheader">🔟 回 22 PIECES</div>
+      <div class="subheader">9️⃣ 回 22 PIECES</div>
       <ul>
         <li>唐吉訶德24H，宵夜、明天飲料零食順便買</li>
       </ul>
