@@ -85,9 +85,9 @@ function getDay2() {
       <div class="alert alert-info">
         <p>💡 提醒：決定明天是雪日還是舟屋日（明早 08:00 取車）</p>
         <ul>
-          <li>看 <strong>琵琶湖山谷官網 TOP 頁</strong> 營業情報（纜車有沒有預告停駛）</li>
-          <li>看隔天 <strong>風速</strong> 預報：風小 → 雪日；風大 → 舟屋日</li>
-          <li>看 <strong>NEXCO 西日本</strong> 縱貫道路況</li>
+          <li><a href="https://www.biwako-valley.com/winter/" target="_blank" rel="noopener noreferrer">琵琶湖山谷官網</a></li>
+          <li>看 <strong>琵琶湖山谷</strong>有沒有預告停駛</li>
+          <li>多買一點食物，明天山上吃</li>
         </ul>
       </div>
     `
