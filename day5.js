@@ -22,7 +22,6 @@ function getDay5() {
         <li><strong>11:00</strong> 場，可裝官方App看地圖</li>
       </ul>
       ${btn("📍 teamLab Biovortex Kyoto", "teamLab Biovortex Kyoto", "walking")}
-      ${showFoodTable("teamLab")}
       <hr>
 
       <div class="subheader">3️⃣ 車站附近吃/逛</div>
