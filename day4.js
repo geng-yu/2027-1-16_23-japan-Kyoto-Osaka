@@ -83,7 +83,6 @@ function getDay4() {
         <div class="col">${btn("🦀 海鮮市場🅿️", "35.44998819450579, 135.3147607872948", "driving")}</div>
         <div class="col">${btn("🧱 舞鶴紅磚公園", "35.4743250743178, 135.38572558092937", "driving")}</div>
       </div>
-      ${showFoodTable("舞鶴")}
       <hr>
 
       <div class="subheader">7️⃣ 回京都 → 還車</div>
