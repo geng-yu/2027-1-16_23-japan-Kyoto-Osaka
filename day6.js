@@ -3,7 +3,7 @@ function getDay6() {
     key: "Day6\n1/21 四",
     date: "2027-01-21",
     fullTitle: "Day 6(四): 河源町 & 大阪",
-    caption: "1/21 (四)｜京都 → 環球影城 ",
+    caption: "1/21 (四)｜京都 → 大阪 ",
     html: `
       <div class="subheader">1️⃣ 退房 + 吃早餐</div>
       <ul>
@@ -21,38 +21,53 @@ function getDay6() {
       <ul>
         <li>SUINA室町 2F</li>
       </ul>
-      ${btn("SUINA室町", "35.003523277790606, 135.75844735896658", "walking")}
+      ${btn("📍SUINA室町", "35.003523277790606, 135.75844735896658", "walking")}
       <hr>
       
       <div class="subheader">3️⃣ HARBS午餐(大丸3F) </div>
       <ul>
         <li>義大利麵、水果千層</li>
       </ul>
-      ${btn("大丸京都店", "35.00377711981995, 135.7617190264002", "walking")}
+      ${btn("📍大丸京都店", "35.00377711981995, 135.7617190264002", "walking")}
       <hr>
 
-      <div class="subheader">3️⃣ 三宅一生 </div>
+      <div class="subheader">4️⃣ 三宅一生 </div>
       <ul>
       </ul>
-      ${btn("ISSEY MIYAKE KYOTO", "35.00798544803317, 135.76398716632036", "walking")}
+      ${btn("📍ISSEY MIYAKE KYOTO", "35.00798544803317, 135.76398716632036", "walking")}
       <hr>
 
-      <div class="subheader">2️⃣ 高島屋 </div>
+      <div class="subheader">5️⃣ UQ旗艦/GU </div>
+      <ul>
+      </ul>
+      ${btn("📍QU/GU", "35.00771979298431, 135.76891052802597", "walking")}
+      <hr>
+
+      <div class="subheader">6️⃣ 高島屋 </div>
       <ul>
         <li><strong>高島屋</strong>：7F:任天堂、B1:抹茶粉(丸久／一保堂)</li>
         <li><strong>京都河原町花園</strong>：B1 扭蛋百貨</li>
       </ul>
       <div class="cols">
-        <div class="col">${btn("高島屋", "35.003651800889465, 135.76908716520896", "transit")}</div>
-        <div class="col">${btn("河原町花園", "35.003596192017824, 135.7695664437894", "transit")}</div>
+        <div class="col">${btn("📍高島屋", "35.003651800889465, 135.76908716520896", "transit")}</div>
+        <div class="col">${btn("📍河原町花園", "35.003596192017824, 135.7695664437894", "transit")}</div>
       </div>
       <hr>
 
-      <div class="subheader">1️⃣ 京都 → 環球城飯店</div>
+      <div class="subheader">7️⃣ 錦市場</div>
       <ul>
-        <li><strong>京都 → 大阪</strong>：JR 新快速（約29分）</li>
-        <li><strong>大阪 → 西九条</strong>：轉環狀線 <strong>1 號月台</strong>（約 5 分；直通櫻島免換車）</li>
-        <li><strong>西九条 → USJ</strong>：4 號下車 → <strong>對面 3 號月台</strong>夢咲線（約 5 分，出站即飯店）</li>
+        <li>玉子燒、豆乳甜甜圈、烤麻糬、章魚蛋</li>
+        <li>大部分店 18:00 前收</li>
+      </ul>
+      ${btn("📍錦市場", "Nishiki Market", "transit")}
+      ${showFoodTable("錦市場")}
+      <hr>
+      
+      <div class="subheader">8️⃣ 京都 → 環球城飯店</div>
+      <ul>
+        <li><strong>京都 → 大阪</strong>：JR 新快速(29分)</li>
+        <li><strong>大阪 → 西九条</strong>：轉環狀線 <strong>1 號月台</strong></li>
+        <li><strong>西九条 → USJ</strong>：4 號下車 → <strong>對面 3 號月台</strong>夢咲線</li>
       </ul>
 
       <details class="expander">
@@ -87,24 +102,17 @@ function getDay6() {
           </table>
         </div>
       </details>
-
-      ${btn("🏨 導航：京阪環球影城塔樓", "Hotel Keihan Universal Tower", "transit")}
       <hr>
-
-      <div class="subheader">3️⃣ 京阪環球影城塔樓</div>
+      ${btn("🏨 京阪環球影城塔樓", "Hotel Keihan Universal Tower", "transit")}
       <ul>
         <li><strong>15:00</strong> 後入住</li>
         <li>🍽 晚餐：<strong>Universal Citywalk</strong>（飯店旁，たこ焼きミュージアム、各式餐廳）</li>
       </ul>
-      ${btn("🏨 導航：京阪環球影城塔樓", "Hotel Keihan Universal Tower", "transit")}
       ${showFoodTable("環球城")}
-
       <div class="alert alert-info">
         <p>💡 提醒：明天環球影城</p>
         <ul>
-          <li>再看一次環球 App：<strong>區域入場整理券</strong> 怎麼抽</li>
-          <li>早餐先買好</li>
-          <li>明天穿：保暖＋好走的鞋，園內風大</li>
+          <li>早餐買好，飯店吃</li>
         </ul>
       </div>
     `
