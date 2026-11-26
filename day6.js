@@ -106,7 +106,7 @@ function getDay6() {
       ${btn("🏨 京阪環球影城塔樓", "Hotel Keihan Universal Tower", "transit")}
       <ul>
         <li><strong>15:00</strong> 後入住</li>
-        <li>🍽 晚餐：<strong>Universal Citywalk</strong>（飯店旁，たこ焼きミュージアム、各式餐廳）</li>
+        <li>🍽 晚餐：<strong>Universal Citywalk</strong>（章魚燒廣場、餐廳）</li>
       </ul>
       ${showFoodTable("環球城")}
       <div class="alert alert-info">
