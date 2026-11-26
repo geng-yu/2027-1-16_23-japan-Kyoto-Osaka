@@ -25,36 +25,15 @@ function getDay5() {
       ${showFoodTable("teamLab")}
       <hr>
 
-      <div class="subheader">3️⃣ 錦市場</div>
+      <div class="subheader">3️⃣ 車站附近吃/逛</div>
       <ul>
-        <li>走回 <strong>京都站</strong></li>
-        <li>玉子燒、豆乳甜甜圈、烤麻糬、章魚蛋</li>
-        <li>大部分店 18:00 前收</li>
-      </ul>
-      ${btn("🚃 導航：錦市場", "Nishiki Market", "transit")}
-      ${showFoodTable("錦市場")}
-      <hr>
-
-      <div class="subheader">4️⃣ UQ旗艦店</div>
-      <ul>
-      </ul>
-      ${btn("📍 UQ旗艦店", "Mina Kyoto", "walking")}
-      ${showFoodTable("新京極寺町")}
-      <hr>
-
-      <div class="subheader">5️⃣ Nintendo KYOTO ＋ 寶可夢中心</div>
-      <ul>
-        <li><strong>Nintendo KYOTO</strong>：京都高島屋 S.C.（T8）<strong>7F</strong></li>
-        <li><strong>寶可夢中心京都</strong>：SUINA 室町 <strong>4F</strong></li>
-        <li>先 Nintendo 再寶可夢（回程順路到烏丸站）</li>
+        <li>Porta地下街:伴手禮</li>
       </ul>
       <div class="cols">
-        <div class="col">${btn("📍 導航：Nintendo KYOTO", "Nintendo KYOTO", "walking")}</div>
-        <div class="col">${btn("📍 導航：寶可夢中心京都", "Pokemon Center Kyoto", "walking")}</div>
-      </div>
-      ${showFoodTable("河原町-吃")}
-      ${showFoodTable("河原町-逛")}
-
+        <div class="col">${btn("Porta地下街", "京都Porta", "walking")}</div>
+        <div class="col">${btn("星乃咖啡", "34.98455235184084, 135.75965338209778", "walking")}</div>
+        <div class="col">${btn("CAFFÈ VELOCE", "34.98461196987081, 135.76023978598135", "walking")}</div>
+      </div
       <hr>
 
       <div class="subheader">6️⃣ 22 PIECES</div>
