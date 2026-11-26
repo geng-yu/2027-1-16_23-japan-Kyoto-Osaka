@@ -69,7 +69,7 @@ function getDay6() {
       
       <div class="subheader">8️⃣ 京都 → 環球城飯店</div>
       <ul>
-        <li><strong>京都 → 大阪</strong>：JR 新快速(29分)</li>
+        <li><strong>京都 → 大阪</strong>：JR 新快速/快速(其他要加錢買座位、貴)</li>
         <li><strong>大阪 → 西九条</strong>：轉環狀線 <strong>1 號月台</strong></li>
         <li><strong>西九条 → USJ</strong>：4 號下車 → <strong>對面 3 號月台</strong>夢咲線</li>
       </ul>
