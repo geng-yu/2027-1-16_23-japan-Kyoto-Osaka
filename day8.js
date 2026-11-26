@@ -11,7 +11,7 @@ function getDay8() {
         <li><strong>10:50</strong> 班次</li>
         <li>日本環球影城 <strong>乘車處 1</strong> 上車 → 約 70 分 → 關空1航</li>
       </ul>
-      ${btn("🚶 導航：利木津巴士 乘車處 1", "34.66914931884008, 135.4327468195929", "walking")}
+      ${btn("🚍 利木津巴士 乘車處 1", "34.66914931884008, 135.4327468195929", "walking")}
 
       <details class="expander">
         <summary>🚃 巴士沒趕上的備案（JR）</summary>
@@ -19,7 +19,7 @@ function getDay8() {
           <ul>
             <li>JR 環球城 → <strong>西九条</strong> 轉 <strong>關空快速</strong>（西九条有停，看清楚車種）→ 關空 約 70 分</li>
           </ul>
-          ${btn("🚃 導航：關西機場 T1 (JR)", "Kansai International Airport Terminal 1", "transit")}
+          ${btn("🚃 關西機場 T1 (JR)", "Kansai International Airport Terminal 1", "transit")}
         </div>
       </details>
       <hr>
@@ -30,7 +30,7 @@ function getDay8() {
         <li>行李放關空置物櫃（或 Outlet 置物櫃）</li>
         <li>逛到 <strong>13:45</strong> 搭回關空</li>
       </ul>
-      ${btn("🚃 導航：臨空 Premium Outlets", "Rinku Premium Outlets", "transit")}
+      ${btn("🚃 臨空 Premium Outlets", "Rinku Premium Outlets", "transit")}
       ${showFoodTable("臨空港")}
       <hr>
 
@@ -38,7 +38,7 @@ function getDay8() {
       <ul>
         <li>關空 T1 週六人多，<strong>14:15 前</strong>到櫃台</li>
       </ul>
-      ${btn("🚶 導航：關西機場 T1", "Kansai International Airport Terminal 1", "walking")}
+      ${btn("📍 關西機場 T1", "Kansai International Airport Terminal 1", "walking")}
       ${showFoodTable("關空")}
 
       <div class="alert alert-warn">
