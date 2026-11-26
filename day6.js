@@ -21,26 +21,26 @@ function getDay6() {
       <ul>
         <li>SUINA室町 2F</li>
       </ul>
-      ${btn("📍SUINA室町", "35.003523277790606, 135.75844735896658", "walking")}
+      ${btn("📍 SUINA室町", "35.003523277790606, 135.75844735896658", "walking")}
       <hr>
       
       <div class="subheader">3️⃣ HARBS午餐(大丸3F) </div>
       <ul>
         <li>義大利麵、水果千層</li>
       </ul>
-      ${btn("📍大丸京都店", "35.00377711981995, 135.7617190264002", "walking")}
+      ${btn("📍 大丸京都店", "35.00377711981995, 135.7617190264002", "walking")}
       <hr>
 
       <div class="subheader">4️⃣ 三宅一生 </div>
       <ul>
       </ul>
-      ${btn("📍ISSEY MIYAKE KYOTO", "35.00798544803317, 135.76398716632036", "walking")}
+      ${btn("📍 ISSEY MIYAKE KYOTO", "35.00798544803317, 135.76398716632036", "walking")}
       <hr>
 
       <div class="subheader">5️⃣ UQ旗艦/GU </div>
       <ul>
       </ul>
-      ${btn("📍QU/GU", "35.00771979298431, 135.76891052802597", "walking")}
+      ${btn("📍 QU/GU", "35.00771979298431, 135.76891052802597", "walking")}
       <hr>
 
       <div class="subheader">6️⃣ 高島屋 </div>
@@ -49,8 +49,8 @@ function getDay6() {
         <li><strong>京都河原町花園</strong>：B1 扭蛋百貨</li>
       </ul>
       <div class="cols">
-        <div class="col">${btn("📍高島屋", "35.003651800889465, 135.76908716520896", "transit")}</div>
-        <div class="col">${btn("📍河原町花園", "35.003596192017824, 135.7695664437894", "transit")}</div>
+        <div class="col">${btn("📍 高島屋", "35.003651800889465, 135.76908716520896", "transit")}</div>
+        <div class="col">${btn("📍 河原町花園", "35.003596192017824, 135.7695664437894", "transit")}</div>
       </div>
       <hr>
 
@@ -59,7 +59,7 @@ function getDay6() {
         <li>玉子燒、豆乳甜甜圈、烤麻糬、章魚蛋</li>
         <li>大部分店 18:00 前收</li>
       </ul>
-      ${btn("📍錦市場", "Nishiki Market", "transit")}
+      ${btn("📍 錦市場", "Nishiki Market", "transit")}
       ${showFoodTable("錦市場")}
       <hr>
       
