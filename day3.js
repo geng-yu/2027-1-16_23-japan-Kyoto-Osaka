@@ -45,8 +45,6 @@ function getDay3() {
         <div class="col">${btn("🚗 浮御堂🅿️", "35.110234089508126, 135.92081966978157", "driving")}</div>
         <div class="col">${btn("🚗 水杉大道", "Metasequoia Namiki Makino", "driving")}</div>
       </div>
-      ${showFoodTable("浮御堂")}
-      ${showFoodTable("湖西其他")}
       <hr>
 
       <div class="subheader">5️⃣ 鞍馬大天狗(備)</div>
