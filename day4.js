@@ -63,7 +63,6 @@ function getDay4() {
       <div class="cols">
         <div class="col">${btn("散步🅿️1", "35.67588609020973, 135.2876171094408", "driving")}</div>
         <div class="col">${btn("散步🅿️2", "35.675009163323544, 135.28801877920432", "driving")}</div>
-        <div class="col">${btn("散步🅿️3", "35.67480632258699, 135.2915108528081", "driving")}</div>
       </div>
       ${showFoodTable("伊根")}
       <hr>
