@@ -16,7 +16,7 @@ function getDay1() {
         <li><a href="https://guest-ui.west-qr.com/#/" target="_blank" rel="noopener noreferrer">WEST QR 劃位</a></li>
         <li>買ICOCA(兒童)、便利商店買食物</li>
       </ul>
-      ${btn("🚶 JR 關西機場站 (Haruka 月台)", "Kansai-Airport Station JR", "walking")}
+      ${btn("🚆JR 關西機場站 (Haruka 月台)", "Kansai-Airport Station JR", "walking")}
       
       <hr>
 
