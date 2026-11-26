@@ -39,7 +39,6 @@ function getDay8() {
         <li>關空 T1 週六人多，<strong>14:15 前</strong>到櫃台</li>
       </ul>
       ${btn("📍 關西機場 T1", "Kansai International Airport Terminal 1", "walking")}
-      ${showFoodTable("關空")}
 
       <div class="alert alert-warn">
         <p>💡 退稅提醒</p>
