@@ -24,9 +24,9 @@ function getDay6() {
       ${btn("📍 SUINA室町", "35.003523277790606, 135.75844735896658", "walking")}
       <hr>
       
-      <div class="subheader">3️⃣ HARBS午餐(大丸3F) </div>
+      <div class="subheader">3️⃣ HARBS午餐 </div>
       <ul>
-        <li>義大利麵、水果千層</li>
+        <li>大丸百貨3F:義大利麵、水果千層</li>
       </ul>
       ${btn("📍 大丸京都店", "35.00377711981995, 135.7617190264002", "walking")}
       <hr>
@@ -37,10 +37,10 @@ function getDay6() {
       ${btn("📍 ISSEY MIYAKE KYOTO", "35.00798544803317, 135.76398716632036", "walking")}
       <hr>
 
-      <div class="subheader">5️⃣ UQ旗艦/GU </div>
+      <div class="subheader">5️⃣ UQ旗艦 / GU </div>
       <ul>
       </ul>
-      ${btn("📍 QU/GU", "35.00771979298431, 135.76891052802597", "walking")}
+      ${btn("📍 UQ / GU", "35.00771979298431, 135.76891052802597", "walking")}
       <hr>
 
       <div class="subheader">6️⃣ 高島屋 </div>
