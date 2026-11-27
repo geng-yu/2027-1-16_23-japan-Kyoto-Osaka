@@ -74,8 +74,14 @@ function getDay6() {
         <li><strong>大阪 → 西九条 → USJ</strong></li>
       </ul>
 
-     <details class="expander">
-        <summary>🚆 京都 → 大阪 時刻表（15:00～18:00）</summary>
+     <div class="subheader">8️⃣ 京都 → 環球城飯店</div>
+      <ul>
+        <li><strong>京都 → 大阪</strong>：JR 新快速（只搭這個）</li>
+        <li><strong>大阪 → 西九条 → USJ</strong>：大阪1號月台 → 西九条對面3號月台</li>
+      </ul>
+
+      <details class="expander">
+        <summary>🚆 京都 → 大阪 新快速時刻表（15:00～18:00）</summary>
         <div class="expander-body">
           <div class="caption" style="margin-bottom:6px;">
             ⚡ 即時查：
@@ -86,23 +92,14 @@ function getDay6() {
           <table class="food-table">
             <thead>
               <tr>
-                <th style="width:30%;">時間</th>
-                <th style="width:70%;">車種</th>
+                <th style="width:20%;">時</th>
+                <th style="width:80%;">發車分（皆為新快速，往姫路／播州赤穂）</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td>15:00</td><td>新快速（姫路）</td></tr>
-              <tr><td>15:15</td><td>新快速（姫路）</td></tr>
-              <tr><td>15:30</td><td>新快速（播州赤穂）</td></tr>
-              <tr><td>15:45</td><td>新快速（姫路）</td></tr>
-              <tr><td>16:00</td><td>新快速（姫路）</td></tr>
-              <tr><td>16:15</td><td>新快速（播州赤穂）</td></tr>
-              <tr><td>16:29</td><td>新快速（姫路）</td></tr>
-              <tr><td>16:44</td><td>新快速（播州赤穂）</td></tr>
-              <tr><td>16:59</td><td>新快速（姫路）</td></tr>
-              <tr><td>17:14</td><td>新快速（播州赤穂）</td></tr>
-              <tr><td>17:29</td><td>新快速（姫路）</td></tr>
-              <tr><td>17:44</td><td>新快速（姫路）</td></tr>
+              <tr><td><strong>15</strong></td><td>00・15・30・45</td></tr>
+              <tr><td><strong>16</strong></td><td>00・15・29・44・59</td></tr>
+              <tr><td><strong>17</strong></td><td>14・29・44</td></tr>
             </tbody>
           </table>
         </div>
