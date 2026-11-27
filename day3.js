@@ -2,7 +2,7 @@ function getDay3() {
   return {
     key: "Day3\n1/18 一",
     date: "2027-01-18",
-    fullTitle: "Day 3(一): 雪日｜琵琶湖山谷 & 湖西",
+    fullTitle: "Day 3(一): 雪日｜琵琶湖山谷 & 貴船",
     caption: "1/18 (一)｜雪日（可與 D4 對調）｜自駕 Day1",
     html: `
       <div class="subheader">1️⃣ 取車</div>
@@ -98,7 +98,6 @@ function getDay3() {
       <div class="alert alert-info">
         <p>💡 提醒：明天舟屋日</p>
         <ul>
-          <li><strong>22:00 前還車</strong>（滿油）</li>
           <li>油量夠不夠、買蝦味仙</li>
         </ul>
       </div>
