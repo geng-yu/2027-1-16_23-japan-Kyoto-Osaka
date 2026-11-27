@@ -72,7 +72,7 @@ function getDay4() {
         <li><strong>15:00</strong> 伊根出發</li>
         <li>走舞鶴若狹道(多40分)
           <ul>
-            <li><strong>道の駅 舞鶴港</strong>：海鮮市場(PM 5點前)，松葉蟹、牡蠣現烤現吃</li>
+            <li><strong>舞鶴港</strong>：海鮮市場(17:00關)，松葉蟹、牡蠣現烤</li>
             <li><strong>舞鶴紅磚公園</strong>：明治海軍紅磚倉庫群</li>
           </ul>
         </li>
@@ -88,7 +88,6 @@ function getDay4() {
       <ul>
         <li>加滿油 → <strong>10pm 前</strong>還車</li>
         <li>🍽 晚餐：京都站周邊</li>
-        <li><strong>22:00<strong>前趕不到租車店→ 明早<strong>07:45<strong>還</li>
       </ul>
       ${codeBlock("22 PIECES MapCode：7 526 455*55")}
       ${btn("🏠 22 PIECES", "22 PIECES Kyoto", "driving")}
@@ -113,7 +112,6 @@ function getDay4() {
         <p>💡 提醒：</p>
         <ul>
           <li>確認 <strong>teamLab 11:00 場</strong> 票在手機裡</li>
-          <li>車已還的話明早不用趕；沒還的話 07:45 前還，油要滿</li>
         </ul>
       </div>
     `
