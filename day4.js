@@ -8,7 +8,7 @@ function getDay4() {
       <div class="subheader">1️⃣ 天橋立</div>
       <ul>
         <li><strong>08:00</strong> 出發（約 2hr）</li>
-        <li>道の駅 京丹波 味夢の里（休息站，廁所、丹波栗、黑豆點心）</li>
+        <li>道の駅 京丹波 味夢の里（休息站，丹波栗、黑豆點心）</li>
       </ul>
       <div class="cols">
         <div class="col">${codeBlock("中途休息站MapCode：344 245 245*10")}</div>
@@ -70,7 +70,7 @@ function getDay4() {
       <div class="subheader">6️⃣ 舞鶴（備二選一）</div>
       <ul>
         <li><strong>15:00</strong> 伊根出發</li>
-        <li>走舞鶴若狹道會經過舞鶴(多40分，停一個就好)
+        <li>走舞鶴若狹道(多40分)
           <ul>
             <li><strong>道の駅 舞鶴港</strong>：海鮮市場(PM 5點前)，松葉蟹、牡蠣現烤現吃</li>
             <li><strong>舞鶴紅磚公園</strong>：明治海軍紅磚倉庫群</li>
