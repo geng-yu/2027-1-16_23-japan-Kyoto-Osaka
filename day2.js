@@ -54,7 +54,7 @@ function getDay2() {
       <div class="subheader">7️⃣ 宇治 → JR 小倉 → 任天堂博物館</div>
       <ul>
         <li><strong>14:30集合</strong> (班次 26分/37分/52分/56分)</li>
-        <li>JR宇治站(往奈良) → <strong>JR小倉</strong></li>
+        <li>JR宇治站(往奈良) →(2分) <strong>JR小倉</strong></li>
         <li>計程車約250$</li>
       </ul>
       ${btn("🚃 JR 小倉站", "JR Ogura Station Uji", "transit")}
@@ -72,7 +72,8 @@ function getDay2() {
 
       <div class="subheader">9️⃣ 回 22 PIECES</div>
       <ul>
-        <li>唐吉訶德24H，宵夜、明天飲料零食順便買</li>
+        <li>唐吉訶德24H，明天飲料零食順便買</li>
+        <li>多買一點食物，明天山上吃</li>
       </ul>
       <div class="cols">
         <div class="col">${btn("🚃 近鉄 小倉站", "34.893405954313955, 135.78212671519515", "walking")}</div>
@@ -86,8 +87,7 @@ function getDay2() {
         <p>💡 提醒：決定明天是雪日還是舟屋日（明早 08:00 取車）</p>
         <ul>
           <li><a href="https://www.biwako-valley.com/winter/" target="_blank" rel="noopener noreferrer">琵琶湖山谷官網</a></li>
-          <li>看 <strong>琵琶湖山谷</strong>有沒有預告停駛</li>
-          <li>多買一點食物，明天山上吃</li>
+          <li>看 <strong>琵琶湖山谷</strong> 有沒有預告停駛</li>
         </ul>
       </div>
     `
