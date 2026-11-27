@@ -70,13 +70,12 @@ function getDay6() {
       
       <div class="subheader">8️⃣ 京都 → 環球城飯店</div>
       <ul>
-        <li><strong>京都 → 大阪</strong>：JR 新快速/快速(其他要加錢買座位、貴)</li>
-        <li><strong>大阪 → 西九条</strong>：轉環狀線 <strong>1 號月台</strong></li>
-        <li><strong>西九条 → USJ</strong>：4 號下車 → <strong>對面 3 號月台</strong>夢咲線</li>
+        <li><strong>京都 → 大阪</strong>：JR 新快速/快速(只搭這個)</li>
+        <li><strong>大阪 → 西九条 → USJ</strong></li>
       </ul>
 
-      <details class="expander">
-        <summary>🚆 京都 → 大阪 時刻表（15:00～17:00）</summary>
+     <details class="expander">
+        <summary>🚆 京都 → 大阪 時刻表（15:00～18:00）</summary>
         <div class="expander-body">
           <div class="caption" style="margin-bottom:6px;">
             🔗 <a href="這裡貼上官網時刻表網址" target="_blank" rel="noopener noreferrer">JR 西日本官網時刻表</a>
@@ -84,25 +83,23 @@ function getDay6() {
           <table class="food-table">
             <thead>
               <tr>
-                <th style="width:22%;">時間</th>
-                <th style="width:28%;">車種</th>
-                <th style="width:18%;">月台</th>
-                <th style="width:32%;">座位</th>
+                <th style="width:30%;">時間</th>
+                <th style="width:70%;">車種</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td>14:00</td><td>新快速</td><td>5號</td><td>免（刷卡）</td></tr>
-              <tr><td>14:15</td><td>新快速</td><td>5號</td><td>免（刷卡）</td></tr>
-              <tr><td>14:30</td><td>新快速</td><td>5號</td><td>免（刷卡）</td></tr>
-              <tr><td>14:45</td><td>新快速</td><td>5號</td><td>免（刷卡）</td></tr>
-              <tr><td>15:00</td><td>新快速</td><td>5號</td><td>免（刷卡）</td></tr>
-              <tr><td>15:15</td><td>新快速</td><td>5號</td><td>免（刷卡）</td></tr>
-              <tr><td>15:30</td><td>新快速</td><td>5號</td><td>免（刷卡）</td></tr>
-              <tr><td>15:45</td><td>新快速</td><td>5號</td><td>免（刷卡）</td></tr>
-              <tr><td>16:00</td><td>新快速</td><td>5號</td><td>免（刷卡）</td></tr>
-              <tr><td>16:15</td><td>新快速</td><td>5號</td><td>免（刷卡）</td></tr>
-              <tr><td>16:30</td><td>新快速</td><td>5號</td><td>免（刷卡）</td></tr>
-              <tr><td>16:45</td><td>新快速</td><td>5號</td><td>免（刷卡）</td></tr>
+              <tr><td>15:00</td><td>新快速（姫路）</td></tr>
+              <tr><td>15:15</td><td>新快速（姫路）</td></tr>
+              <tr><td>15:30</td><td>新快速（播州赤穂）</td></tr>
+              <tr><td>15:45</td><td>新快速（姫路）</td></tr>
+              <tr><td>16:00</td><td>新快速（姫路）</td></tr>
+              <tr><td>16:15</td><td>新快速（播州赤穂）</td></tr>
+              <tr><td>16:29</td><td>新快速（姫路）</td></tr>
+              <tr><td>16:44</td><td>新快速（播州赤穂）</td></tr>
+              <tr><td>16:59</td><td>新快速（姫路）</td></tr>
+              <tr><td>17:14</td><td>新快速（播州赤穂）</td></tr>
+              <tr><td>17:29</td><td>新快速（姫路）</td></tr>
+              <tr><td>17:44</td><td>新快速（姫路）</td></tr>
             </tbody>
           </table>
         </div>
