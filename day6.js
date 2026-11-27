@@ -78,7 +78,10 @@ function getDay6() {
         <summary>🚆 京都 → 大阪 時刻表（15:00～18:00）</summary>
         <div class="expander-body">
           <div class="caption" style="margin-bottom:6px;">
-            🔗 <a href="這裡貼上官網時刻表網址" target="_blank" rel="noopener noreferrer">JR 西日本官網時刻表</a>
+            ⚡ 即時查：
+            <a href="https://transit.yahoo.co.jp/search/result?from=京都&to=ユニバーサルシティ" target="_blank" rel="noopener noreferrer">京都→USJ</a>｜
+            <a href="https://transit.yahoo.co.jp/search/result?from=大阪&to=ユニバーサルシティ" target="_blank" rel="noopener noreferrer">大阪→USJ</a>｜
+            <a href="https://transit.yahoo.co.jp/search/result?from=西九条&to=ユニバーサルシティ" target="_blank" rel="noopener noreferrer">西九条→USJ</a>
           </div>
           <table class="food-table">
             <thead>
