@@ -67,12 +67,6 @@ function getDay6() {
       ${btn("📍 錦市場", "35.00502728663626, 135.767164110694", "walking")}
       ${showFoodTable("錦市場")}
       <hr>
-      
-      <div class="subheader">8️⃣ 京都 → 環球城飯店</div>
-      <ul>
-        <li><strong>京都 → 大阪</strong>：JR 新快速(只搭這個)</li>
-        <li><strong>大阪 → 西九条 → USJ</strong></li>
-      </ul>
 
      <div class="subheader">8️⃣ 京都 → 環球城飯店</div>
       <ul>
