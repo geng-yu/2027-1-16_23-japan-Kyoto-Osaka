@@ -35,8 +35,9 @@ function getDay6() {
       </div>
       <hr>
 
-      <div class="subheader">4️⃣ 三宅一生 ${btn("📍 ISSEY MIYAKE KYOTO", "35.00798544803317, 135.76398716632036", "walking")}</div>
+      <div class="subheader">4️⃣ 三宅一生 </div>
       <ul>
+      ${btn("📍 ISSEY MIYAKE KYOTO", "35.00798544803317, 135.76398716632036", "walking")}
       </ul>
       
       <hr>
