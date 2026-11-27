@@ -26,7 +26,7 @@ function getDay6() {
       
       <div class="subheader">3️⃣ 午餐 </div>
       <ul>
-        <li>大丸HARBS3F:義大利麵(11:00)、水果千層</li>
+        <li>大丸3F:HARBS義大利麵(11:00)、水果千層</li>
         <li>勝田炸豬排</li>
       </ul>
       <div class="cols">
